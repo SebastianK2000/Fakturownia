@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FakturowniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adress">
+    <Key>
+      <PropertyRef Name="IdAdress" />
+    </Key>
+    <Property Name="IdAdress" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NrHome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NrLocal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdCustomer" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Adress_Customer" FromRole="Adress" ToRole="Customer" />
+    <NavigationProperty Name="CompanyData" Relationship="Self.FK_CompanyData_Adress" FromRole="Adress" ToRole="CompanyData" />
+    <NavigationProperty Name="Kontrahent" Relationship="Self.FK_Kontrahent_Adress" FromRole="Adress" ToRole="Kontrahent" />
+  </EntityType>
+  <EntityType Name="CompanyData">
+    <Key>
+      <PropertyRef Name="IdCompanyData" />
+    </Key>
+    <Property Name="IdCompanyData" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeOfActivity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstNameCompanyOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastNameCompanyOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NIP" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="REGON" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdAdress" Type="Int32" />
+    <Property Name="IdCustomer" Type="Int32" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK_CompanyData_Adress" FromRole="CompanyData" ToRole="Adress" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_CompanyData_Customer" FromRole="CompanyData" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="IdCustomer" />
+    </Key>
+    <Property Name="IdCustomer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="0" />
+    <Property Name="IsPrimary" Type="Boolean" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK_Adress_Customer" FromRole="Customer" ToRole="Adress" />
+    <NavigationProperty Name="CompanyData" Relationship="Self.FK_CompanyData_Customer" FromRole="Customer" ToRole="CompanyData" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Customer" FromRole="Customer" ToRole="Invoice" />
+    <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_Customer" FromRole="Customer" ToRole="Notifications" />
+    <NavigationProperty Name="Settings" Relationship="Self.FK_Settings_Customer" FromRole="Customer" ToRole="Settings" />
+  </EntityType>
+  <EntityType Name="CustomerRaport">
+    <Key>
+      <PropertyRef Name="IdCustomerRaport" />
+    </Key>
+    <Property Name="IdCustomerRaport" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HowMuchNewUser" Type="Int32" />
+    <Property Name="HowLostUser" Type="Int32" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Period" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ImportExportLogs">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="IdInvoice" Type="Int32" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_ImportExportLogs_Invoice" FromRole="ImportExportLogs" ToRole="Invoice" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="IdInvoice" />
+    </Key>
+    <Property Name="IdInvoice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="IdKontrahenta" Type="Int32" />
+    <Property Name="PaymentDeadline" Type="DateTime" Precision="3" />
+    <Property Name="IdPaymentMethod" Type="Int32" />
+    <Property Name="IsPaid" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="HowMuchCost" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="0" />
+    <Property Name="IdCustomer" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Invoice_Customer" FromRole="Invoice" ToRole="Customer" />
+    <NavigationProperty Name="ImportExportLogs" Relationship="Self.FK_ImportExportLogs_Invoice" FromRole="Invoice" ToRole="ImportExportLogs" />
+    <NavigationProperty Name="Kontrahent" Relationship="Self.FK_Invoice_Kontrahent" FromRole="Invoice" ToRole="Kontrahent" />
+    <NavigationProperty Name="PaymentMethod" Relationship="Self.FK_Invoice_PaymentMethod" FromRole="Invoice" ToRole="PaymentMethod" />
+    <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItems_Invoice" FromRole="Invoice" ToRole="InvoiceItems" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Invoice" FromRole="Invoice" ToRole="Payments" />
+  </EntityType>
+  <EntityType Name="InvoiceItems">
+    <Key>
+      <PropertyRef Name="IdInvoiceItems" />
+    </Key>
+    <Property Name="IdInvoiceItems" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdInvoice" Type="Int32" />
+    <Property Name="IdTowar" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_InvoiceItems_Invoice" FromRole="InvoiceItems" ToRole="Invoice" />
+    <NavigationProperty Name="Towar" Relationship="Self.FK_InvoiceItems_Towar" FromRole="InvoiceItems" ToRole="Towar" />
+  </EntityType>
+  <EntityType Name="Kind">
+    <Key>
+      <PropertyRef Name="IdKind" />
+    </Key>
+    <Property Name="IdKind" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Desctiption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kontrahent" Relationship="Self.FK_Kontrahent_Kind" FromRole="Kind" ToRole="Kontrahent" />
+  </EntityType>
+  <EntityType Name="Kontrahent">
+    <Key>
+      <PropertyRef Name="IdKontrachenta" />
+    </Key>
+    <Property Name="IdKontrachenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdKind" Type="Int32" />
+    <Property Name="IdStatus" Type="Int32" />
+    <Property Name="IdAdress" Type="Int32" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK_Kontrahent_Adress" FromRole="Kontrahent" ToRole="Adress" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Kontrahent" FromRole="Kontrahent" ToRole="Invoice" />
+    <NavigationProperty Name="Kind" Relationship="Self.FK_Kontrahent_Kind" FromRole="Kontrahent" ToRole="Kind" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_Kontrahent_Status" FromRole="Kontrahent" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="IdNotification" />
+    </Key>
+    <Property Name="IdNotification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IdCustomer" Type="Int32" />
+    <Property Name="SendDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Notifications_Customer" FromRole="Notifications" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="PaymentMethod">
+    <Key>
+      <PropertyRef Name="IdPayments" />
+    </Key>
+    <Property Name="IdPayments" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_PaymentMethod" FromRole="PaymentMethod" ToRole="Invoice" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_PaymentMethod" FromRole="PaymentMethod" ToRole="Payments" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdInvoice" Type="Int32" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="0" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdPyments" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Payments_Invoice" FromRole="Payments" ToRole="Invoice" />
+    <NavigationProperty Name="PaymentMethod" Relationship="Self.FK_Payments_PaymentMethod" FromRole="Payments" ToRole="PaymentMethod" />
+  </EntityType>
+  <EntityType Name="RaportSales">
+    <Key>
+      <PropertyRef Name="IdSalesRaport" />
+    </Key>
+    <Property Name="IdSalesRaport" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Period" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="HowMuchSales" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="IdSettings" />
+    </Key>
+    <Property Name="IdSettings" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentDeadlineTrigger" Type="Boolean" />
+    <Property Name="NewInoviceTrigger" Type="Boolean" />
+    <Property Name="PymentNotMade" Type="Boolean" />
+    <Property Name="IdCustomer" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Settings_Customer" FromRole="Settings" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="IdStatus" />
+    </Key>
+    <Property Name="IdStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kontrahent" Relationship="Self.FK_Kontrahent_Status" FromRole="Status" ToRole="Kontrahent" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Towar">
+    <Key>
+      <PropertyRef Name="IdTowaru" />
+    </Key>
+    <Property Name="IdTowaru" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PurchaseRate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SalesRate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Spread" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItems_Towar" FromRole="Towar" ToRole="InvoiceItems" />
+  </EntityType>
+  <Association Name="FK_Adress_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyData_Adress">
+    <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
+    <End Role="CompanyData" Type="Self.CompanyData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adress">
+        <PropertyRef Name="IdAdress" />
+      </Principal>
+      <Dependent Role="CompanyData">
+        <PropertyRef Name="IdAdress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontrahent_Adress">
+    <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adress">
+        <PropertyRef Name="IdAdress" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="IdAdress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyData_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CompanyData" Type="Self.CompanyData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="CompanyData">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Settings_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="Settings">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportExportLogs_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
+    <End Role="ImportExportLogs" Type="Self.ImportExportLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="IdInvoice" />
+      </Principal>
+      <Dependent Role="ImportExportLogs">
+        <PropertyRef Name="IdInvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Kontrahent">
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kontrahent">
+        <PropertyRef Name="IdKontrachenta" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="IdKontrahenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_PaymentMethod">
+    <End Role="PaymentMethod" Type="Self.PaymentMethod" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentMethod">
+        <PropertyRef Name="IdPayments" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="IdPaymentMethod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceItems_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
+    <End Role="InvoiceItems" Type="Self.InvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="IdInvoice" />
+      </Principal>
+      <Dependent Role="InvoiceItems">
+        <PropertyRef Name="IdInvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
+    <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="IdInvoice" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="IdInvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceItems_Towar">
+    <End Role="Towar" Type="Self.Towar" Multiplicity="0..1" />
+    <End Role="InvoiceItems" Type="Self.InvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="IdTowaru" />
+      </Principal>
+      <Dependent Role="InvoiceItems">
+        <PropertyRef Name="IdTowar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontrahent_Kind">
+    <End Role="Kind" Type="Self.Kind" Multiplicity="0..1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kind">
+        <PropertyRef Name="IdKind" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="IdKind" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontrahent_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Kontrahent" Type="Self.Kontrahent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="IdStatus" />
+      </Principal>
+      <Dependent Role="Kontrahent">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_PaymentMethod">
+    <End Role="PaymentMethod" Type="Self.PaymentMethod" Multiplicity="0..1" />
+    <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentMethod">
+        <PropertyRef Name="IdPayments" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="IdPyments" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InvoiceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adress" EntityType="Self.Adress" />
+    <EntitySet Name="CompanyData" EntityType="Self.CompanyData" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" />
+    <EntitySet Name="CustomerRaport" EntityType="Self.CustomerRaport" />
+    <EntitySet Name="ImportExportLogs" EntityType="Self.ImportExportLogs" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" />
+    <EntitySet Name="InvoiceItems" EntityType="Self.InvoiceItems" />
+    <EntitySet Name="Kind" EntityType="Self.Kind" />
+    <EntitySet Name="Kontrahent" EntityType="Self.Kontrahent" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" />
+    <EntitySet Name="PaymentMethod" EntityType="Self.PaymentMethod" />
+    <EntitySet Name="Payments" EntityType="Self.Payments" />
+    <EntitySet Name="RaportSales" EntityType="Self.RaportSales" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Towar" EntityType="Self.Towar" />
+    <AssociationSet Name="FK_Adress_Customer" Association="Self.FK_Adress_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyData_Adress" Association="Self.FK_CompanyData_Adress">
+      <End Role="Adress" EntitySet="Adress" />
+      <End Role="CompanyData" EntitySet="CompanyData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontrahent_Adress" Association="Self.FK_Kontrahent_Adress">
+      <End Role="Adress" EntitySet="Adress" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyData_Customer" Association="Self.FK_CompanyData_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CompanyData" EntitySet="CompanyData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Customer" Association="Self.FK_Invoice_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notifications_Customer" Association="Self.FK_Notifications_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Settings_Customer" Association="Self.FK_Settings_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Settings" EntitySet="Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportExportLogs_Invoice" Association="Self.FK_ImportExportLogs_Invoice">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="ImportExportLogs" EntitySet="ImportExportLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Kontrahent" Association="Self.FK_Invoice_Kontrahent">
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_PaymentMethod" Association="Self.FK_Invoice_PaymentMethod">
+      <End Role="PaymentMethod" EntitySet="PaymentMethod" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceItems_Invoice" Association="Self.FK_InvoiceItems_Invoice">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_Invoice" Association="Self.FK_Payments_Invoice">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceItems_Towar" Association="Self.FK_InvoiceItems_Towar">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontrahent_Kind" Association="Self.FK_Kontrahent_Kind">
+      <End Role="Kind" EntitySet="Kind" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontrahent_Status" Association="Self.FK_Kontrahent_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Kontrahent" EntitySet="Kontrahent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_PaymentMethod" Association="Self.FK_Payments_PaymentMethod">
+      <End Role="PaymentMethod" EntitySet="PaymentMethod" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
