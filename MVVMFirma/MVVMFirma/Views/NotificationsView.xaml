@@ -9,10 +9,10 @@
     <Grid Background="White">
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" />
-                <DataGridTextColumn Header="Message" />
-                <DataGridTextColumn Header="Id Customer" />
-                <DataGridTextColumn Header="Send Date" />
+                <DataGridTextColumn Header="Id" Binding="{Binding IdNotification}"/>
+                <DataGridTextColumn Header="Message" Binding="{Binding Message}"/>
+                <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
+                <DataGridTextColumn Header="Send Date" Binding="{Binding SendDate}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

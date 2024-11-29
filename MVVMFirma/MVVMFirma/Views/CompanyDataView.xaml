@@ -10,7 +10,7 @@
         <TabControl>
             <!-- Company Data -->
             <TabItem Header="Company Data">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding CompanyDataList}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding IdCompanyData}"/>
                         <DataGridTextColumn Header="Type Of Activity" Binding="{Binding TypeOfActivity}"/>
@@ -27,18 +27,19 @@
 
             <!-- Address -->
             <TabItem Header="Address">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding AdressList}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" />
-                        <DataGridTextColumn Header="City" />
-                        <DataGridTextColumn Header="Street" />
-                        <DataGridTextColumn Header="Nr Home" />
-                        <DataGridTextColumn Header="Nr Local" />
-                        <DataGridTextColumn Header="Zip Code" />
-                        <DataGridTextColumn Header="Id Customer" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding IdAdress}"/>
+                        <DataGridTextColumn Header="City" Binding="{Binding City}"/>
+                        <DataGridTextColumn Header="Street" Binding="{Binding Street}"/>
+                        <DataGridTextColumn Header="Nr Home" Binding="{Binding NrHome}"/>
+                        <DataGridTextColumn Header="Nr Local" Binding="{Binding NrLocal}"/>
+                        <DataGridTextColumn Header="Zip Code" Binding="{Binding ZipCode}"/>
+                        <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
+
         </TabControl>
     </Grid>
 </UserControl>

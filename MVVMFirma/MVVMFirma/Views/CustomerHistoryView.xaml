@@ -4,9 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMFirma.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" d:DesignWidth="800" Height="1295">
     <Grid Background="White">
-        <Label>History Customers</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-1506">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding IdCustomer}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                <DataGridTextColumn Header="Created At" Binding="{Binding CreatedAt}"/>
+                <DataGridTextColumn Header="Updated At" Binding="{Binding UpdatedAt}"/>
+                <DataGridTextColumn Header="Is Primary" Binding="{Binding IsPrimary}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

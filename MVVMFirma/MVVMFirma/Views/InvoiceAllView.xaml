@@ -9,20 +9,20 @@
     <Grid Background="White">
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-926">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" />
-                <DataGridTextColumn Header="Status" />
-                <DataGridTextColumn Header="Number" />
-                <DataGridTextColumn Header="Date" />
-                <DataGridTextColumn Header="Id Kontrahenta" />
-                <DataGridTextColumn Header="Payment Deadline" />
-                <DataGridTextColumn Header="Id Payment Method" />
-                <DataGridTextColumn Header="Is Paid" />
-                <DataGridTextColumn Header="Is Active" />
-                <DataGridTextColumn Header="How Much Cost" />
-                <DataGridTextColumn Header="Notes" />
-                <DataGridTextColumn Header="Created At" />
-                <DataGridTextColumn Header="Updated At" />
-                <DataGridTextColumn Header="Id Customer" />
+                <DataGridTextColumn Header="Id" Binding="{Binding IdInvoice}"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Id Kontrahenta" Binding="{Binding IdKontrahenta}"/>
+                <DataGridTextColumn Header="Payment Deadline" Binding="{Binding PaymentDeadline}"/>
+                <DataGridTextColumn Header="Id Payment Method" Binding="{Binding IdPaymentMethod}"/>
+                <DataGridTextColumn Header="Is Paid" Binding="{Binding IsPaid}"/>
+                <DataGridTextColumn Header="Is Active" Binding="{Binding IsActive}"/>
+                <DataGridTextColumn Header="How Much Cost" Binding="{Binding HowMuchCost}"/>
+                <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                <DataGridTextColumn Header="Created At" Binding="{Binding CreatedAt}"/>
+                <DataGridTextColumn Header="Updated At" Binding="{Binding UpdatedAt}"/>
+                <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

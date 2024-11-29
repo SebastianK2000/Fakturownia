@@ -9,14 +9,14 @@
     <Grid Background="White">
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-1506">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" />
-                <DataGridTextColumn Header="Name" />
-                <DataGridTextColumn Header="Phone" />
-                <DataGridTextColumn Header="Email" />
-                <DataGridTextColumn Header="Notes" />
-                <DataGridTextColumn Header="Created At" />
-                <DataGridTextColumn Header="Updated At" />
-                <DataGridTextColumn Header="Is Primary" />
+                <DataGridTextColumn Header="Id" Binding="{Binding IdCustomer}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                <DataGridTextColumn Header="Created At" Binding="{Binding CreatedAt}"/>
+                <DataGridTextColumn Header="Updated At" Binding="{Binding UpdatedAt}"/>
+                <DataGridTextColumn Header="Is Primary" Binding="{Binding IsPrimary}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

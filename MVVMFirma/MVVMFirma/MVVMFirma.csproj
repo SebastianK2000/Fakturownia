@@ -163,6 +163,7 @@
     <Compile Include="ViewModels\VatViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszystkieTowaryViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieViewModel.cs" />
     <Compile Include="Views\AllViewBase.cs" />
     <Compile Include="Views\CompanyDataView.xaml.cs">
       <DependentUpon>CompanyDataView.xaml</DependentUpon>

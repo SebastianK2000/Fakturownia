@@ -10,60 +10,21 @@ using System.Data.Entity.Infrastructure;
 
 namespace MVVMFirma.ViewModels
 {
-    public class WszystkieTowaryViewModel : WorkspaceViewModel
+    public class WszystkieTowaryViewModel : WszystkieViewModel<Towar>
     {
-        #region DB
-        private readonly InvoiceEntities invoiceEntities; // pole preprezentujące DB
-        #endregion
-
-        #region LoadCommand
-        private BaseCommand _LoadCommand; // komenda wywołująca funkcje pobierania z DB
-
-        public ICommand LoadCommand
-        {
-            get
-            {
-                if (_LoadCommand == null)
-                    _LoadCommand = new BaseCommand(() => load());
-                return _LoadCommand;
-            }
-        }
-
-        #endregion
-
-        #region List
-        private ObservableCollection<Towar> _List; // Tu przechowujemy towary pobrane z DB
-
-        public ObservableCollection<Towar> List
-        {
-            get
-            {
-                if (_List == null)
-                    load();
-                    return _List;
-            }
-            set
-            {
-                _List = value;
-                OnPropertyChanged(() => List); // Odświeżenie listy na interfejsie
-            }
-        }
-        #endregion
 
         #region Construktor
 
 
         public WszystkieTowaryViewModel()
+            :base("Towary")
         {
-            base.DisplayName = "Towary";
-            invoiceEntities = new InvoiceEntities();
-
         }
         #endregion
 
         #region Helpers
         // metoda load pobierze all towary z DB
-        private void load()
+        public override void Load()
         {
             List = new ObservableCollection<Towar>
                 (

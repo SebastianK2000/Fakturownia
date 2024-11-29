@@ -9,11 +9,11 @@
     <Grid Background="White">
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" />
-                <DataGridTextColumn Header="Action Type" />
-                <DataGridTextColumn Header="File Name" />
-                <DataGridTextColumn Header="Timestamp" />
-                <DataGridTextColumn Header="Id Invoice" />
+                <DataGridTextColumn Header="Id" Binding="{Binding IdLog}"/>
+                <DataGridTextColumn Header="Action Type" Binding="{Binding ActionType}"/>
+                <DataGridTextColumn Header="File Name" Binding="{Binding FileName}"/>
+                <DataGridTextColumn Header="Timestamp" Binding="{Binding Timestamp}"/>
+                <DataGridTextColumn Header="Id Invoice" Binding="{Binding IdInvoice}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

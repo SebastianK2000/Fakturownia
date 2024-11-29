@@ -9,14 +9,14 @@
     <Grid Background="White">
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" />
-                <DataGridTextColumn Header="Language" />
-                <DataGridTextColumn Header="Login" />
-                <DataGridTextColumn Header="Password" />
-                <DataGridTextColumn Header="Payment Deadline Trigger" />
-                <DataGridTextColumn Header="New Inovice Trigger" />
-                <DataGridTextColumn Header="Pyment Not Made" />
-                <DataGridTextColumn Header="Id Customer" />
+                <DataGridTextColumn Header="Id" Binding="{Binding IdSettings}"/>
+                <DataGridTextColumn Header="Language" Binding="{Binding Language}"/>
+                <DataGridTextColumn Header="Login" Binding="{Binding Login}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Payment Deadline Trigger" Binding="{Binding PaymentDeadlineTrigger}"/>
+                <DataGridTextColumn Header="New Inovice Trigger" Binding="{Binding NewInoviceTrigger}"/>
+                <DataGridTextColumn Header="Pyment Not Made" Binding="{Binding PymentNotMade}"/>
+                <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

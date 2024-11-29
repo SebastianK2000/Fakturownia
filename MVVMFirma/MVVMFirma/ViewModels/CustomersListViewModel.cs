@@ -1,16 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVVMFirma.Models.Entities;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MVVMFirma.ViewModels
 {
-    public class CustomersListViewModel:WorkspaceViewModel
+    public class CustomersListViewModel : WszystkieViewModel<Customer>
     {
-        public CustomersListViewModel() 
+        #region Constructor
+        public CustomersListViewModel()
+            : base("Customer")
         {
-            base.DisplayName = "Customers List";
         }
+        #endregion
+
+        #region Helpers
+        public override void Load()
+        {
+            List = new ObservableCollection<Customer>(
+                invoiceEntities.Customer.ToList()
+            );
+        }
+        #endregion
     }
 }
+

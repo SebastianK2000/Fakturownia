@@ -10,25 +10,25 @@
         <TabControl>
             <!-- Payments -->
             <TabItem Header="Payments">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding PaymentsList}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" />
-                        <DataGridTextColumn Header="Id Invoice" />
-                        <DataGridTextColumn Header="Payment Date" />
-                        <DataGridTextColumn Header="Amount" />
-                        <DataGridTextColumn Header="Id Payments" />
-                        <DataGridTextColumn Header="Notes" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding PaymentId}"/>
+                        <DataGridTextColumn Header="Id Invoice" Binding="{Binding IdInvoice}"/>
+                        <DataGridTextColumn Header="Payment Date" Binding="{Binding PaymentDate}"/>
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
+                        <DataGridTextColumn Header="Id Payments" Binding="{Binding IdPayments}"/>
+                        <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
 
             <!-- Payment Method -->
             <TabItem Header="Payment Method">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding PaymentMethodsList}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" />
-                        <DataGridTextColumn Header="Name" />
-                        <DataGridTextColumn Header="Description" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding IdPayments}"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>

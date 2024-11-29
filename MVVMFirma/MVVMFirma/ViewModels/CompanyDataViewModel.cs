@@ -1,77 +1,35 @@
-﻿using MVVMFirma.Helper;
-using MVVMFirma.Models.Entities;
-using System;
-using System.Collections.Generic;
+﻿using MVVMFirma.Models.Entities;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
-    public class CompanyDataViewModel:WorkspaceViewModel
+    public class CompanyDataViewModel : WszystkieViewModel<CompanyData>
     {
-        #region DB
-        private readonly InvoiceEntities invoiceEntities;
-        #endregion
-
-        #region LoadCommand
-        private BaseCommand _LoadCommand;
-
-        public ICommand LoadCommand
-        {
-            get
-            {
-                if (_LoadCommand == null)
-                    _LoadCommand = new BaseCommand(() => load());
-                return _LoadCommand;
-            }
-        }
-        #endregion
-
-        #region List 
-
-        private ObservableCollection<CompanyData> _List;
-
-        public ObservableCollection<CompanyData> List
-        {
-            get
-            {
-                if (_List == null)
-                    load();
-                return _List;
-            }
-            set
-            {
-                _List = value;
-                OnPropertyChanged(() => List);
-            }
-        }
-
-        #endregion
-
-        #region Construktor
-
-        
+        #region Constructor
         public CompanyDataViewModel()
+            : base("Company Data")
         {
-            base.DisplayName = "Company Data";
-            invoiceEntities = new InvoiceEntities();
+            Load();
         }
+        #endregion
+
+        #region Properties
+        public ObservableCollection<CompanyData> CompanyDataList { get; set; }
+        public ObservableCollection<Adress> AdressList { get; set; }
         #endregion
 
         #region Helpers
-
-        private void load()
+        public override void Load()
         {
-            List = new ObservableCollection<CompanyData>
-                (
-                    invoiceEntities.CompanyData.ToList()
-                );
+            CompanyDataList = new ObservableCollection<CompanyData>(
+                invoiceEntities.CompanyData.ToList()
+            );
+
+            AdressList = new ObservableCollection<Adress>(
+                invoiceEntities.Adress.ToList()
+            );
         }
-
         #endregion
-
     }
 }

@@ -1,16 +1,32 @@
-﻿using System;
+﻿using MVVMFirma.Models.Entities;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace MVVMFirma.ViewModels
 {
-    public class SalesRaportViewModel:WorkspaceViewModel
+    public class SalesRaportViewModel:WszystkieViewModel<RaportSales>
     {
-        public SalesRaportViewModel() 
+        #region Construktor
+
+        public SalesRaportViewModel()
+            : base("Raport Sales")
         {
-            base.DisplayName = "Sales Raport";
         }
+        #endregion
+
+        #region Helpers
+        public override void Load()
+        {
+            List = new ObservableCollection<RaportSales>
+                (
+                    invoiceEntities.RaportSales.ToList()
+                );
+        }
+        #endregion
     }
 }
