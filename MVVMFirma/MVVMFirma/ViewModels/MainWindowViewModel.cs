@@ -37,7 +37,7 @@ namespace MVVMFirma.ViewModels
             return new List<CommandViewModel>
     {
 
-        // Invoices section
+        // Customer section
 
         new CommandViewModel(
             "Customer",
@@ -51,7 +51,7 @@ namespace MVVMFirma.ViewModels
             "Customer History",
             new BaseCommand(() => this.ShowView<CustomerHistoryViewModel>())),
 
-        // Customers section
+        // Invoices section
 
         new CommandViewModel(
             "Invoice",
@@ -121,7 +121,7 @@ namespace MVVMFirma.ViewModels
 
         new CommandViewModel(
             "Settings",
-            new BaseCommand(() => this.ShowView<SettingsViewModel>())),
+            new BaseCommand(() => this.ShowView<SettingsViewModel>()))
     };
         }
 

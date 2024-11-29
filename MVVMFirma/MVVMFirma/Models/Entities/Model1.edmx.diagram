@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b9fa3fefa1b942fdb5751f6eb30da7c7" Name="Diagram1" ZoomLevel="47">
+      <Diagram DiagramId="b9fa3fefa1b942fdb5751f6eb30da7c7" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="FakturowniaModel.Adress" Width="1.5" PointX="11.875" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="FakturowniaModel.CompanyData" Width="1.5" PointX="14.125" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="FakturowniaModel.Customer" Width="1.5" PointX="9.625" PointY="4.25" IsExpanded="true" />
@@ -20,7 +20,7 @@
         <EntityTypeShape EntityType="FakturowniaModel.RaportSales" Width="1.5" PointX="7.125" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FakturowniaModel.Settings" Width="1.5" PointX="9.25" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FakturowniaModel.Status" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FakturowniaModel.sysdiagrams" Width="1.5" PointX="16.625" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FakturowniaModel.sysdiagrams" Width="1.5" PointX="17.375" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FakturowniaModel.Towar" Width="1.5" PointX="19.375" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="FakturowniaModel.FK_Adress_Customer" ManuallyRouted="false" />
         <AssociationConnector Association="FakturowniaModel.FK_CompanyData_Adress" ManuallyRouted="false" />

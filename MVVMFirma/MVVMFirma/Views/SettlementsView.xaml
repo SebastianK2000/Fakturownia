@@ -7,6 +7,31 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Settlements</Label>
+        <TabControl>
+            <!-- Payments -->
+            <TabItem Header="Payments">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" />
+                        <DataGridTextColumn Header="Id Invoice" />
+                        <DataGridTextColumn Header="Payment Date" />
+                        <DataGridTextColumn Header="Amount" />
+                        <DataGridTextColumn Header="Id Payments" />
+                        <DataGridTextColumn Header="Notes" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <!-- Payment Method -->
+            <TabItem Header="Payment Method">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" />
+                        <DataGridTextColumn Header="Name" />
+                        <DataGridTextColumn Header="Description" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

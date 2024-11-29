@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy CustomersListView.xaml
     /// </summary>
-    public partial class CustomersListView : UserControl
+    public partial class CustomersListView : AllViewBase
     {
         public CustomersListView()
         {

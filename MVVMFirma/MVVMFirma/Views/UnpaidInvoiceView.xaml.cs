@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy UnpaidInvoiceView.xaml
     /// </summary>
-    public partial class UnpaidInvoiceView : UserControl
+    public partial class UnpaidInvoiceView : AllViewBase
     {
         public UnpaidInvoiceView()
         {

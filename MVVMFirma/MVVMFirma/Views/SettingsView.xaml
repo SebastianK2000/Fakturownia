@@ -7,6 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Settings</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" />
+                <DataGridTextColumn Header="Language" />
+                <DataGridTextColumn Header="Login" />
+                <DataGridTextColumn Header="Password" />
+                <DataGridTextColumn Header="Payment Deadline Trigger" />
+                <DataGridTextColumn Header="New Inovice Trigger" />
+                <DataGridTextColumn Header="Pyment Not Made" />
+                <DataGridTextColumn Header="Id Customer" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

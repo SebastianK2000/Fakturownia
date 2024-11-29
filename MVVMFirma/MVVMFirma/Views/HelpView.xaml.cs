@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVMFirma.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy HelpView.xaml
     /// </summary>
-    public partial class HelpView : UserControl
+    public partial class HelpView : UserControl 
     {
         public HelpView()
         {

@@ -163,6 +163,7 @@
     <Compile Include="ViewModels\VatViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszystkieTowaryViewModel.cs" />
+    <Compile Include="Views\AllViewBase.cs" />
     <Compile Include="Views\CompanyDataView.xaml.cs">
       <DependentUpon>CompanyDataView.xaml</DependentUpon>
     </Compile>
@@ -264,6 +265,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\CompanyDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

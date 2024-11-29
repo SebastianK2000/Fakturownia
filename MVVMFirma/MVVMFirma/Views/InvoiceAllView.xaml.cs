@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy InvoiceAllView.xaml
     /// </summary>
-    public partial class InvoiceAllView : UserControl
+    public partial class InvoiceAllView : AllViewBase
     {
         public InvoiceAllView()
         {

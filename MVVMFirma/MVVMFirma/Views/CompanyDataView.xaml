@@ -7,6 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>CompantData</Label>
+        <TabControl>
+            <!-- Company Data -->
+            <TabItem Header="Company Data">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding IdCompanyData}"/>
+                        <DataGridTextColumn Header="Type Of Activity" Binding="{Binding TypeOfActivity}"/>
+                        <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}"/>
+                        <DataGridTextColumn Header="First Name Company Owner" Binding="{Binding FirstNameCompanyOwner}"/>
+                        <DataGridTextColumn Header="Last Name Company Owner" Binding="{Binding LastNameCompanyOwner}"/>
+                        <DataGridTextColumn Header="NIP" Binding="{Binding NIP}"/>
+                        <DataGridTextColumn Header="REGON" Binding="{Binding REGON}"/>
+                        <DataGridTextColumn Header="Id Address" Binding="{Binding IdAddress}"/>
+                        <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <!-- Address -->
+            <TabItem Header="Address">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" />
+                        <DataGridTextColumn Header="City" />
+                        <DataGridTextColumn Header="Street" />
+                        <DataGridTextColumn Header="Nr Home" />
+                        <DataGridTextColumn Header="Nr Local" />
+                        <DataGridTextColumn Header="Zip Code" />
+                        <DataGridTextColumn Header="Id Customer" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

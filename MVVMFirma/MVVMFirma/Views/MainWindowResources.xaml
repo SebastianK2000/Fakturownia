@@ -20,6 +20,74 @@
         <vw:InvoiceAllView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:HelpViewModel}">
+        <vw:HelpView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:CompanyDataViewModel}">
+        <vw:CompanyDataView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ContactSupportViewModel}">
+        <vw:ContactSupportView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:CustomerHistoryViewModel}">
+        <vw:CustomerHistoryView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:CustomersListViewModel}">
+        <vw:CustomersListView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:CustomersRaportViewModel}">
+        <vw:CustomersRaportView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:CustomerViewModel}">
+        <vw:CustomerView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ExportViewModel}">
+        <vw:ExportView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:HistoryInvoiceViewModel}">
+        <vw:HistoryInvoiceView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ImportViewModel}">
+        <vw:ImportView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NotificationsViewModel}">
+        <vw:NotificationsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:PaidInvoiceViewModel}">
+        <vw:PaidInvoice/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SalesRaportViewModel}">
+        <vw:SalesRaportView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+        <vw:SettingsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettlementsViewModel}">
+        <vw:SettlementsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:UnpaidInvoiceViewModel}">
+        <vw:UnpaidInvoiceView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:VatViewModel}">
+        <vw:VatView/>
+    </DataTemplate>
+
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>

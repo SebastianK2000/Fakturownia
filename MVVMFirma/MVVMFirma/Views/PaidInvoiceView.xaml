@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.PaidInvoice"
+﻿<local:AllViewBase x:Class="MVVMFirma.Views.PaidInvoice"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,4 +9,4 @@
     <Grid Background="White">
         <Label>This view display all paid invoice</Label>
     </Grid>
-</UserControl>
+</local:AllViewBase>
