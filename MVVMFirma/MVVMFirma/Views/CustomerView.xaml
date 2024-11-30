@@ -19,16 +19,20 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Name"/>
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" 
+                 Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Phone"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" 
+                 Text="{Binding Path=Phone, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="Email"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" 
+                 Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="Notes"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" 
+                 Text="{Binding Path=Notes, UpdateSourceTrigger=PropertyChanged}" />
 
     </Grid>
 </local:JedenViewBase>
