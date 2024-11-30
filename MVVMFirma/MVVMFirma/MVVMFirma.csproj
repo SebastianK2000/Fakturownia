@@ -171,6 +171,7 @@
     <Compile Include="Views\ContactSupportView.xaml.cs">
       <DependentUpon>ContactSupportView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\JedenViewBase.cs" />
     <Compile Include="Views\CustomerHistoryView.xaml.cs">
       <DependentUpon>CustomerHistoryView.xaml</DependentUpon>
     </Compile>

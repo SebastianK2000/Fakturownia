@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NewInvoiceView.xaml
     /// </summary>
-    public partial class NewInvoiceView : UserControl
+    public partial class NewInvoiceView : JedenViewBase
     {
         public NewInvoiceView()
         {

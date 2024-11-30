@@ -18,7 +18,8 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy CustomerView.xaml
     /// </summary>
-    public partial class CustomerView : UserControl
+    public partial class CustomerView : JedenViewBase
+
     {
         public CustomerView()
         {
