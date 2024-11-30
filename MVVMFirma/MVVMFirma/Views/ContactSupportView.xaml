@@ -3,10 +3,96 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Label>Contact</Label>
+    <UserControl.Resources>
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#0056B3" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#007BFF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#003F73" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="White" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Background="#0056B3" Margin="0,0,0,10">
+            <TextBlock Text="Contact Support" FontSize="24" FontWeight="Bold" Foreground="White" Margin="10,5" />
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Background="#F5F5F5" Margin="0,0,10,0" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Send us a message" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
+                    <TextBlock Text="Please fill out the form below, and our team will get back to you as soon as possible." 
+                               TextWrapping="Wrap" Margin="0,0,0,20" />
+
+                    <StackPanel Margin="0,0,0,10">
+                        <TextBlock Text="Name" FontWeight="Bold" />
+                        <TextBox Text="" ToolTip="Enter your name" Margin="0,5,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,10">
+                        <TextBlock Text="Email" FontWeight="Bold" />
+                        <TextBox Text="" ToolTip="Enter your email address" Margin="0,5,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,20">
+                        <TextBlock Text="Message" FontWeight="Bold" />
+                        <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="100" ToolTip="Enter your message" Margin="0,5,0,0" />
+                    </StackPanel>
+
+                    <Button Content="Send Message" Style="{StaticResource SidebarButtonStyle}" 
+                        HorizontalAlignment="Right" Width="130" Height="40" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Background="#E6E6E6" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Contact Information" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
+                    <TextBlock Text="If you need immediate assistance, you can reach us at:" TextWrapping="Wrap" Margin="0,0,0,10" />
+
+                    <StackPanel Margin="10,0,0,0">
+                        <TextBlock Text="📞 Phone: +1 (800) 123-4567" Margin="0,5" />
+                        <TextBlock Text="✉ Email: support@mvvmfirma.com" Margin="0,5" />
+                        <TextBlock Text="🌐 Website: www.mvvmfirma.com" Margin="0,5" />
+                    </StackPanel>
+
+                    <TextBlock Text="Working Hours:" FontSize="16" FontWeight="Bold" Margin="20,10,0,5" />
+                    <TextBlock Text="Monday - Friday: 9:00 AM - 6:00 PM" Margin="10,0,0,0" />
+                    <TextBlock Text="Saturday: 10:00 AM - 2:00 PM" Margin="10,0,0,0" />
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

@@ -7,41 +7,69 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#0056B3" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#007BFF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#003F73" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <UserControl.DataContext>
         <vm:HelpViewModel />
     </UserControl.DataContext>
 
     <Grid Background="White">
-        <!-- Główne układ -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <!-- Nagłówek -->
-        <StackPanel Orientation="Horizontal" Background="#FF3C78D8" Margin="10">
-            <TextBlock Text="Help Center" FontSize="24" FontWeight="Bold" Foreground="White" Height="35" />
-            <TextBlock Text=" - Find your answers here!" FontSize="16" Foreground="White" Width="187" Height="22" />
+        <StackPanel Orientation="Horizontal" Background="#0056B3" Margin="10">
+            <TextBlock Text="Help Center" FontSize="24" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,5,0,5" />
+            <TextBlock Text=" - Find your answers here!" FontSize="16" Foreground="White" Margin="10,5,0,5" VerticalAlignment="Center" />
         </StackPanel>
 
-        <!-- Sekcja zawartości -->
         <Grid Grid.Row="1" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Panel boczny z tematami -->
-            <StackPanel Background="#F5F5F5" Margin="0,0,10,0">
-                <TextBlock Text="Topics" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
-                <Button Content="Getting Started" Margin="0,5" />
-                <Button Content="How to Create an Invoice" Margin="0,5" />
-                <Button Content="Export Data" Margin="0,5" />
-                <Button Content="Integration Settings" Margin="0,5" />
-                <Button Content="Contact Support" Margin="0,5" />
-            </StackPanel>
+            <Border Background="#F5F5F5" Padding="10" Margin="0,0,10,0">
+                <StackPanel>
+                    <TextBlock Text="Topics" FontSize="18" FontWeight="Bold" Margin="5,0,0,20" />
+                    <Button Content="Getting Started" Style="{StaticResource SidebarButtonStyle}" Height="30"/>
+                    <Button Content="How to Create an Invoice" Style="{StaticResource SidebarButtonStyle}" Click="Button_Click" Height="30"/>
+                    <Button Content="Export Data" Style="{StaticResource SidebarButtonStyle}" Height="30"/>
+                    <Button Content="Integration Settings" Style="{StaticResource SidebarButtonStyle}" Height="30"/>
+                    <Button Content="Contact Support" Style="{StaticResource SidebarButtonStyle}" Height="30"/>
+                </StackPanel>
+            </Border>
 
-            <!-- Główna zawartość -->
             <ScrollViewer Grid.Column="1" Padding="10" Background="#FFFFFF" BorderBrush="#D3D3D3" BorderThickness="1">
                 <StackPanel>
                     <TextBlock Text="Welcome to the Help Center!" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />

@@ -40,7 +40,7 @@ namespace MVVMFirma.ViewModels
         // Customer section
 
         new CommandViewModel(
-            "Customer",
+            "Add New Customer",
             new BaseCommand(() => this.CreateView(new CustomerViewModel()))),
 
         new CommandViewModel(
@@ -48,27 +48,27 @@ namespace MVVMFirma.ViewModels
             new BaseCommand(() => this.ShowView<CustomersListViewModel>())),
 
         new CommandViewModel(
-            "Customer History",
+            "Customer Archive",
             new BaseCommand(() => this.ShowView<CustomerHistoryViewModel>())),
 
         // Invoices section
 
         new CommandViewModel(
-            "Invoice",
+            "Add New Invoice",
             new BaseCommand(() => this.CreateView(new NewInvoiceViewModel()))),
 
         new CommandViewModel(
-            "Invoices",
+            "Invoices List",
             new BaseCommand(() => this.ShowView<InvoiceAllViewModel>())),
 
         // Products and Services section
 
         new CommandViewModel(
-            "Towar",
+            "Add New Product",
             new BaseCommand(() => this.CreateView(new NowyTowarViewModel()))),
 
         new CommandViewModel(
-            "Towary",
+            "Product List",
             new BaseCommand(() => this.ShowView<WszystkieTowaryViewModel>())),
 
         // Raport and analiza section 
@@ -98,7 +98,7 @@ namespace MVVMFirma.ViewModels
         // Payments section 
 
         new CommandViewModel(
-            "Settlements",
+            "Payments",
             new BaseCommand(() => this.ShowView<SettlementsViewModel>())),
 
         // Organizational section
