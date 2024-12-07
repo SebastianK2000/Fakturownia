@@ -72,6 +72,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helper\BaseCommand.cs" />
+    <Compile Include="Models\EntitiesForView\AddressForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\CompanyDataForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\ImportExportLogsForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\InvoiceForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\ItemInvoiceForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\KontrahentForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\NotificationsForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\SettingsForAllView.cs" />
     <Compile Include="Models\Entities\Adress.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -123,6 +131,7 @@
     <Compile Include="Models\Entities\Payments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EntitiesForView\PaymentsForAllView.cs" />
     <Compile Include="Models\Entities\RaportSales.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -139,6 +148,8 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\JedenViewModel.cs" />
+    <Compile Include="ViewModels\KontrahentViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\CompanyDataViewModel.cs" />
     <Compile Include="ViewModels\ContactSupportViewModel.cs" />
@@ -159,6 +170,7 @@
     <Compile Include="ViewModels\SalesRaportViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\SettlementsViewModel.cs" />
+    <Compile Include="ViewModels\StatusViewModel.cs" />
     <Compile Include="ViewModels\UnpaidInvoiceViewModel.cs" />
     <Compile Include="ViewModels\VatViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
@@ -199,6 +211,9 @@
     <Compile Include="Views\InvoiceAllView.xaml.cs">
       <DependentUpon>InvoiceAllView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\KontrahentView.xaml.cs">
+      <DependentUpon>KontrahentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -222,6 +237,9 @@
     </Compile>
     <Compile Include="Views\SettlementsView.xaml.cs">
       <DependentUpon>SettlementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatusView.xaml.cs">
+      <DependentUpon>StatusView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UnpaidInvoiceView.xaml.cs">
       <DependentUpon>UnpaidInvoiceView.xaml</DependentUpon>
@@ -315,6 +333,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\KontrahentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -351,6 +373,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\StatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UnpaidInvoiceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -379,6 +405,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

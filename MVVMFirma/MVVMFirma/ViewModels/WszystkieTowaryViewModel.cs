@@ -15,7 +15,6 @@ namespace MVVMFirma.ViewModels
 
         #region Construktor
 
-
         public WszystkieTowaryViewModel()
             :base("Towary")
         {

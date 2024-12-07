@@ -51,6 +51,10 @@ namespace MVVMFirma.ViewModels
             "Customer Archive",
             new BaseCommand(() => this.ShowView<CustomerHistoryViewModel>())),
 
+        new CommandViewModel(
+            "Kontrahent",
+            new BaseCommand(() => this.ShowView<KontrahentViewModel>())),
+
         // Invoices section
 
         new CommandViewModel(
@@ -60,6 +64,10 @@ namespace MVVMFirma.ViewModels
         new CommandViewModel(
             "Invoices List",
             new BaseCommand(() => this.ShowView<InvoiceAllViewModel>())),
+
+        new CommandViewModel(
+            "Status",
+            new BaseCommand(() => this.ShowView<StatusViewModel>())),
 
         // Products and Services section
 

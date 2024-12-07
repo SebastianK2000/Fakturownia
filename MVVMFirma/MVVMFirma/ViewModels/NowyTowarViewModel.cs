@@ -8,37 +8,14 @@ using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
-    public class NowyTowarViewModel : WorkspaceViewModel
+    public class NowyTowarViewModel : JedenViewModel<Towar>
     {
-
-        #region DB
-        private InvoiceEntities invoiceEntities;
-        #endregion
-        #region Item
-        private Towar towar;
-        #endregion
-
-        #region Command 
-        // komenda która zostanie podpięta pod zapisz/zamknij
-        private BaseCommand _SaveCommand;
-
-        public ICommand SaveCommand
-        {
-            get
-            {
-                if (_SaveCommand == null)
-                    _SaveCommand = new BaseCommand(() => SaveAndClose());
-                return _SaveCommand;
-            }
-        }
-        #endregion
 
         #region Construktor
         public NowyTowarViewModel()
+            :base("Towar")
         {
-            base.DisplayName = "Towar";
-            invoiceEntities = new InvoiceEntities();
-            towar = new Towar();
+            Item = new Towar();
         }
 
         #endregion
@@ -48,11 +25,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return towar.Code;
+                return Item.Code;
             }
             set
             {
-                towar.Code = value;
+                Item.Code = value;
                 OnPropertyChanged(() => Code);
             }
         }
@@ -61,11 +38,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return towar.Name;
+                return Item.Name;
             }
             set
             {
-                towar.Name = value;
+                Item.Name = value;
                 OnPropertyChanged(() => Name);
             }
         }
@@ -74,11 +51,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return towar.PurchaseRate;
+                return Item.PurchaseRate;
             }
             set
             {
-                towar.PurchaseRate = value;
+                Item.PurchaseRate = value;
                 OnPropertyChanged(() => PurchaseRate);
             }
         }
@@ -87,11 +64,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return towar.SalesRate;
+                return Item.SalesRate;
             }
             set
             {
-                towar.SalesRate = value;
+                Item.SalesRate = value;
                 OnPropertyChanged(() => SalesRate);
             }
         }
@@ -100,11 +77,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return towar.Price;
+                return Item.Price;
             }
             set
             {
-                towar.Price = value;
+                Item.Price = value;
                 OnPropertyChanged(() => Price);
             }
         }
@@ -113,11 +90,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return towar.Spread;
+                return Item.Spread;
             }
             set
             {
-                towar.Spread = value;
+                Item.Spread = value;
                 OnPropertyChanged(() => Spread);
             }
         }
@@ -126,25 +103,20 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return towar.Notes;
+                return Item.Notes;
             }
             set
             {
-                towar.Notes = value;
+                Item.Notes = value;
                 OnPropertyChanged(() => Notes);
             }
         }
         #endregion
         #region Helpers
-        public void Save()
+        public override void Save()
         {
-            invoiceEntities.Towar.Add(towar); // dodaje do lokalnej kolekcji
+            invoiceEntities.Towar.Add(Item); // dodaje do lokalnej kolekcji
             invoiceEntities.SaveChanges(); // zapisuje do DB
-        }
-        public void SaveAndClose()
-        {
-            Save();
-            base.OnRequestClose(); // zamknięcie zakładki
         }
         #endregion
 

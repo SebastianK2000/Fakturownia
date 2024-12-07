@@ -1,4 +1,5 @@
 ﻿using MVVMFirma.Models.Entities;
+using MVVMFirma.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +10,7 @@ using System.Windows.Documents;
 
 namespace MVVMFirma.ViewModels
 {
-    public class ImportViewModel:WszystkieViewModel<ImportExportLogs>
+    public class ImportViewModel:WszystkieViewModel<ImportExportLogsForAllView>
     {
         #region Construktor
         public ImportViewModel()
@@ -21,9 +22,17 @@ namespace MVVMFirma.ViewModels
         #region Helpers
         public override void Load()
         {
-            List = new ObservableCollection<ImportExportLogs>
+            List = new ObservableCollection<ImportExportLogsForAllView>
                 (
-                    invoiceEntities.ImportExportLogs.ToList()
+                    from logs in invoiceEntities.ImportExportLogs
+                    select new ImportExportLogsForAllView
+                    {
+                        IdLog = logs.IdLog,
+                        ActionType = logs.ActionType,
+                        FileName = logs.FileName,
+                        Timestamp = logs.Timestamp,
+                        InvoiceNumber = logs.Invoice.Number,
+                    }
                 );
         }
         #endregion

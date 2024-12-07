@@ -286,3 +286,7 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\EntityFramework
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\MVVMFirma_Content.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\MVVMFirma.csproj.Up2Date
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Themes\Generic.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\KontrahentView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\StatusView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\KontrahentView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\StatusView.baml

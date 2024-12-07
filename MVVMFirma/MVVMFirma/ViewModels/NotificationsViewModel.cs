@@ -1,4 +1,5 @@
 ﻿using MVVMFirma.Models.Entities;
+using MVVMFirma.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +10,7 @@ using System.Windows.Documents;
 
 namespace MVVMFirma.ViewModels
 {
-    public class NotificationsViewModel:WszystkieViewModel<Notifications>
+    public class NotificationsViewModel:WszystkieViewModel<NotificationsForAllView>
     {
         #region Construktor
 
@@ -23,9 +24,17 @@ namespace MVVMFirma.ViewModels
         #region Helpers
         public override void Load()
         {
-            List = new ObservableCollection<Notifications>
+            List = new ObservableCollection<NotificationsForAllView>
                 (
-                    invoiceEntities.Notifications.ToList()
+                from notifications in invoiceEntities.Notifications
+                select new NotificationsForAllView
+                {
+                    IdNotification = notifications.IdNotification,
+                    Message = notifications.Message,
+                    CustomerIdCustomer = notifications.Customer.IdCustomer,
+                    CustomerName = notifications.Customer.Name,
+                    SendDate = notifications.SendDate,
+                }
                 );
         }
         #endregion

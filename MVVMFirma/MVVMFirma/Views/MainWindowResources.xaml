@@ -88,6 +88,14 @@
         <vw:VatView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:StatusViewModel}">
+        <vw:StatusView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:KontrahentViewModel}">
+        <vw:KontrahentView/>
+    </DataTemplate>
+
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>
