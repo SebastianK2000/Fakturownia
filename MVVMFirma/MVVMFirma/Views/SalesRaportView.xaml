@@ -7,8 +7,47 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33"/>
+            <RowDefinition Height="33"/>
+            <RowDefinition Height="33"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="33"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Raport Sales for select date"
+               Margin="3" HorizontalContentAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Od" Margin="3"/>
+            <DatePicker Grid.Column="1" Margin="3"/>
+            <Label Grid.Column="2" Content="Do" Margin="3"/>
+            <DatePicker Grid.Column="3" Margin="3"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Wybierz towar:" Margin="3"/>
+            <ComboBox Grid.Column="1" Margin="3"/>
+        </Grid>
+        <Button Grid.Row="3" Content="Oblicz" Margin="3"/>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Utarg wynosi:" Margin="3"/>
+            <Label Grid.Column="1" Content="0" Margin="3"/>
+        </Grid>
+        <!--
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
-            <DataGrid.Columns>
+                <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdSalesRaport}"/>
                 <DataGridTextColumn Header="Period" Binding="{Binding Period}"/>
                 <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
@@ -17,5 +56,6 @@
                 <DataGridTextColumn Header="How Much Sales" Binding="{Binding HowMuchSales}"/>
             </DataGrid.Columns>
         </DataGrid>
+-->        
     </Grid>
 </UserControl>
