@@ -10,13 +10,15 @@
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdSettings}"/>
-                <DataGridTextColumn Header="Language" Binding="{Binding Language}"/>
+                <DataGridTextColumn Header="Language" Binding="{Binding Languge}"/>
                 <DataGridTextColumn Header="Login" Binding="{Binding Login}"/>
                 <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
-                <DataGridTextColumn Header="Payment Deadline Trigger" Binding="{Binding PaymentDeadlineTrigger}"/>
-                <DataGridTextColumn Header="New Inovice Trigger" Binding="{Binding NewInoviceTrigger}"/>
-                <DataGridTextColumn Header="Pyment Not Made" Binding="{Binding PymentNotMade}"/>
-                <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
+                <DataGridCheckBoxColumn Header="Payment Deadline Trigger" Binding="{Binding PaymentDeadlineTrigger}"/>
+                <DataGridCheckBoxColumn Header="New Inovice Trigger" Binding="{Binding NewInvoiceTrigger}"/>
+                <DataGridCheckBoxColumn Header="Pyment Not Made" Binding="{Binding PaymentNotMade}"/>
+                <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}"/>
+                <DataGridTextColumn Header="Customer Email" Binding="{Binding CustomerEmail}"/>
+                <DataGridTextColumn Header="Customer Phone" Binding="{Binding CustomerPhone}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -107,6 +107,10 @@ namespace MVVMFirma.ViewModels
 
         new CommandViewModel(
             "Payments",
+            new BaseCommand(() => this.ShowView<PaymentViewModel>())),
+
+        new CommandViewModel(
+            "Payment Method",
             new BaseCommand(() => this.ShowView<SettlementsViewModel>())),
 
         // Organizational section

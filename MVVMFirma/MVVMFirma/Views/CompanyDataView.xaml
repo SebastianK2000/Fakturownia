@@ -10,17 +10,23 @@
         <TabControl>
             <!-- Company Data -->
             <TabItem Header="Company Data">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding CompanyDataList}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding IdCompanyData}"/>
                         <DataGridTextColumn Header="Type Of Activity" Binding="{Binding TypeOfActivity}"/>
                         <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}"/>
-                        <DataGridTextColumn Header="First Name Company Owner" Binding="{Binding FirstNameCompanyOwner}"/>
-                        <DataGridTextColumn Header="Last Name Company Owner" Binding="{Binding LastNameCompanyOwner}"/>
+                        <DataGridTextColumn Header="First Name" Binding="{Binding FirstNameCompanyOwner}"/>
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding LastNameCompanyOwner}"/>
                         <DataGridTextColumn Header="NIP" Binding="{Binding NIP}"/>
                         <DataGridTextColumn Header="REGON" Binding="{Binding REGON}"/>
-                        <DataGridTextColumn Header="Id Address" Binding="{Binding IdAddress}"/>
-                        <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
+                        <DataGridTextColumn Header="Address: City" Binding="{Binding AdressCity}"/>
+                        <DataGridTextColumn Header="Address: Street" Binding="{Binding AdressStreet}"/>
+                        <DataGridTextColumn Header="Address: Home number" Binding="{Binding AdressNrHome}"/>
+                        <DataGridTextColumn Header="Address: Local number" Binding="{Binding AdressNrLocal}"/>
+                        <DataGridTextColumn Header="Address: Zip Code" Binding="{Binding AdressZipCode}"/>
+                        <DataGridTextColumn Header="Customer: Name" Binding="{Binding CustomerName}"/>
+                        <DataGridTextColumn Header="Customer: Phone" Binding="{Binding CustomerPhone}"/>
+                        <DataGridTextColumn Header="Customer: Email" Binding="{Binding CustomerEmail}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
@@ -32,10 +38,12 @@
                         <DataGridTextColumn Header="Id" Binding="{Binding IdAdress}"/>
                         <DataGridTextColumn Header="City" Binding="{Binding City}"/>
                         <DataGridTextColumn Header="Street" Binding="{Binding Street}"/>
-                        <DataGridTextColumn Header="Nr Home" Binding="{Binding NrHome}"/>
-                        <DataGridTextColumn Header="Nr Local" Binding="{Binding NrLocal}"/>
+                        <DataGridTextColumn Header="Home number" Binding="{Binding NrHome}"/>
+                        <DataGridTextColumn Header="Local number" Binding="{Binding NrLocal}"/>
                         <DataGridTextColumn Header="Zip Code" Binding="{Binding ZipCode}"/>
-                        <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
+                        <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}"/>
+                        <DataGridTextColumn Header="Customer Phone" Binding="{Binding CustomerPhone}"/>
+                        <DataGridTextColumn Header="Customer Email" Binding="{Binding CustomerEmail}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>

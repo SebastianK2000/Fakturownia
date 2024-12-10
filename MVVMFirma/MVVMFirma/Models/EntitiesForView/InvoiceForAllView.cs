@@ -10,6 +10,7 @@ namespace MVVMFirma.Models.EntitiesForView
     public class InvoiceForAllView
     {
         public int IdInvoice { get; set; }
+        public bool? Status { get; set; }
         public string Number {  get; set; }
         public DateTime? Date { get; set; }
 

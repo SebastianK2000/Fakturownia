@@ -167,6 +167,8 @@
     <Compile Include="ViewModels\NotificationsViewModel.cs" />
     <Compile Include="ViewModels\NowyTowarViewModel.cs" />
     <Compile Include="ViewModels\PaidInvoiceViewModel.cs" />
+    <Compile Include="ViewModels\PaymentsMethodViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViewModel.cs" />
     <Compile Include="ViewModels\SalesRaportViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\SettlementsViewModel.cs" />
@@ -228,6 +230,12 @@
     </Compile>
     <Compile Include="Views\PaidInvoiceView.xaml.cs">
       <DependentUpon>PaidInvoiceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentsMethod.xaml.cs">
+      <DependentUpon>PaymentsMethod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentView.xaml.cs">
+      <DependentUpon>PaymentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SalesRaportView.xaml.cs">
       <DependentUpon>SalesRaportView.xaml</DependentUpon>
@@ -358,6 +366,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PaidInvoiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PaymentsMethod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PaymentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

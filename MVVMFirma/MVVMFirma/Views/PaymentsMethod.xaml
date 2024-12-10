@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.SettlementsView"
+﻿<local:AllViewBase x:Class="MVVMFirma.Views.PaymentsMethod"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,6 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
+        <TabControl>
+            <TabItem Header="Payment Method">
                 <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding IdPayments}"/>
@@ -14,5 +16,7 @@
                         <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
                     </DataGrid.Columns>
                 </DataGrid>
+            </TabItem>
+        </TabControl>
     </Grid>
-</UserControl>
+</local:AllViewBase>

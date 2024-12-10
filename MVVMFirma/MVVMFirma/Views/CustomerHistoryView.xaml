@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
                 <DataGridTextColumn Header="Created At" Binding="{Binding CreatedAt}"/>
                 <DataGridTextColumn Header="Updated At" Binding="{Binding UpdatedAt}"/>
-                <DataGridTextColumn Header="Is Primary" Binding="{Binding IsPrimary}"/>
+                <DataGridCheckBoxColumn Header="Is Primary" Binding="{Binding IsPrimary}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

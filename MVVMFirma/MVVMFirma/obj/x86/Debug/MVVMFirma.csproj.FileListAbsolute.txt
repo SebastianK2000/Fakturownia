@@ -290,3 +290,7 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Kontr
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\StatusView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\KontrahentView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\StatusView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentsMethod.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentsMethod.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentView.baml

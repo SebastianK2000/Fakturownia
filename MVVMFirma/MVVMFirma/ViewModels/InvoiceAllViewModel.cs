@@ -30,6 +30,7 @@ namespace MVVMFirma.ViewModels
                 select new InvoiceForAllView // tworzymy nową InvoiceForAllView i uzupełniamy dane
                 {
                     IdInvoice = invoice.IdInvoice,
+                    Status = invoice.Status,
                     Number = invoice.Number,
                     Date = invoice.Date,
                     KontrahentNIP = invoice.Kontrahent.NIP,

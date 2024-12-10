@@ -11,7 +11,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdNotification}"/>
                 <DataGridTextColumn Header="Message" Binding="{Binding Message}"/>
-                <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
+                <DataGridTextColumn Header="Id Customer" Binding="{Binding CustomerIdCustomer}"/>
+                <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Send Date" Binding="{Binding SendDate}"/>
             </DataGrid.Columns>
         </DataGrid>

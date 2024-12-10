@@ -13,6 +13,13 @@
                 <DataGridTextColumn Header="Code" Binding="{Binding Code}"/>
                 <DataGridTextColumn Header="NIP" Binding="{Binding NIP}"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Kind" Binding="{Binding KindName}"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding StatusName}"/>
+                <DataGridTextColumn Header="Address: Street" Binding="{Binding AdressStreet}"/>
+                <DataGridTextColumn Header="Address: City" Binding="{Binding AdressCity}"/>
+                <DataGridTextColumn Header="Address: Home Number" Binding="{Binding AdressNrHome}"/>
+                <DataGridTextColumn Header="Address: Local Number" Binding="{Binding AdressNrLocal}"/>
+                <DataGridTextColumn Header="Address: Zip Code" Binding="{Binding AdressZipCode}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

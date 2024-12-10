@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\App.xaml
-26-20059509
+28123852868
 2-662846405
-89-602171759
+93252296858
 17119597286
-Themes\Generic.xaml;Views\CompanyDataView.xaml;Views\ContactSupportView.xaml;Views\CustomerHistoryView.xaml;Views\CustomersListView.xaml;Views\CustomersRaportView.xaml;Views\CustomerView.xaml;Views\ExportView.xaml;Views\HelpView.xaml;Views\HistoryInvoiceView.xaml;Views\ImportView.xaml;Views\InvoiceAllView.xaml;Views\KontrahentView.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NewInvoiceView.xaml;Views\NotificationsView.xaml;Views\NowyTowarView.xaml;Views\PaidInvoiceView.xaml;Views\SalesRaportView.xaml;Views\SettingsView.xaml;Views\SettlementsView.xaml;Views\StatusView.xaml;Views\UnpaidInvoiceView.xaml;Views\VatView.xaml;Views\WszystkieTowaryView.xaml;
+Themes\Generic.xaml;Views\CompanyDataView.xaml;Views\ContactSupportView.xaml;Views\CustomerHistoryView.xaml;Views\CustomersListView.xaml;Views\CustomersRaportView.xaml;Views\CustomerView.xaml;Views\ExportView.xaml;Views\HelpView.xaml;Views\HistoryInvoiceView.xaml;Views\ImportView.xaml;Views\InvoiceAllView.xaml;Views\KontrahentView.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NewInvoiceView.xaml;Views\NotificationsView.xaml;Views\NowyTowarView.xaml;Views\PaidInvoiceView.xaml;Views\PaymentsMethod.xaml;Views\PaymentView.xaml;Views\SalesRaportView.xaml;Views\SettingsView.xaml;Views\SettlementsView.xaml;Views\StatusView.xaml;Views\UnpaidInvoiceView.xaml;Views\VatView.xaml;Views\WszystkieTowaryView.xaml;
 
 False
 

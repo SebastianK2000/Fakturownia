@@ -80,6 +80,10 @@
         <vw:SettlementsView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:PaymentViewModel}">
+        <vw:PaymentView/>
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:UnpaidInvoiceViewModel}">
         <vw:UnpaidInvoiceView/>
     </DataTemplate>

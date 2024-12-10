@@ -10,19 +10,17 @@
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-926">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdInvoice}"/>
-                <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                <DataGridCheckBoxColumn Header="Status" Binding="{Binding Status}"/>
                 <DataGridTextColumn Header="Number" Binding="{Binding Number}"/>
                 <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
-                <DataGridTextColumn Header="Id Kontrahenta" Binding="{Binding IdKontrahenta}"/>
+                <DataGridTextColumn Header="Kontrahent NIP" Binding="{Binding KontrahentNIP}"/>
+                <DataGridTextColumn Header="Kontrahent Name" Binding="{Binding KontrahentNazwa}"/>
                 <DataGridTextColumn Header="Payment Deadline" Binding="{Binding PaymentDeadline}"/>
-                <DataGridTextColumn Header="Id Payment Method" Binding="{Binding IdPaymentMethod}"/>
-                <DataGridTextColumn Header="Is Paid" Binding="{Binding IsPaid}"/>
-                <DataGridTextColumn Header="Is Active" Binding="{Binding IsActive}"/>
-                <DataGridTextColumn Header="How Much Cost" Binding="{Binding HowMuchCost}"/>
+                <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethodName}"/>
+                <DataGridCheckBoxColumn Header="Is Paid?" Binding="{Binding IsPaid}"/>
+                <DataGridCheckBoxColumn Header="Is Active?" Binding="{Binding IsActive}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding HowMuchCost}"/>
                 <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
-                <DataGridTextColumn Header="Created At" Binding="{Binding CreatedAt}"/>
-                <DataGridTextColumn Header="Updated At" Binding="{Binding UpdatedAt}"/>
-                <DataGridTextColumn Header="Id Customer" Binding="{Binding IdCustomer}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
