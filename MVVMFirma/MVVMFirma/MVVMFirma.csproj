@@ -74,6 +74,7 @@
     <Compile Include="Helper\BaseCommand.cs" />
     <Compile Include="Models\BusinessLogic\DatabaseClass.cs" />
     <Compile Include="Models\BusinessLogic\TowarB.cs" />
+    <Compile Include="Models\BusinessLogic\UtargB.cs" />
     <Compile Include="Models\EntitiesForView\AddressForAllView.cs" />
     <Compile Include="Models\EntitiesForView\CompanyDataForAllView.cs" />
     <Compile Include="Models\EntitiesForView\ImportExportLogsForAllView.cs" />
