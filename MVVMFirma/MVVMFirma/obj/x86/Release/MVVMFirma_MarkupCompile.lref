@@ -1,7 +1,7 @@
-﻿C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+﻿
 
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Themes\Generic.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CompanyDataView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\ContactSupportView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomerHistoryView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomersListView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomersRaportView.xaml;;
@@ -11,14 +11,20 @@ FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\HelpView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\HistoryInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\ImportView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\InvoiceAllView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\KontrahentView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\MainWindow.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\MainWindowResources.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\NewInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\NotificationsView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\NowyTowarView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\PaidInvoiceView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\PaymentsMethod.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\PaymentView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\SalesRaportView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\SettingsView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\SettlementsView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\StatusView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\UnpaidInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\VatView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\WszystkieTowaryView.xaml;;
 

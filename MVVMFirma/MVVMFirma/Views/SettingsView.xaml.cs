@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy SettingsView.xaml
     /// </summary>
-    public partial class SettingsView : UserControl
+    public partial class SettingsView : AllViewBase
     {
         public SettingsView()
         {

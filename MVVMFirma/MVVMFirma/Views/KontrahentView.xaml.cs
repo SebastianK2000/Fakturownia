@@ -18,11 +18,16 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy KontrahentView.xaml
     /// </summary>
-    public partial class KontrahentView : UserControl
+    public partial class KontrahentView : AllViewBase
     {
         public KontrahentView()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

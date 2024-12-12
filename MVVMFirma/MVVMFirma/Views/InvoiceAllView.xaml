@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-926">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-356">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdInvoice}"/>
                 <DataGridCheckBoxColumn Header="Status" Binding="{Binding Status}"/>

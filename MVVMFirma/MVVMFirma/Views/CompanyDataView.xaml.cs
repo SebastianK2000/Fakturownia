@@ -18,11 +18,16 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy CompanyDataView.xaml
     /// </summary>
-    public partial class CompanyDataView : UserControl
+    public partial class CompanyDataView : AllViewBase
     {
         public CompanyDataView()
         {
             InitializeComponent();
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

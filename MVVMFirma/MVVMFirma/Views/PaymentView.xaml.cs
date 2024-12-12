@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy PaymentView.xaml
     /// </summary>
-    public partial class PaymentView : UserControl
+    public partial class PaymentView : AllViewBase
     {
         public PaymentView()
         {

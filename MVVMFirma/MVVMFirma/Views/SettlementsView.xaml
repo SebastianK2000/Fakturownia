@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.SettlementsView"
+﻿<local:AllViewBase x:Class="MVVMFirma.Views.SettlementsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-364">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding IdPayments}"/>
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
@@ -15,4 +15,4 @@
                     </DataGrid.Columns>
                 </DataGrid>
     </Grid>
-</UserControl>
+</local:AllViewBase>

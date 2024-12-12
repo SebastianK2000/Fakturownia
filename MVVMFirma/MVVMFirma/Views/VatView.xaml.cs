@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy VatView.xaml
     /// </summary>
-    public partial class VatView : UserControl
+    public partial class VatView : AllViewBase
     {
         public VatView()
         {

@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy ExportView.xaml
     /// </summary>
-    public partial class ExportView : UserControl
+    public partial class ExportView : AllViewBase
     {
         public ExportView()
         {

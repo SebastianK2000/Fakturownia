@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy HistoryInvoiceView.xaml
     /// </summary>
-    public partial class HistoryInvoiceView : UserControl
+    public partial class HistoryInvoiceView : AllViewBase
     {
         public HistoryInvoiceView()
         {

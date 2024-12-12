@@ -11,7 +11,7 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,-331,-1281" Grid.ColumnSpan="2">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,-4,-331,-210" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdTowaru}"/>
                 <DataGridTextColumn Header="Code" Binding="{Binding Code}"/>

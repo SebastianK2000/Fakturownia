@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NotificationsView.xaml
     /// </summary>
-    public partial class NotificationsView : UserControl
+    public partial class NotificationsView : AllViewBase
     {
         public NotificationsView()
         {

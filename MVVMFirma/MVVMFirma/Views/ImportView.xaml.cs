@@ -18,11 +18,16 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy ImportView.xaml
     /// </summary>
-    public partial class ImportView : UserControl
+    public partial class ImportView : AllViewBase
     {
         public ImportView()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

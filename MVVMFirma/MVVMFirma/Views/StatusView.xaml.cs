@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy StatusView.xaml
     /// </summary>
-    public partial class StatusView : UserControl
+    public partial class StatusView : AllViewBase
     {
         public StatusView()
         {

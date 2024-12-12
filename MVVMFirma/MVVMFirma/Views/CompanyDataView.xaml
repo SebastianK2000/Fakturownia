@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.CompanyDataView"
+﻿<local:AllViewBase x:Class="MVVMFirma.Views.CompanyDataView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <TabControl>
+        <TabControl SelectionChanged="TabControl_SelectionChanged" Margin="0,0,0,-361">
             <!-- Company Data -->
             <TabItem Header="Company Data">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding CompanyDataList}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding IdCompanyData}"/>
                         <DataGridTextColumn Header="Type Of Activity" Binding="{Binding TypeOfActivity}"/>
@@ -33,7 +33,7 @@
 
             <!-- Address -->
             <TabItem Header="Address">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding AdressList}">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding IdAdress}"/>
                         <DataGridTextColumn Header="City" Binding="{Binding City}"/>
@@ -50,4 +50,4 @@
 
         </TabControl>
     </Grid>
-</UserControl>
+</local:AllViewBase>

@@ -7,7 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <TabControl>
+        <TabControl RenderTransformOrigin="0.5,0.5" Margin="3,0,-3,-355">
+            <TabControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.924"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.484"/>
+                </TransformGroup>
+            </TabControl.RenderTransform>
             <TabItem Header="Payment Method">
                 <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
                     <DataGrid.Columns>

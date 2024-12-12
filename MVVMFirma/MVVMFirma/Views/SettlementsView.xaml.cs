@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy SettlementsView.xaml
     /// </summary>
-    public partial class SettlementsView : UserControl
+    public partial class SettlementsView : AllViewBase
     {
         public SettlementsView()
         {
