@@ -1,17 +1,16 @@
 ﻿using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
-using MVVMFirma.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
+using System.Windows.Documents;
 
 namespace MVVMFirma.ViewModels
 {
-    public class AddressViewModel : WszystkieViewModel<AddressForAllView>
+    public class AddressViewModel:WszystkieViewModel<AddressForAllView>
     {
         #region Constructor
         public AddressViewModel()
@@ -19,7 +18,6 @@ namespace MVVMFirma.ViewModels
         {
         }
         #endregion
-
         #region Helpers
         public override void Load()
         {

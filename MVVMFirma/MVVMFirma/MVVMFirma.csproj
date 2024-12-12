@@ -157,6 +157,7 @@
     <Compile Include="Models\Entities\Towar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddressViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\JedenViewModel.cs" />
     <Compile Include="ViewModels\KontrahentViewModel.cs" />

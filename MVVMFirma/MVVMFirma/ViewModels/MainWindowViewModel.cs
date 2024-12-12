@@ -94,6 +94,9 @@ namespace MVVMFirma.ViewModels
             new BaseCommand(() => this.CreateView(new VatViewModel()))),
 
         // Notifications and configurations section
+        new CommandViewModel(
+            "Address",
+            new BaseCommand(() => this.ShowView<AddressViewModel>())),
 
         new CommandViewModel(
             "Company Data",
