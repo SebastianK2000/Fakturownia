@@ -46,13 +46,28 @@
         <TextBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8" Text="{Binding Path=Notes, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Kontrahent" />
-        <ComboBox Grid.Column="1" Grid.Row="7" Margin="0,8,0,8"/>
+        <ComboBox Grid.Column="1" Grid.Row="7" Margin="0,8,0,8"
+                  ItemsSource="{Binding KontrahentItems}"
+                  DisplayMemberPath="Value"
+                  SelectedValuePath="Key"
+                  SelectedValue="{Binding Path=IdKontrahenta, Mode=TwoWay}"
+                  />
 
         <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" Content="Customer" />
-        <ComboBox Grid.Column="1" Grid.Row="8" Margin="0,8,0,8"/>
+        <ComboBox Grid.Column="1" Grid.Row="8" Margin="0,8,0,8"
+                  ItemsSource="{Binding CustomerItems}"
+                  DisplayMemberPath="Value"
+                  SelectedValuePath="Key"
+                  SelectedValue="{Binding Path=IdCustomer, Mode=TwoWay}"
+                  />
 
         <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" Content="Payment Method" />
-        <ComboBox Grid.Column="1" Grid.Row="9" Margin="0,8,0,8"/>
+        <ComboBox Grid.Column="1" Grid.Row="9" Margin="0,8,0,8"
+                  ItemsSource="{Binding PaymentMethodItems}"
+                  DisplayMemberPath="Value"
+                  SelectedValuePath="Key"
+                  SelectedValue="{Binding Path=PaymentMethod, Mode=TwoWay}"
+                  />
 
     </Grid>
 </local:JedenViewBase>

@@ -13,27 +13,6 @@ namespace MVVMFirma.ViewModels
 {
     public class NewInvoiceViewModel:JedenViewModel<Invoice>
     {
-        //#region DB
-        //private InvoiceEntities invoiceEntities;
-        //#endregion
-        //#region Item
-        //private Invoice invoice;
-        //#endregion
-
-        //#region Command 
-        ////private BaseCommand _SaveCommand;
-
-        ////public ICommand SaveCommand
-        ////{
-        ////    get
-        ////    {
-        ////        if (_SaveCommand == null)
-        ////            _SaveCommand = new BaseCommand(() => SaveAndClose());
-        ////        return _SaveCommand;
-        ////    }
-        ////}
-        ////#endregion
-
         #region Construktor
         public NewInvoiceViewModel()
             : base("Invoice")
@@ -197,11 +176,6 @@ namespace MVVMFirma.ViewModels
             invoiceEntities.Invoice.Add(Item);
             invoiceEntities.SaveChanges();
         }
-        //public void SaveAndClose()
-        //{
-        //    Save();
-        //    base.OnRequestClose();
-        //}
         #endregion
 
     }
