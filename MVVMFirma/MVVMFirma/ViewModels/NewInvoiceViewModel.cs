@@ -1,5 +1,7 @@
 ﻿using MVVMFirma.Helper;
+using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
+using MVVMFirma.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,62 +11,60 @@ using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
-    public class NewInvoiceViewModel:WorkspaceViewModel
+    public class NewInvoiceViewModel:JedenViewModel<Invoice>
     {
-        #region DB
-        private InvoiceEntities invoiceEntities;
-        #endregion
-        #region Item
-        private Invoice invoice;
-        #endregion
+        //#region DB
+        //private InvoiceEntities invoiceEntities;
+        //#endregion
+        //#region Item
+        //private Invoice invoice;
+        //#endregion
 
-        #region Command 
-        // komenda która zostanie podpięta pod zapisz/zamknij
-        private BaseCommand _SaveCommand;
+        //#region Command 
+        ////private BaseCommand _SaveCommand;
 
-        public ICommand SaveCommand
-        {
-            get
-            {
-                if (_SaveCommand == null)
-                    _SaveCommand = new BaseCommand(() => SaveAndClose());
-                return _SaveCommand;
-            }
-        }
-        #endregion
+        ////public ICommand SaveCommand
+        ////{
+        ////    get
+        ////    {
+        ////        if (_SaveCommand == null)
+        ////            _SaveCommand = new BaseCommand(() => SaveAndClose());
+        ////        return _SaveCommand;
+        ////    }
+        ////}
+        ////#endregion
 
         #region Construktor
         public NewInvoiceViewModel()
+            : base("Invoice")
         {
-            base.DisplayName = "Invoice";
-            invoiceEntities = new InvoiceEntities();
-            invoice = new Invoice();
+            Item = new Invoice();
         }
 
         #endregion
 
         #region Properties
-        public bool? Status
+        public bool? IsActive
         {
             get
             {
-                return invoice.Status;
+                return Item.IsActive;
             }
             set
             {
-                invoice.Status = value;
-                OnPropertyChanged(() => Status);
+                Item.IsActive = value;
+                OnPropertyChanged(() => IsActive);
             }
         }
         public string Number
         {
             get
             {
-                return invoice.Number;
+                return Item.Number;
             }
             set
             {
-                invoice.Number = value;
+                Item.Number = value;
                 OnPropertyChanged(() => Number);
             }
         }
@@ -72,11 +72,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return invoice.Date;
+                return Item.Date;
             }
             set
             {
-                invoice.Date = value;
+                Item.Date = value;
                 OnPropertyChanged(() => Date);
             }
         }
@@ -84,11 +84,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return invoice.PaymentDeadline;
+                return Item.PaymentDeadline;
             }
             set
             {
-                invoice.PaymentDeadline = value;
+                Item.PaymentDeadline = value;
                 OnPropertyChanged(() => PaymentDeadline);
             }
         }
@@ -96,35 +96,23 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return invoice.IsPaid;
+                return Item.IsPaid;
             }
             set
             {
-                invoice.IsPaid = value;
+                Item.IsPaid = value;
                 OnPropertyChanged(() => IsPaid);
-            }
-        }
-        public bool? IsActive
-        {
-            get
-            {
-                return invoice.IsActive;
-            }
-            set
-            {
-                invoice.IsActive = value;
-                OnPropertyChanged(() => IsActive);
             }
         }
         public decimal? HowMuchCost
         {
             get
             {
-                return invoice.HowMuchCost;
+                return Item.HowMuchCost;
             }
             set
             {
-                invoice.HowMuchCost = value;
+                Item.HowMuchCost = value;
                 OnPropertyChanged(() => HowMuchCost);
             }
         }
@@ -133,28 +121,87 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return invoice.Notes;
+                return Item.Notes;
             }
             set
             {
-                invoice.Notes = value;
+                Item.Notes = value;
                 OnPropertyChanged(() => Notes);
+            }
+        }
+        public int? IdKontrahenta
+        {
+            get
+            {
+                return Item.IdKontrahenta;
+            }
+            set
+            {
+                Item.IdKontrahenta = value;
+                OnPropertyChanged(() => IdKontrahenta);
+            }
+        }
+        public int? IdCustomer
+        {
+            get
+            {
+                return Item.IdCustomer;
+            }
+            set
+            {
+                Item.IdCustomer = value;
+                OnPropertyChanged(() => IdCustomer);
+            }
+        }
+        public int? PaymentMethod
+        {
+            get
+            {
+                return Item.IdPaymentMethod;
+            }
+            set
+            {
+                Item.IdPaymentMethod = value;
+                OnPropertyChanged(() => PaymentMethod);
             }
         }
 
 
         #endregion
+        #region Propertises for ComboBox 
+        public IQueryable<KeyAndValue> KontrahentItems
+        {
+            get
+            {
+                return new KontrahenciB(invoiceEntities).GetKontrahenciKeyAndValueItems();
+            }
+        }
+        public IQueryable<KeyAndValue> CustomerItems
+        {
+            get
+            {
+                return new CustomersB(invoiceEntities).GetCustomersKeyAndValueItems();
+            }
+        }
+        public IQueryable<KeyAndValue> PaymentMethodItems
+        {
+            get
+            {
+                return new PaymentMethodB(invoiceEntities).GetPaymentMethodKeyAndValueItems();
+            }
+        }
+        #endregion
         #region Helpers
-        public void Save()
+        public override void Save()
         {
-            invoiceEntities.Invoice.Add(invoice); // dodaje do lokalnej kolekcji
-            invoiceEntities.SaveChanges(); // zapisuje do DB
+            invoiceEntities.Invoice.Add(Item);
+            invoiceEntities.SaveChanges();
         }
-        public void SaveAndClose()
-        {
-            Save();
-            base.OnRequestClose(); // zamknięcie zakładki
-        }
+        //public void SaveAndClose()
+        //{
+        //    Save();
+        //    base.OnRequestClose();
+        //}
         #endregion
 
     }
