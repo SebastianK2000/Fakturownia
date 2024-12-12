@@ -18,8 +18,8 @@ namespace MVVMFirma.Models.Entities
         public Invoice()
         {
             this.ImportExportLogs = new HashSet<ImportExportLogs>();
-            this.InvoiceItems = new HashSet<InvoiceItems>();
             this.Payments = new HashSet<Payments>();
+            this.InvoiceItems = new HashSet<InvoiceItems>();
         }
     
         public int IdInvoice { get; set; }
@@ -43,8 +43,8 @@ namespace MVVMFirma.Models.Entities
         public virtual Kontrahent Kontrahent { get; set; }
         public virtual PaymentMethod PaymentMethod { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InvoiceItems> InvoiceItems { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Payments> Payments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InvoiceItems> InvoiceItems { get; set; }
     }
 }

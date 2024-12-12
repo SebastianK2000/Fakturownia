@@ -92,22 +92,8 @@
     <NavigationProperty Name="ImportExportLogs" Relationship="Self.FK_ImportExportLogs_Invoice" FromRole="Invoice" ToRole="ImportExportLogs" />
     <NavigationProperty Name="Kontrahent" Relationship="Self.FK_Invoice_Kontrahent" FromRole="Invoice" ToRole="Kontrahent" />
     <NavigationProperty Name="PaymentMethod" Relationship="Self.FK_Invoice_PaymentMethod" FromRole="Invoice" ToRole="PaymentMethod" />
-    <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItems_Invoice" FromRole="Invoice" ToRole="InvoiceItems" />
     <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Invoice" FromRole="Invoice" ToRole="Payments" />
-  </EntityType>
-  <EntityType Name="InvoiceItems">
-    <Key>
-      <PropertyRef Name="IdInvoiceItems" />
-    </Key>
-    <Property Name="IdInvoiceItems" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdInvoice" Type="Int32" />
-    <Property Name="IdTowar" Type="Int32" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" />
-    <NavigationProperty Name="Invoice" Relationship="Self.FK_InvoiceItems_Invoice" FromRole="InvoiceItems" ToRole="Invoice" />
-    <NavigationProperty Name="Towar" Relationship="Self.FK_InvoiceItems_Towar" FromRole="InvoiceItems" ToRole="Towar" />
+    <NavigationProperty Name="InvoiceItems" Relationship="FakturowniaModel.FK_InvoiceItems_Invoice" FromRole="Invoice" ToRole="InvoiceItems" />
   </EntityType>
   <EntityType Name="Kind">
     <Key>
@@ -227,7 +213,7 @@
     <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Precision="0" />
     <Property Name="UpdatedAt" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItems_Towar" FromRole="Towar" ToRole="InvoiceItems" />
+    <NavigationProperty Name="InvoiceItems" Relationship="FakturowniaModel.FK_InvoiceItems_Towar" FromRole="Towar" ToRole="InvoiceItems" />
   </EntityType>
   <Association Name="FK_Adress_Customer">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -349,18 +335,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_InvoiceItems_Invoice">
-    <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
-    <End Role="InvoiceItems" Type="Self.InvoiceItems" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Invoice">
-        <PropertyRef Name="IdInvoice" />
-      </Principal>
-      <Dependent Role="InvoiceItems">
-        <PropertyRef Name="IdInvoice" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Payments_Invoice">
     <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
     <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
@@ -370,18 +344,6 @@
       </Principal>
       <Dependent Role="Payments">
         <PropertyRef Name="IdInvoice" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_InvoiceItems_Towar">
-    <End Role="Towar" Type="Self.Towar" Multiplicity="0..1" />
-    <End Role="InvoiceItems" Type="Self.InvoiceItems" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Towar">
-        <PropertyRef Name="IdTowaru" />
-      </Principal>
-      <Dependent Role="InvoiceItems">
-        <PropertyRef Name="IdTowar" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -428,7 +390,6 @@
     <EntitySet Name="CustomerRaport" EntityType="Self.CustomerRaport" />
     <EntitySet Name="ImportExportLogs" EntityType="Self.ImportExportLogs" />
     <EntitySet Name="Invoice" EntityType="Self.Invoice" />
-    <EntitySet Name="InvoiceItems" EntityType="Self.InvoiceItems" />
     <EntitySet Name="Kind" EntityType="Self.Kind" />
     <EntitySet Name="Kontrahent" EntityType="Self.Kontrahent" />
     <EntitySet Name="Notifications" EntityType="Self.Notifications" />
@@ -479,17 +440,9 @@
       <End Role="PaymentMethod" EntitySet="PaymentMethod" />
       <End Role="Invoice" EntitySet="Invoice" />
     </AssociationSet>
-    <AssociationSet Name="FK_InvoiceItems_Invoice" Association="Self.FK_InvoiceItems_Invoice">
-      <End Role="Invoice" EntitySet="Invoice" />
-      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
-    </AssociationSet>
     <AssociationSet Name="FK_Payments_Invoice" Association="Self.FK_Payments_Invoice">
       <End Role="Invoice" EntitySet="Invoice" />
       <End Role="Payments" EntitySet="Payments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InvoiceItems_Towar" Association="Self.FK_InvoiceItems_Towar">
-      <End Role="Towar" EntitySet="Towar" />
-      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
     </AssociationSet>
     <AssociationSet Name="FK_Kontrahent_Kind" Association="Self.FK_Kontrahent_Kind">
       <End Role="Kind" EntitySet="Kind" />
@@ -503,5 +456,93 @@
       <End Role="PaymentMethod" EntitySet="PaymentMethod" />
       <End Role="Payments" EntitySet="Payments" />
     </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(FakturowniaModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(FakturowniaModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="InvoiceItems" EntityType="FakturowniaModel.InvoiceItems" />
+    <AssociationSet Name="FK_InvoiceItems_Invoice" Association="FakturowniaModel.FK_InvoiceItems_Invoice">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceItems_Towar" Association="FakturowniaModel.FK_InvoiceItems_Towar">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
+    </AssociationSet>
   </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="InvoiceItems">
+    <Key>
+      <PropertyRef Name="IdInvoiceItems" />
+    </Key>
+    <Property Name="IdInvoiceItems" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdInvoice" Type="Int32" />
+    <Property Name="IdTowar" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Invoice" Relationship="FakturowniaModel.FK_InvoiceItems_Invoice" FromRole="InvoiceItems" ToRole="Invoice" />
+    <NavigationProperty Name="Towar" Relationship="FakturowniaModel.FK_InvoiceItems_Towar" FromRole="InvoiceItems" ToRole="Towar" />
+  </EntityType>
+  <Association Name="FK_InvoiceItems_Invoice">
+    <End Type="FakturowniaModel.Invoice" Role="Invoice" Multiplicity="0..1" />
+    <End Type="FakturowniaModel.InvoiceItems" Role="InvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="IdInvoice" />
+      </Principal>
+      <Dependent Role="InvoiceItems">
+        <PropertyRef Name="IdInvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceItems_Towar">
+    <End Type="FakturowniaModel.Towar" Role="Towar" Multiplicity="0..1" />
+    <End Type="FakturowniaModel.InvoiceItems" Role="InvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="IdTowaru" />
+      </Principal>
+      <Dependent Role="InvoiceItems">
+        <PropertyRef Name="IdTowar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

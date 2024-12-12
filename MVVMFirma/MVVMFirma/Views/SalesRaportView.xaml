@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MVVMFirma.Views"
+             xmlns:local="clr-namespace:MVVMFirma.Views" xmlns:viewmodels="clr-namespace:MVVMFirma.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SalesRaportViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
@@ -24,9 +24,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Od" Margin="3"/>
-            <DatePicker Grid.Column="1" Margin="3"/>
+            <DatePicker Grid.Column="1" Margin="3" SelectedDate="{Binding DataOd, Mode=TwoWay}"/>
             <Label Grid.Column="2" Content="Do" Margin="3"/>
-            <DatePicker Grid.Column="3" Margin="3"/>
+            <DatePicker Grid.Column="3" Margin="3" SelectedDate="{Binding DataDo, Mode=TwoWay}"/>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -34,28 +34,21 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Wybierz towar:" Margin="3"/>
-            <ComboBox Grid.Column="1" Margin="3"/>
+            <ComboBox Grid.Column="1" Margin="3"
+                      ItemsSource="{Binding TowaryItems}"
+                      DisplayMemberPath="Value"
+                      SelectedValuePath="Key"
+                      SelectedValue="{Binding Path=IdTowar, Mode=TwoWay}"
+                      />
         </Grid>
-        <Button Grid.Row="3" Content="Oblicz" Margin="3"/>
+        <Button Grid.Row="3" Content="Oblicz" Margin="3" Command="{Binding ObliczCommand}"/>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Utarg wynosi:" Margin="3"/>
-            <Label Grid.Column="1" Content="0" Margin="3"/>
+            <Label Grid.Column="1" Content="{Binding TotalPrice}" Margin="3"/>
         </Grid>
-        <!--
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
-                <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding IdSalesRaport}"/>
-                <DataGridTextColumn Header="Period" Binding="{Binding Period}"/>
-                <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
-                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
-                <DataGridTextColumn Header="How Much Sales" Binding="{Binding HowMuchSales}"/>
-            </DataGrid.Columns>
-        </DataGrid>
--->        
     </Grid>
 </UserControl>

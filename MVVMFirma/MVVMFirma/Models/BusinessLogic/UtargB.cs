@@ -16,13 +16,13 @@ namespace MVVMFirma.Models.BusinessLogic
         #endregion
         #region Business function
         // funkcja do obliczania utargu danego towaru - okres od:do
-        public decimal? UtargOkresTowar(int idTowaru, DateTime dataOd, DateTime dataDo)
+        public decimal? UtargOkresTowar(int idTowar, DateTime dataOd, DateTime dataDo)
         {
             return
                 (
                     from pozycja in db.InvoiceItems
                     where
-                    pozycja.IdTowar == idTowaru && 
+                    pozycja.IdTowar == idTowar && 
                     pozycja.Invoice.Date>= dataOd && 
                     pozycja.Invoice.Date<= dataDo
                     select pozycja.Price*pozycja.Quantity
