@@ -294,3 +294,5 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Payme
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentsMethod.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressView.baml

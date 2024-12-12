@@ -7,10 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <TabControl SelectionChanged="TabControl_SelectionChanged" Margin="0,0,0,-361">
-            <!-- Company Data -->
-            <TabItem Header="Company Data">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding CompanyDataList}">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-369">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding IdCompanyData}"/>
                         <DataGridTextColumn Header="Type Of Activity" Binding="{Binding TypeOfActivity}"/>
@@ -29,25 +26,5 @@
                         <DataGridTextColumn Header="Customer: Email" Binding="{Binding CustomerEmail}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-            </TabItem>
-
-            <!-- Address -->
-            <TabItem Header="Address">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding IdAdress}"/>
-                        <DataGridTextColumn Header="City" Binding="{Binding City}"/>
-                        <DataGridTextColumn Header="Street" Binding="{Binding Street}"/>
-                        <DataGridTextColumn Header="Home number" Binding="{Binding NrHome}"/>
-                        <DataGridTextColumn Header="Local number" Binding="{Binding NrLocal}"/>
-                        <DataGridTextColumn Header="Zip Code" Binding="{Binding ZipCode}"/>
-                        <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}"/>
-                        <DataGridTextColumn Header="Customer Phone" Binding="{Binding CustomerPhone}"/>
-                        <DataGridTextColumn Header="Customer Email" Binding="{Binding CustomerEmail}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
-
-        </TabControl>
     </Grid>
 </local:AllViewBase>

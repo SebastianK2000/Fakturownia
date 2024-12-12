@@ -188,6 +188,9 @@
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszystkieTowaryViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModel.cs" />
+    <Compile Include="Views\AddressView.xaml.cs">
+      <DependentUpon>AddressView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AllViewBase.cs" />
     <Compile Include="Views\CompanyDataView.xaml.cs">
       <DependentUpon>CompanyDataView.xaml</DependentUpon>
@@ -306,6 +309,10 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CompanyDataView.xaml">
       <SubType>Designer</SubType>
