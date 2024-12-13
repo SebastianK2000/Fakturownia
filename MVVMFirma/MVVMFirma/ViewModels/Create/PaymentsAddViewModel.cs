@@ -71,11 +71,11 @@ namespace MVVMFirma.ViewModels.Create
         }
         #endregion
             #region Propertises for ComboBox 
-        public IQueryable<KeyAndValue> KontrahentItems
+        public IQueryable<KeyAndValue> InvoiceItems
         {
             get
             {
-                return new KontrahenciB(invoiceEntities).GetKontrahenciKeyAndValueItems(); // invoice do poprawy
+                return new InvoiceB(invoiceEntities).GetInvoiceKeyAndValueItems();
             }
         }
         public IQueryable<KeyAndValue> PaymentMethodItems

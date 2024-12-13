@@ -75,7 +75,14 @@ namespace MVVMFirma.ViewModels.Create
         {
             get
             {
-                return new KontrahenciB(invoiceEntities).GetKontrahenciKeyAndValueItems(); // tu do poprawy na invoice
+                return new KontrahenciB(invoiceEntities).GetKontrahenciKeyAndValueItems();
+            }
+        }
+        public IQueryable<KeyAndValue> InvoiceItems
+        {
+            get
+            {
+                return new InvoiceB(invoiceEntities).GetInvoiceKeyAndValueItems();
             }
         }
         #endregion

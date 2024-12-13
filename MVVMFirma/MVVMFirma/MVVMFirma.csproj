@@ -87,10 +87,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helper\BaseCommand.cs" />
+    <Compile Include="Models\BusinessLogic\AddressB.cs" />
     <Compile Include="Models\BusinessLogic\CustomersB.cs" />
     <Compile Include="Models\BusinessLogic\DatabaseClass.cs" />
+    <Compile Include="Models\BusinessLogic\InvoiceB.cs" />
+    <Compile Include="Models\BusinessLogic\KindB.cs" />
     <Compile Include="Models\BusinessLogic\KontrahenciB.cs" />
     <Compile Include="Models\BusinessLogic\PaymentMethodB.cs" />
+    <Compile Include="Models\BusinessLogic\StatusB.cs" />
     <Compile Include="Models\BusinessLogic\TowarB.cs" />
     <Compile Include="Models\BusinessLogic\UtargB.cs" />
     <Compile Include="Models\EntitiesForView\AddressForAllView.cs" />

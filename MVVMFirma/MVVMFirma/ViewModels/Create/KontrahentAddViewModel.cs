@@ -66,7 +66,7 @@ namespace MVVMFirma.ViewModels.Create
             set
             {
                 Item.IdKind = value;
-                OnPropertyChanged(() => IdKind); // musze dodać plik kindB
+                OnPropertyChanged(() => IdKind);
             }
         }
         public int? IdAdress
@@ -78,7 +78,7 @@ namespace MVVMFirma.ViewModels.Create
             set
             {
                 Item.IdAdress = value;
-                OnPropertyChanged(() => IdAdress);// musze dodać plik AddressB
+                OnPropertyChanged(() => IdAdress);
             }
         }
         public int? IdStatus
@@ -90,30 +90,30 @@ namespace MVVMFirma.ViewModels.Create
             set
             {
                 Item.IdStatus = value;
-                OnPropertyChanged(() => IdStatus);// musze dodać plik StatusB
+                OnPropertyChanged(() => IdStatus);
             }
         }
         #endregion
         #region Propertises for ComboBox 
-        public IQueryable<KeyAndValue> KontrahentItems
+        public IQueryable<KeyAndValue> KindItems
         {
             get
             {
-                return new KontrahenciB(invoiceEntities).GetKontrahenciKeyAndValueItems();
+                return new KindB(invoiceEntities).GetKindKeyAndValueItems();
             }
         }
-        public IQueryable<KeyAndValue> CustomerItems
+        public IQueryable<KeyAndValue> AddressItems
         {
             get
             {
-                return new CustomersB(invoiceEntities).GetCustomersKeyAndValueItems();
+                return new AddressB(invoiceEntities).GetAddressKeyAndValueItems();
             }
         }
-        public IQueryable<KeyAndValue> PaymentMethodItems
+        public IQueryable<KeyAndValue> StatusItems
         {
             get
             {
-                return new PaymentMethodB(invoiceEntities).GetPaymentMethodKeyAndValueItems();
+                return new StatusB(invoiceEntities).GetStatusKeyAndValueItems();
             }
         }
         #endregion

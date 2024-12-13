@@ -114,7 +114,7 @@ namespace MVVMFirma.ViewModels.Create
             set
             {
                 Item.IdAdress = value;
-                OnPropertyChanged(() => IdAdress);// musze dodać plik AddressB
+                OnPropertyChanged(() => IdAdress);
             }
         }
         #endregion
@@ -124,6 +124,13 @@ namespace MVVMFirma.ViewModels.Create
             get
             {
                 return new CustomersB(invoiceEntities).GetCustomersKeyAndValueItems();
+            }
+        }
+        public IQueryable<KeyAndValue> AddressItems
+        {
+            get
+            {
+                return new AddressB(invoiceEntities).GetAddressKeyAndValueItems();
             }
         }
         #endregion
