@@ -36,7 +36,7 @@ namespace MVVMFirma.ViewModels
         private List<CommandViewModel> CreateCommands()
         {
             // oczekuje na stringa i jak go złapie to wywołuje open która jest zdefiniowana w regionie prywatnych helpersów
-            Messenger.Default.Register<string>(this, open);
+            Messenger.Default.Register<string>(this, Open);
             return new List<CommandViewModel>
             {
 
@@ -213,17 +213,20 @@ namespace MVVMFirma.ViewModels
             if (collectionView != null)
                 collectionView.MoveCurrentTo(workspace);
         }
-        private void open (string name) // name to jest wysłany komunikat
+        private void Open(string name)
         {
-            if (name == "Towary")
-                CreateView(new NowyTowarViewModel());  // Wywołujemy zakładkę do dodawania nowego elementu
+            Debug.WriteLine($"Otrzymano komunikat: {name}");
 
-            if (name == "Customers")
+            if (name == "TowaryAdd")
+                CreateView(new NowyTowarViewModel());
+
+            if (name == "CustomersAdd")
                 CreateView(new CustomerViewModel());
 
-            if (name == "Invoices")
+            if (name == "InvoicesAdd")
                 CreateView(new NewInvoiceViewModel());
         }
+
         #endregion
     }
 }
