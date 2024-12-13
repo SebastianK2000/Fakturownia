@@ -95,13 +95,16 @@
     <Compile Include="Models\BusinessLogic\UtargB.cs" />
     <Compile Include="Models\EntitiesForView\AddressForAllView.cs" />
     <Compile Include="Models\EntitiesForView\CompanyDataForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\CustomerArchiveForAllView.cs" />
     <Compile Include="Models\EntitiesForView\ImportExportLogsForAllView.cs" />
     <Compile Include="Models\EntitiesForView\InvoiceForAllView.cs" />
     <Compile Include="Models\EntitiesForView\ItemInvoiceForAllView.cs" />
     <Compile Include="Models\EntitiesForView\KeyAndValue.cs" />
     <Compile Include="Models\EntitiesForView\KontrahentForAllView.cs" />
     <Compile Include="Models\EntitiesForView\NotificationsForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\PaymentMethodForAllView.cs" />
     <Compile Include="Models\EntitiesForView\SettingsForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\StatusForAllView.cs" />
     <Compile Include="Models\Entities\Adress.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -177,6 +180,17 @@
     </Compile>
     <Compile Include="ViewModels\AddressViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Create\AddressAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\CompanyDataAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\CustomerArchiveAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\ExportAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\ImportAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\KontrahentAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\NotificationsAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\PaymentMethodAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\PaymentsAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\SettingsAddViewModel.cs" />
+    <Compile Include="ViewModels\Create\StatusAddViewModel.cs" />
     <Compile Include="ViewModels\JedenViewModel.cs" />
     <Compile Include="ViewModels\KontrahentViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
