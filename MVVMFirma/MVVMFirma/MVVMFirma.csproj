@@ -219,6 +219,39 @@
     <Compile Include="Views\ContactSupportView.xaml.cs">
       <DependentUpon>ContactSupportView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Create\AddressAddView.xaml.cs">
+      <DependentUpon>AddressAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\CompanyDataAddView.xaml.cs">
+      <DependentUpon>CompanyDataAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\CustomerArchiveAddView.xaml.cs">
+      <DependentUpon>CustomerArchiveAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\ExportAddView.xaml.cs">
+      <DependentUpon>ExportAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\ImportAddView.xaml.cs">
+      <DependentUpon>ImportAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\KontrahentAddView.xaml.cs">
+      <DependentUpon>KontrahentAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\NotificationsAddView.xaml.cs">
+      <DependentUpon>NotificationsAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\PaymentMethodAddView.xaml.cs">
+      <DependentUpon>PaymentMethodAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\PaymentsAddView.xaml.cs">
+      <DependentUpon>PaymentsAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\SettingsAddView.xaml.cs">
+      <DependentUpon>SettingsAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Create\StatusAddView.xaml.cs">
+      <DependentUpon>StatusAddView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\JedenViewBase.cs" />
     <Compile Include="Views\CustomerHistoryView.xaml.cs">
       <DependentUpon>CustomerHistoryView.xaml</DependentUpon>
@@ -340,6 +373,50 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ContactSupportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\AddressAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\CompanyDataAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\CustomerArchiveAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\ExportAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\ImportAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\KontrahentAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\NotificationsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\PaymentMethodAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\PaymentsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\SettingsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Create\StatusAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

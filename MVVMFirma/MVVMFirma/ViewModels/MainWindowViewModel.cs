@@ -70,7 +70,7 @@ namespace MVVMFirma.ViewModels
 
                 new CommandViewModel(
                     "Status",
-                    new BaseCommand(() => this.ShowView<StatusViewModel>())),
+                    new BaseCommand(() => this.ShowView < StatusViewModel >())),
 
                 // Products and Services section
 
@@ -82,7 +82,52 @@ namespace MVVMFirma.ViewModels
                     "Product List",
                     new BaseCommand(() => this.ShowView<WszystkieTowaryViewModel>())),
 
-                // Raport and analiza section 
+                // Notifications and configurations section
+                new CommandViewModel(
+                    "Address",
+                    new BaseCommand(() => this.ShowView < AddressViewModel >())),
+
+                new CommandViewModel(
+                    "Company Data",
+                    new BaseCommand(() => this.ShowView < CompanyDataViewModel >())),
+
+                new CommandViewModel(
+                    "Notifications",
+                    new BaseCommand(() => this.ShowView < NotificationsViewModel >())),
+
+                // Payments section 
+
+                new CommandViewModel(
+                    "Payments",
+                    new BaseCommand(() => this.ShowView < PaymentViewModel >())),
+
+                new CommandViewModel(
+                    "Payment Method",
+                    new BaseCommand(() => this.ShowView < SettlementsViewModel >())),
+
+                // Organizational section
+
+                new CommandViewModel(
+                    "Import",
+                    new BaseCommand(() => this.ShowView < ImportViewModel >())),
+
+                new CommandViewModel(
+                    "Export",
+                    new BaseCommand(() => this.ShowView < ExportViewModel >())),
+
+                new CommandViewModel(
+                    "Settings",
+                    new BaseCommand(() => this.ShowView < SettingsViewModel >())),
+
+                new CommandViewModel(
+                    "Contact Support",
+                    new BaseCommand(() => this.ShowView<ContactSupportViewModel>())),
+
+                new CommandViewModel(
+                    "Help",
+                    new BaseCommand(() => this.ShowView<HelpViewModel>())),
+
+                // Raport - Business logic 
 
                 new CommandViewModel(
                     "Sales Raport",
@@ -95,51 +140,6 @@ namespace MVVMFirma.ViewModels
                 new CommandViewModel(
                     "Vat Raport",
                     new BaseCommand(() => this.CreateView(new VatViewModel()))),
-
-                // Notifications and configurations section
-                new CommandViewModel(
-                    "Address",
-                    new BaseCommand(() => this.ShowView<AddressViewModel>())),
-
-                new CommandViewModel(
-                    "Company Data",
-                    new BaseCommand(() => this.ShowView<CompanyDataViewModel>())),
-
-                new CommandViewModel(
-                    "Notifications",
-                    new BaseCommand(() => this.ShowView<NotificationsViewModel>())),
-
-                // Payments section 
-
-                new CommandViewModel(
-                    "Payments",
-                    new BaseCommand(() => this.ShowView<PaymentViewModel>())),
-
-                new CommandViewModel(
-                    "Payment Method",
-                    new BaseCommand(() => this.ShowView<SettlementsViewModel>())),
-
-                // Organizational section
-
-                new CommandViewModel(
-                    "Import",
-                    new BaseCommand(() => this.ShowView<ImportViewModel>())),
-
-                new CommandViewModel(
-                    "Export",
-                    new BaseCommand(() => this.ShowView<ExportViewModel>())),
-
-                new CommandViewModel(
-                    "Help",
-                    new BaseCommand(() => this.ShowView<HelpViewModel>())),
-
-                new CommandViewModel(
-                    "Contact Support",
-                    new BaseCommand(() => this.ShowView<ContactSupportViewModel>())),
-
-                new CommandViewModel(
-                    "Settings",
-                    new BaseCommand(() => this.ShowView<SettingsViewModel>()))
             };
         }
 
