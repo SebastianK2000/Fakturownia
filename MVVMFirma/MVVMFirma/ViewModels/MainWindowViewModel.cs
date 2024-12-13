@@ -213,10 +213,16 @@ namespace MVVMFirma.ViewModels
             if (collectionView != null)
                 collectionView.MoveCurrentTo(workspace);
         }
-        private void open (string name)
+        private void open (string name) // name to jest wysłany komunikat
         {
-            if (name == "Add New Product")
-                CreateView(new NowyTowarViewModel());
+            if (name == "Towary")
+                CreateView(new NowyTowarViewModel());  // Wywołujemy zakładkę do dodawania nowego elementu
+
+            if (name == "Customers")
+                CreateView(new CustomerViewModel());
+
+            if (name == "Invoices")
+                CreateView(new NewInvoiceViewModel());
         }
         #endregion
     }

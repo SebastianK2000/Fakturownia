@@ -9,36 +9,13 @@ using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
-    public class CustomerViewModel:WorkspaceViewModel
+    public class CustomerViewModel:JedenViewModel<Customer>
     {
-        #region DB
-        private InvoiceEntities invoiceEntities;
-        #endregion
-        #region Item
-        private Customer customer;
-        #endregion
-
-        #region Command 
-        // komenda która zostanie podpięta pod zapisz/zamknij
-        private BaseCommand _SaveCommand;
-
-        public ICommand SaveCommand
-        {
-            get
-            {
-                if (_SaveCommand == null)
-                    _SaveCommand = new BaseCommand(() => SaveAndClose());
-                return _SaveCommand;
-            }
-        }
-        #endregion
-
         #region Construktor
         public CustomerViewModel()
+            : base("New Customer")
         {
-            base.DisplayName = "Customer";
-            invoiceEntities = new InvoiceEntities();
-            customer = new Customer();
+            Item = new Customer();
         }
 
         #endregion
@@ -48,11 +25,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return customer.Name;
+                return Item.Name;
             }
             set
             {
-                customer.Name = value;
+                Item.Name = value;
                 OnPropertyChanged(() => Name);
             }
         }
@@ -60,11 +37,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return customer.Phone;
+                return Item.Phone;
             }
             set
             {
-                customer.Phone = value;
+                Item.Phone = value;
                 OnPropertyChanged(() => Phone);
             }
         }
@@ -72,11 +49,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return customer.Email;
+                return Item.Email;
             }
             set
             {
-                customer.Email = value;
+                Item.Email = value;
                 OnPropertyChanged(() => Email);
             }
         }
@@ -84,26 +61,20 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return customer.Notes;
+                return Item.Notes;
             }
             set
             {
-                customer.Notes = value;
+                Item.Notes = value;
                 OnPropertyChanged(() => Notes);
             }
         }
-
         #endregion
         #region Helpers
-        public void Save()
+        public override void Save()
         {
-            invoiceEntities.Customer.Add(customer); // dodaje do lokalnej kolekcji
-            invoiceEntities.SaveChanges(); // zapisuje do DB
-        }
-        public void SaveAndClose()
-        {
-            Save();
-            base.OnRequestClose(); // zamknięcie zakładki
+            invoiceEntities.Customer.Add(Item);
+            invoiceEntities.SaveChanges();
         }
         #endregion
 

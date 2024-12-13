@@ -8,7 +8,7 @@ namespace MVVMFirma.ViewModels
     {
         #region Constructor
         public CustomersListViewModel()
-            : base("Customer")
+            : base("Customers")
         {
         }
         #endregion

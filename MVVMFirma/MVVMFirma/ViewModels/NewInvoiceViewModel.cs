@@ -15,7 +15,7 @@ namespace MVVMFirma.ViewModels
     {
         #region Construktor
         public NewInvoiceViewModel()
-            : base("Invoice")
+            : base("New Invoice")
         {
             Item = new Invoice();
         }

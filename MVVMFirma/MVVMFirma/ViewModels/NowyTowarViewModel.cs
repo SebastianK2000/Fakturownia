@@ -13,7 +13,7 @@ namespace MVVMFirma.ViewModels
 
         #region Construktor
         public NowyTowarViewModel()
-            :base("Towar")
+            :base("New Towar")
         {
             Item = new Towar();
         }

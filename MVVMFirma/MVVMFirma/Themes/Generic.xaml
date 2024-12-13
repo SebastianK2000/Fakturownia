@@ -16,7 +16,7 @@
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0">
                             <!-- Add -->
-                            <ToggleButton Margin="10,2,10,2" ToolTip="Add">
+                            <ToggleButton Margin="10,2,10,2" ToolTip="Add" Command="{Binding AddCommand}">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE710;" FontSize="16" />
                             </ToggleButton>
                             <!-- Edit -->
@@ -28,7 +28,7 @@
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE74D;" FontSize="16" />
                             </ToggleButton>
                             <!-- Refresh -->
-                            <ToggleButton Margin="10,2,10,2" ToolTip="Refresh">
+                            <ToggleButton Margin="10,2,10,2" ToolTip="Refresh" Command="{Binding LoadCommand}">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE72C;" FontSize="16" />
                             </ToggleButton>
                         </ToolBar>

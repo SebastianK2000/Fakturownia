@@ -36,7 +36,7 @@ namespace MVVMFirma.ViewModels
             get
             {
                 if (_AddCommand == null)
-                    _AddCommand = new BaseCommand(() => add());
+                    _AddCommand = new BaseCommand(() => Add());
                 return _AddCommand;
             }
         }
@@ -75,7 +75,7 @@ namespace MVVMFirma.ViewModels
         #region Helpers
 
         public abstract void Load();
-        private void add()
+        public void Add()
         {
             // ten komunikat odbierze mainViewModel i wyświetli okno do dodawania
             Messenger.Default.Send(DisplayName + "Add");
