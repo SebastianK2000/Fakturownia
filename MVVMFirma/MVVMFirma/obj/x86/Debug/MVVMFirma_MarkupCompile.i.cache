@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\App.xaml
 29-2019343237
 2-662846405
-1051658206612
-17119597286
+1071988977541
+126-1382262933
 Themes\Generic.xaml;Views\AddressView.xaml;Views\CompanyDataView.xaml;Views\ContactSupportView.xaml;Views\CustomerHistoryView.xaml;Views\CustomersListView.xaml;Views\CustomersRaportView.xaml;Views\CustomerView.xaml;Views\ExportView.xaml;Views\HelpView.xaml;Views\HistoryInvoiceView.xaml;Views\ImportView.xaml;Views\InvoiceAllView.xaml;Views\KontrahentView.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\NewInvoiceView.xaml;Views\NotificationsView.xaml;Views\NowyTowarView.xaml;Views\PaidInvoiceView.xaml;Views\PaymentsMethod.xaml;Views\PaymentView.xaml;Views\SalesRaportView.xaml;Views\SettingsView.xaml;Views\SettlementsView.xaml;Views\StatusView.xaml;Views\UnpaidInvoiceView.xaml;Views\VatView.xaml;Views\WszystkieTowaryView.xaml;
 
-False
+True
 

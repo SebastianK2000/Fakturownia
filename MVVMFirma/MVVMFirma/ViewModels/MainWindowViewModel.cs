@@ -9,6 +9,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Data;
 using MVVMFirma.Views;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace MVVMFirma.ViewModels
 {
@@ -34,110 +35,112 @@ namespace MVVMFirma.ViewModels
         }
         private List<CommandViewModel> CreateCommands()
         {
+            // oczekuje na stringa i jak go złapie to wywołuje open która jest zdefiniowana w regionie prywatnych helpersów
+            Messenger.Default.Register<string>(this, open);
             return new List<CommandViewModel>
-    {
+            {
 
-        // Customer section
+                // Customer section
 
-        new CommandViewModel(
-            "Add New Customer",
-            new BaseCommand(() => this.CreateView(new CustomerViewModel()))),
+                new CommandViewModel(
+                    "Add New Customer",
+                    new BaseCommand(() => this.CreateView(new CustomerViewModel()))),
 
-        new CommandViewModel(
-            "Customer List",
-            new BaseCommand(() => this.ShowView<CustomersListViewModel>())),
+                new CommandViewModel(
+                    "Customer List",
+                    new BaseCommand(() => this.ShowView<CustomersListViewModel>())),
 
-        new CommandViewModel(
-            "Customer Archive",
-            new BaseCommand(() => this.ShowView<CustomerHistoryViewModel>())),
+                new CommandViewModel(
+                    "Customer Archive",
+                    new BaseCommand(() => this.ShowView<CustomerHistoryViewModel>())),
 
-        new CommandViewModel(
-            "Kontrahent",
-            new BaseCommand(() => this.ShowView<KontrahentViewModel>())),
+                new CommandViewModel(
+                    "Kontrahent",
+                    new BaseCommand(() => this.ShowView<KontrahentViewModel>())),
 
-        // Invoices section
+                // Invoices section
 
-        new CommandViewModel(
-            "Add New Invoice",
-            new BaseCommand(() => this.CreateView(new NewInvoiceViewModel()))),
+                new CommandViewModel(
+                    "Add New Invoice",
+                    new BaseCommand(() => this.CreateView(new NewInvoiceViewModel()))),
 
-        new CommandViewModel(
-            "Invoices List",
-            new BaseCommand(() => this.ShowView<InvoiceAllViewModel>())),
+                new CommandViewModel(
+                    "Invoices List",
+                    new BaseCommand(() => this.ShowView<InvoiceAllViewModel>())),
 
-        new CommandViewModel(
-            "Status",
-            new BaseCommand(() => this.ShowView<StatusViewModel>())),
+                new CommandViewModel(
+                    "Status",
+                    new BaseCommand(() => this.ShowView<StatusViewModel>())),
 
-        // Products and Services section
+                // Products and Services section
 
-        new CommandViewModel(
-            "Add New Product",
-            new BaseCommand(() => this.CreateView(new NowyTowarViewModel()))),
+                new CommandViewModel(
+                    "Add New Product",
+                    new BaseCommand(() => this.CreateView(new NowyTowarViewModel()))),
 
-        new CommandViewModel(
-            "Product List",
-            new BaseCommand(() => this.ShowView<WszystkieTowaryViewModel>())),
+                new CommandViewModel(
+                    "Product List",
+                    new BaseCommand(() => this.ShowView<WszystkieTowaryViewModel>())),
 
-        // Raport and analiza section 
+                // Raport and analiza section 
 
-        new CommandViewModel(
-            "Sales Raport",
-            new BaseCommand(() => this.CreateView(new SalesRaportViewModel()))),
+                new CommandViewModel(
+                    "Sales Raport",
+                    new BaseCommand(() => this.CreateView(new SalesRaportViewModel()))),
 
-        new CommandViewModel(
-            "Customers Raport",
-            new BaseCommand(() => this.CreateView(new CustomersRaportViewModel()))),
+                new CommandViewModel(
+                    "Customers Raport",
+                    new BaseCommand(() => this.CreateView(new CustomersRaportViewModel()))),
 
-        new CommandViewModel(
-            "Vat Raport",
-            new BaseCommand(() => this.CreateView(new VatViewModel()))),
+                new CommandViewModel(
+                    "Vat Raport",
+                    new BaseCommand(() => this.CreateView(new VatViewModel()))),
 
-        // Notifications and configurations section
-        new CommandViewModel(
-            "Address",
-            new BaseCommand(() => this.ShowView<AddressViewModel>())),
+                // Notifications and configurations section
+                new CommandViewModel(
+                    "Address",
+                    new BaseCommand(() => this.ShowView<AddressViewModel>())),
 
-        new CommandViewModel(
-            "Company Data",
-            new BaseCommand(() => this.ShowView<CompanyDataViewModel>())),
+                new CommandViewModel(
+                    "Company Data",
+                    new BaseCommand(() => this.ShowView<CompanyDataViewModel>())),
 
-        new CommandViewModel(
-            "Notifications",
-            new BaseCommand(() => this.ShowView<NotificationsViewModel>())),
+                new CommandViewModel(
+                    "Notifications",
+                    new BaseCommand(() => this.ShowView<NotificationsViewModel>())),
 
-        // Payments section 
+                // Payments section 
 
-        new CommandViewModel(
-            "Payments",
-            new BaseCommand(() => this.ShowView<PaymentViewModel>())),
+                new CommandViewModel(
+                    "Payments",
+                    new BaseCommand(() => this.ShowView<PaymentViewModel>())),
 
-        new CommandViewModel(
-            "Payment Method",
-            new BaseCommand(() => this.ShowView<SettlementsViewModel>())),
+                new CommandViewModel(
+                    "Payment Method",
+                    new BaseCommand(() => this.ShowView<SettlementsViewModel>())),
 
-        // Organizational section
+                // Organizational section
 
-        new CommandViewModel(
-            "Import",
-            new BaseCommand(() => this.ShowView<ImportViewModel>())),
+                new CommandViewModel(
+                    "Import",
+                    new BaseCommand(() => this.ShowView<ImportViewModel>())),
 
-        new CommandViewModel(
-            "Export",
-            new BaseCommand(() => this.ShowView<ExportViewModel>())),
+                new CommandViewModel(
+                    "Export",
+                    new BaseCommand(() => this.ShowView<ExportViewModel>())),
 
-        new CommandViewModel(
-            "Help",
-            new BaseCommand(() => this.ShowView<HelpViewModel>())),
+                new CommandViewModel(
+                    "Help",
+                    new BaseCommand(() => this.ShowView<HelpViewModel>())),
 
-        new CommandViewModel(
-            "Contact Support",
-            new BaseCommand(() => this.ShowView<ContactSupportViewModel>())),
+                new CommandViewModel(
+                    "Contact Support",
+                    new BaseCommand(() => this.ShowView<ContactSupportViewModel>())),
 
-        new CommandViewModel(
-            "Settings",
-            new BaseCommand(() => this.ShowView<SettingsViewModel>()))
-    };
+                new CommandViewModel(
+                    "Settings",
+                    new BaseCommand(() => this.ShowView<SettingsViewModel>()))
+            };
         }
 
         #endregion
@@ -209,6 +212,11 @@ namespace MVVMFirma.ViewModels
             ICollectionView collectionView = CollectionViewSource.GetDefaultView(this.Workspaces);
             if (collectionView != null)
                 collectionView.MoveCurrentTo(workspace);
+        }
+        private void open (string name)
+        {
+            if (name == "Add New Product")
+                CreateView(new NowyTowarViewModel());
         }
         #endregion
     }

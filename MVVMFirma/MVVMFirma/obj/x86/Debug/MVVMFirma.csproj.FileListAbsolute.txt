@@ -296,3 +296,16 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Payme
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\PaymentView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\Microsoft.Practices.ServiceLocation.xml
