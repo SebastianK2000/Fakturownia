@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MVVMFirma.Views.Create
 {
     /// <summary>
-    /// Logika interakcji dla klasy AddressAddView.xaml
+    /// Logika interakcji dla klasy StatusAddView.xaml
     /// </summary>
-    public partial class AddressAddView : UserControl
+    public partial class StatusAddView : UserControl
     {
-        public AddressAddView()
+        public StatusAddView()
         {
             InitializeComponent();
         }

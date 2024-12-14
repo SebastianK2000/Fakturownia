@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVMFirma.ViewModels
+namespace MVVMFirma.ViewModels.Create
 {
     public class AddressAddViewModel : JedenViewModel<Adress>
     {

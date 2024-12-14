@@ -309,7 +309,6 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLi
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\GalaSoft.MvvmLight.Platform.xml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\Microsoft.Practices.ServiceLocation.xml
-C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\AddressAddView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\CompanyDataAddView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\CustomerArchiveAddView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\ExportAddView.g.cs
@@ -320,7 +319,6 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Creat
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\PaymentsAddView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\SettingsAddView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\StatusAddView.g.cs
-C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\AddressAddView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\CompanyDataAddView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\CustomerArchiveAddView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\ExportAddView.baml
@@ -331,3 +329,5 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Creat
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\PaymentsAddView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\SettingsAddView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\StatusAddView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressAddView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressAddView.baml

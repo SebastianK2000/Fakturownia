@@ -237,7 +237,7 @@
     <Compile Include="Views\ContactSupportView.xaml.cs">
       <DependentUpon>ContactSupportView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Create\AddressAddView.xaml.cs">
+    <Compile Include="Views\AddressAddView.xaml.cs">
       <DependentUpon>AddressAddView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Create\CompanyDataAddView.xaml.cs">
@@ -394,7 +394,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Create\AddressAddView.xaml">
+    <Page Include="Views\AddressAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

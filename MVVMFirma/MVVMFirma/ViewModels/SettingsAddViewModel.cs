@@ -7,78 +7,90 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVMFirma.ViewModels
+namespace MVVMFirma.ViewModels.Create
 {
-    public class AddressAddViewModel : JedenViewModel<Adress>
+    public class SettingsAddViewModel : JedenViewModel<Settings>
     {
         #region Construktor
-        public AddressAddViewModel()
-            : base("Address")
+        public SettingsAddViewModel()
+            : base("Settings")
         {
-            Item = new Adress();
+            Item = new Settings();
         }
 
         #endregion
 
         #region Properties
-        public string City
+        public string Language
         {
             get
             {
-                return Item.City;
+                return Item.Language;
             }
             set
             {
-                Item.City = value;
-                OnPropertyChanged(() => City);
+                Item.Language = value;
+                OnPropertyChanged(() => Language);
             }
         }
-        public string Street
+        public string Login
         {
             get
             {
-                return Item.Street;
+                return Item.Login;
             }
             set
             {
-                Item.Street = value;
-                OnPropertyChanged(() => Street);
+                Item.Login = value;
+                OnPropertyChanged(() => Login);
             }
         }
-        public string NrHome
+        public string Password
         {
             get
             {
-                return Item.NrHome;
+                return Item.Password;
             }
             set
             {
-                Item.NrHome = value;
-                OnPropertyChanged(() => NrHome);
+                Item.Password = value;
+                OnPropertyChanged(() => Password);
             }
         }
-        public string NrLocal
+        public bool? PaymentDeadlineTrigger
         {
             get
             {
-                return Item.NrLocal;
+                return Item.PaymentDeadlineTrigger;
             }
             set
             {
-                Item.NrLocal = value;
-                OnPropertyChanged(() => NrLocal);
+                Item.PaymentDeadlineTrigger = value;
+                OnPropertyChanged(() => PaymentDeadlineTrigger);
             }
         }
-        public string ZipCode
+        public bool? NewInoviceTrigger
         {
             get
             {
-                return Item.ZipCode;
+                return Item.NewInoviceTrigger;
             }
             set
             {
-                Item.ZipCode = value;
-                OnPropertyChanged(() => ZipCode);
+                Item.NewInoviceTrigger = value;
+                OnPropertyChanged(() => NewInoviceTrigger);
+            }
+        }
+        public bool? PymentNotMade
+        {
+            get
+            {
+                return Item.PymentNotMade;
+            }
+            set
+            {
+                Item.PymentNotMade = value;
+                OnPropertyChanged(() => PymentNotMade);
             }
         }
         public int? IdCustomer
@@ -106,7 +118,7 @@ namespace MVVMFirma.ViewModels
         #region Helpers
         public override void Save()
         {
-            invoiceEntities.Adress.Add(Item);
+            invoiceEntities.Settings.Add(Item);
             invoiceEntities.SaveChanges();
         }
         #endregion

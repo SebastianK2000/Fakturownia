@@ -1,8 +1,19 @@
-﻿
+﻿C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Themes\Generic.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\AddressView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CompanyDataView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\AddressAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\CompanyDataAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\CustomerArchiveAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\ExportAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\ImportAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\KontrahentAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\NotificationsAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\PaymentMethodAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\PaymentsAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\SettingsAddView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\StatusAddView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomerHistoryView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomersListView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomersRaportView.xaml;;
@@ -28,15 +39,4 @@ FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\StatusView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\UnpaidInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\VatView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\WszystkieTowaryView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\AddressAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\CompanyDataAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\CustomerArchiveAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\ExportAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\ImportAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\KontrahentAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\NotificationsAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\PaymentMethodAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\PaymentsAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\SettingsAddView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\StatusAddView.xaml;;
 

@@ -103,6 +103,52 @@
     <DataTemplate DataType="{x:Type vm:KontrahentViewModel}">
         <vw:KontrahentView/>
     </DataTemplate>
+    
+    <!-- Create folder -->
+
+    <DataTemplate DataType="{x:Type vm:AddressAddViewModel}">
+        <vw:AddressAddView/>
+    </DataTemplate>
+
+   <!-- <DataTemplate DataType="{x:Type vm:NotificationsViewModel}">
+        <vw:NotificationsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:PaidInvoiceViewModel}">
+        <vw:PaidInvoice/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SalesRaportViewModel}">
+        <vw:SalesRaportView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+        <vw:SettingsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettlementsViewModel}">
+        <vw:SettlementsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:PaymentViewModel}">
+        <vw:PaymentView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:UnpaidInvoiceViewModel}">
+        <vw:UnpaidInvoiceView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:VatViewModel}">
+        <vw:VatView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:StatusViewModel}">
+        <vw:StatusView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:KontrahentViewModel}">
+        <vw:KontrahentView/>
+    </DataTemplate> -->
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
