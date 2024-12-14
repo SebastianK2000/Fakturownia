@@ -260,6 +260,39 @@ namespace MVVMFirma.ViewModels
 
             if (name == "InvoicesAdd")
                 CreateView(new NewInvoiceViewModel());
+
+            if (name == "KontrahentAdd")
+                CreateView(new KontrahentAddViewModel());
+
+            if (name == "AddressAdd")
+                CreateView(new AddressAddViewModel());
+
+            if (name == "CustomerAdd")
+                CreateView(new CustomerArchiveAddViewModel());
+
+            if (name == "Company DataAdd")
+                CreateView(new CompanyDataAddViewModel());
+
+            if (name == "ImportAdd")
+                CreateView(new ImportAddViewModel());
+
+            if (name == "ExportAdd")
+                CreateView(new ExportAddViewModel());
+
+            if (name == "NotificationsAdd")
+                CreateView(new NotificationsAddViewModel());
+
+            if (name == "PaymentsAdd")
+                CreateView(new PaymentsAddViewModel());
+
+            if (name == "Payments MethodAdd")
+                CreateView(new PaymentMethodAddViewModel());
+
+            if (name == "SettingsAdd")
+                CreateView(new SettingsAddViewModel());
+
+            if (name == "StatusAdd")
+                CreateView(new StatusAddViewModel());
         }
 
         #endregion
