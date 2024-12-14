@@ -70,19 +70,12 @@ namespace MVVMFirma.ViewModels
             }
         }
         #endregion
-            #region Propertises for ComboBox 
+        #region Propertises for ComboBox 
         public IQueryable<KeyAndValue> InvoiceItems
         {
             get
             {
                 return new InvoiceB(invoiceEntities).GetInvoiceKeyAndValueItems();
-            }
-        }
-        public IQueryable<KeyAndValue> PaymentMethodItems
-        {
-            get
-            {
-                return new PaymentMethodB(invoiceEntities).GetPaymentMethodKeyAndValueItems();
             }
         }
         #endregion

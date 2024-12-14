@@ -41,7 +41,7 @@
 
         <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Customer" />
         <ComboBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8"
-                  ItemsSource="{Binding InvoiceItems}"
+                  ItemsSource="{Binding CustomerItems}"
                   DisplayMemberPath="Value"
                   SelectedValuePath="Key"
                   SelectedValue="{Binding Path=IdCustomer, Mode=TwoWay}"

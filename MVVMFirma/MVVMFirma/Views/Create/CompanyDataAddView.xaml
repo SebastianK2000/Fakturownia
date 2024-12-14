@@ -43,15 +43,15 @@
 
         <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Addres" />
         <ComboBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8"
-                  ItemsSource="{Binding InvoiceItems}"
+                  ItemsSource="{Binding AddressItems}"
                   DisplayMemberPath="Value"
                   SelectedValuePath="Key"
-                  SelectedValue="{Binding Path=IdCustomer, Mode=TwoWay}"
+                  SelectedValue="{Binding Path=IdAdress, Mode=TwoWay}"
                   />
         
         <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Customer" />
         <ComboBox Grid.Column="1" Grid.Row="7" Margin="0,8,0,8"
-                  ItemsSource="{Binding InvoiceItems}"
+                  ItemsSource="{Binding CustomerItems}"
                   DisplayMemberPath="Value"
                   SelectedValuePath="Key"
                   SelectedValue="{Binding Path=IdCustomer, Mode=TwoWay}"
