@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMFirma.Views.Create
+namespace MVVMFirma.Views
 {
     /// <summary>
     /// Logika interakcji dla klasy CompanyDataAddView.xaml
     /// </summary>
-    public partial class CompanyDataAddView : UserControl
+    public partial class CompanyDataAddView : JedenViewBase
     {
         public CompanyDataAddView()
         {

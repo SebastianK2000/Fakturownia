@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMFirma.Views.Create
+namespace MVVMFirma.Views
 {
     /// <summary>
     /// Logika interakcji dla klasy SettingsAddView.xaml
     /// </summary>
-    public partial class SettingsAddView : UserControl
+    public partial class SettingsAddView : JedenViewBase
     {
         public SettingsAddView()
         {

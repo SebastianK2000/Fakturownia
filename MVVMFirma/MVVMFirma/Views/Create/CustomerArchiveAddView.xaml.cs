@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy CustomerArchiveAddView.xaml
     /// </summary>
-    public partial class CustomerArchiveAddView : UserControl
+    public partial class CustomerArchiveAddView : JedenViewBase
     {
         public CustomerArchiveAddView()
         {

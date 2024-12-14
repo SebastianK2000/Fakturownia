@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMFirma.Views.Create
+namespace MVVMFirma.Views
 {
     /// <summary>
     /// Logika interakcji dla klasy PaymentMethodAddView.xaml
     /// </summary>
-    public partial class PaymentMethodAddView : UserControl
+    public partial class PaymentMethodAddView : JedenViewBase
     {
         public PaymentMethodAddView()
         {

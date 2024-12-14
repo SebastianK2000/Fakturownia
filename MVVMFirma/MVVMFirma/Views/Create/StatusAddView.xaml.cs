@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMFirma.Views.Create
+namespace MVVMFirma.Views
 {
     /// <summary>
     /// Logika interakcji dla klasy StatusAddView.xaml
     /// </summary>
-    public partial class StatusAddView : UserControl
+    public partial class StatusAddView : JedenViewBase
     {
         public StatusAddView()
         {

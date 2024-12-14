@@ -110,45 +110,45 @@
         <vw:AddressAddView/>
     </DataTemplate>
 
-   <!-- <DataTemplate DataType="{x:Type vm:NotificationsViewModel}">
-        <vw:NotificationsView/>
+   <DataTemplate DataType="{x:Type vm:CompanyDataAddViewModel}">
+        <vw:CompanyDataAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:PaidInvoiceViewModel}">
-        <vw:PaidInvoice/>
+    <DataTemplate DataType="{x:Type vm:CustomerArchiveAddViewModel}">
+        <vw:CustomerArchiveAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:SalesRaportViewModel}">
-        <vw:SalesRaportView/>
+    <DataTemplate DataType="{x:Type vm:ExportAddViewModel}">
+        <vw:ExportAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
-        <vw:SettingsView/>
+    <DataTemplate DataType="{x:Type vm:ImportAddViewModel}">
+        <vw:ImportAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:SettlementsViewModel}">
-        <vw:SettlementsView/>
+    <DataTemplate DataType="{x:Type vm:KontrahentAddViewModel}">
+        <vw:KontrahentAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:PaymentViewModel}">
-        <vw:PaymentView/>
+    <DataTemplate DataType="{x:Type vm:NotificationsAddViewModel}">
+        <vw:NotificationsAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:UnpaidInvoiceViewModel}">
-        <vw:UnpaidInvoiceView/>
+    <DataTemplate DataType="{x:Type vm:PaymentMethodAddViewModel}">
+        <vw:PaymentMethodAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:VatViewModel}">
-        <vw:VatView/>
+    <DataTemplate DataType="{x:Type vm:PaymentsAddViewModel}">
+        <vw:PaymentsAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:StatusViewModel}">
-        <vw:StatusView/>
+    <DataTemplate DataType="{x:Type vm:SettingsAddViewModel}">
+        <vw:SettingsAddView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:KontrahentViewModel}">
-        <vw:KontrahentView/>
-    </DataTemplate> -->
+    <DataTemplate DataType="{x:Type vm:StatusAddViewModel}">
+        <vw:StatusAddView/>
+    </DataTemplate>
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">

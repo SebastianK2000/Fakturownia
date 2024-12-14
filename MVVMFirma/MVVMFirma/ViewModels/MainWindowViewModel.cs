@@ -43,10 +43,6 @@ namespace MVVMFirma.ViewModels
                 // Customer section
 
                 new CommandViewModel(
-                    "Add New Customer",
-                    new BaseCommand(() => this.CreateView(new CustomerViewModel()))),
-
-                new CommandViewModel(
                     "Customer List",
                     new BaseCommand(() => this.ShowView<CustomersListViewModel>())),
 
@@ -61,10 +57,6 @@ namespace MVVMFirma.ViewModels
                 // Invoices section
 
                 new CommandViewModel(
-                    "Add New Invoice",
-                    new BaseCommand(() => this.CreateView(new NewInvoiceViewModel()))),
-
-                new CommandViewModel(
                     "Invoices List",
                     new BaseCommand(() => this.ShowView<InvoiceAllViewModel>())),
 
@@ -73,10 +65,6 @@ namespace MVVMFirma.ViewModels
                     new BaseCommand(() => this.ShowView < StatusViewModel >())),
 
                 // Products and Services section
-
-                new CommandViewModel(
-                    "Add New Product",
-                    new BaseCommand(() => this.CreateView(new NowyTowarViewModel()))),
 
                 new CommandViewModel(
                     "Product List",
@@ -140,6 +128,53 @@ namespace MVVMFirma.ViewModels
                 new CommandViewModel(
                     "Vat Raport",
                     new BaseCommand(() => this.CreateView(new VatViewModel()))),
+
+                // Create folder 
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new AddressAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new CompanyDataAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new CustomerArchiveAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new ExportAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new ImportAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new KontrahentAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new NotificationsAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new PaymentMethodAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new PaymentsAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new SettingsAddViewModel()))),
+
+                new CommandViewModel(
+                    "Add",
+                    new BaseCommand(() => this.CreateView(new StatusAddViewModel()))),
+
             };
         }
 
