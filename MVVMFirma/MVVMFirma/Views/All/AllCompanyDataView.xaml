@@ -1,0 +1,22 @@
+﻿<local:AllViewBase x:Class="MVVMFirma.Views.AllCompanyDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMFirma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-354">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id Company Data" Binding="{Binding IdCompanyData}"/>
+                <DataGridTextColumn Header="Type of activity" Binding="{Binding TypeOfActivity}"/>
+                <DataGridTextColumn Header="Company name" Binding="{Binding CompanyName}"/>
+                <DataGridTextColumn Header="First name" Binding="{Binding FirstNameCompanyOwner}"/>
+                <DataGridTextColumn Header="Last name" Binding="{Binding LastNameCompanyOwner}"/>
+                <DataGridTextColumn Header="NIP" Binding="{Binding NIP}"/>
+                <DataGridTextColumn Header="REGON" Binding="{Binding REGON}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:AllViewBase>

@@ -1,4 +1,6 @@
-﻿using MVVMFirma.Models.BusinessLogic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
+using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using System;
@@ -6,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
@@ -19,7 +22,39 @@ namespace MVVMFirma.ViewModels
         }
 
         #endregion
+        #region Command
+        private BaseCommand _ShowCustomers;
 
+        public ICommand ShowCustomers
+        {
+            get
+            {
+                if (_ShowCustomers == null)
+                    _ShowCustomers = new BaseCommand(() => showCustomers());
+                return _ShowCustomers;
+            }
+        }
+        private void showCustomers()
+        {
+            Messenger.Default.Send<string>("CustomersAll");
+        }
+
+        private BaseCommand _ShowAddress;
+
+        public ICommand ShowAddress
+        {
+            get
+            {
+                if (_ShowAddress == null)
+                    _ShowAddress = new BaseCommand(() => showAddress());
+                return _ShowAddress;
+            }
+        }
+        private void showAddress()
+        {
+            Messenger.Default.Send<string>("AddressAll");
+        }
+        #endregion
         #region Properties
         public string TypeOfActivity
         {

@@ -129,6 +129,24 @@ namespace MVVMFirma.ViewModels
                     "Vat Raport",
                     new BaseCommand(() => this.CreateView(new VatViewModel()))),
 
+                // Modal section
+
+                new CommandViewModel(
+                    "Addresse's",
+                    new BaseCommand(() => this.ShowView<AllAddressViewModel>())),
+                new CommandViewModel(
+                    "Companies Data",
+                    new BaseCommand(() => this.ShowView<AllCompanyDataViewModel>())),
+                new CommandViewModel(
+                    "Customers",
+                    new BaseCommand(() => this.ShowView<AllCustomerViewModel>())),
+                new CommandViewModel(
+                    "Faktury",
+                    new BaseCommand(() => this.ShowView<AllFakturyViewModel>())),
+                new CommandViewModel(
+                    "Kontrahenci",
+                    new BaseCommand(() => this.ShowView<AllKontrahentViewModel>())),
+
                 // Create folder 
 
                 //new CommandViewModel(
@@ -293,6 +311,24 @@ namespace MVVMFirma.ViewModels
 
             if (name == "StatusAdd")
                 CreateView(new StatusAddViewModel());
+
+            // Modal section
+            if (name == "AddressAll")
+                ShowView<AllAddressViewModel>();
+
+            if (name == "CompanyDataAll")
+                ShowView<AllCompanyDataViewModel>();
+
+            if (name == "CustomersAll")
+                ShowView<AllCustomerViewModel>();
+
+            if (name == "InvoiceAll")
+                ShowView<AllFakturyViewModel>();
+
+            if (name == "KontrahentAll")
+                ShowView<AllKontrahentViewModel>();
+
+
         }
 
         #endregion

@@ -1,4 +1,5 @@
-﻿using MVVMFirma.Helper;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
 using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
@@ -21,7 +22,39 @@ namespace MVVMFirma.ViewModels
         }
 
         #endregion
+        #region Command
+        private BaseCommand _ShowCustomers;
 
+        public ICommand ShowCustomers
+        {
+            get
+            {
+                if (_ShowCustomers == null)
+                    _ShowCustomers = new BaseCommand(() => showCustomers());
+                return _ShowCustomers;
+            }
+        }
+        private void showCustomers()
+        {
+            Messenger.Default.Send<string>("CustomersAll");
+        }
+
+        private BaseCommand _ShowKontrahent;
+
+        public ICommand ShowKontrahent
+        {
+            get
+            {
+                if (_ShowKontrahent == null)
+                    _ShowKontrahent = new BaseCommand(() => showKontrahenci());
+                return _ShowKontrahent;
+            }
+        }
+        private void showKontrahenci()
+        {
+            Messenger.Default.Send<string>("KontrahentAll");
+        }
+        #endregion
         #region Properties
         public bool? IsActive
         {

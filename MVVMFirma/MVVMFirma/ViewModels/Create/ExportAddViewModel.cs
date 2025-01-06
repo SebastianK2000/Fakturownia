@@ -1,4 +1,6 @@
-﻿using MVVMFirma.Models.BusinessLogic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
+using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using System;
@@ -6,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
@@ -19,7 +22,23 @@ namespace MVVMFirma.ViewModels
         }
 
         #endregion
+        #region Command
+        private BaseCommand _ShowInvoice;
 
+        public ICommand ShowInvoice
+        {
+            get
+            {
+                if (_ShowInvoice == null)
+                    _ShowInvoice = new BaseCommand(() => showInvoice());
+                return _ShowInvoice;
+            }
+        }
+        private void showInvoice()
+        {
+            Messenger.Default.Send<string>("InvoiceAll");
+        }
+        #endregion
         #region Properties
         public string ActionType
         {

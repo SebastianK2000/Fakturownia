@@ -183,6 +183,11 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AddressViewModel.cs" />
+    <Compile Include="ViewModels\All\AllAddressViewModel.cs" />
+    <Compile Include="ViewModels\All\AllCompanyDataViewModel.cs" />
+    <Compile Include="ViewModels\All\AllCustomerViewModel.cs" />
+    <Compile Include="ViewModels\All\AllFakturyViewModel.cs" />
+    <Compile Include="ViewModels\All\AllKontrahentViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Create\AddressAddViewModel.cs" />
     <Compile Include="ViewModels\Create\CompanyDataAddViewModel.cs" />
@@ -231,6 +236,21 @@
       <DependentUpon>AddressView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AllViewBase.cs" />
+    <Compile Include="Views\All\AllAddressView.xaml.cs">
+      <DependentUpon>AllAddressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\All\AllCompanyDataView.xaml.cs">
+      <DependentUpon>AllCompanyDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\All\AllCustomerView.xaml.cs">
+      <DependentUpon>AllCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\All\AllFakturyView.xaml.cs">
+      <DependentUpon>AllFakturyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\All\AllKontrahentView.xaml.cs">
+      <DependentUpon>AllKontrahentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CompanyDataView.xaml.cs">
       <DependentUpon>CompanyDataView.xaml</DependentUpon>
     </Compile>
@@ -383,6 +403,26 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AddressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\All\AllAddressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\All\AllCompanyDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\All\AllCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\All\AllFakturyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\All\AllKontrahentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,6 +2,11 @@
 
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Themes\Generic.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\AddressView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\All\AllAddressView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\All\AllCompanyDataView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\All\AllCustomerView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\All\AllFakturyView.xaml;;
+FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\All\AllKontrahentView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CompanyDataView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\AddressAddView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\Create\CompanyDataAddView.xaml;;

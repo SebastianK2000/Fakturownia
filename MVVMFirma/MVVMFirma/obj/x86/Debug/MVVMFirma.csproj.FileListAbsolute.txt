@@ -331,3 +331,13 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Creat
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\Create\StatusAddView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressAddView.g.cs
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\AddressAddView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allAddressView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allCompanyDataView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allCustomerView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allFakturyView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allKontrahentView.g.cs
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allAddressView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allCompanyDataView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allCustomerView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allFakturyView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allKontrahentView.baml

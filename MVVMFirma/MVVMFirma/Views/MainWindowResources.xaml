@@ -149,6 +149,29 @@
     <DataTemplate DataType="{x:Type vm:StatusAddViewModel}">
         <vw:StatusAddView/>
     </DataTemplate>
+    
+    <!-- Modal section -->
+
+    <DataTemplate DataType="{x:Type vm:AllAddressViewModel}">
+        <vw:AllAddressView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AllCompanyDataViewModel}">
+        <vw:AllCompanyDataView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AllCustomerViewModel}">
+        <vw:AllCustomerView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AllFakturyViewModel}">
+        <vw:AllFakturyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AllKontrahentViewModel}">
+        <vw:AllKontrahentView/>
+    </DataTemplate>
+
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">

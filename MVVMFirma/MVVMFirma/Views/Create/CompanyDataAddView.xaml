@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="50" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -42,19 +43,23 @@
         <TextBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" Text="{Binding Path=REGON, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Addres" />
-        <ComboBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8"
+        <TextBox Grid.Column="1" Grid.Row="6" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=IdAddress, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Content="..." Grid.Column="2" Grid.Row="6" Margin="8,8,0,8" Command="{Binding ShowAddress}"/>
+       <!-- <ComboBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8"
                   ItemsSource="{Binding AddressItems}"
                   DisplayMemberPath="Value"
                   SelectedValuePath="Key"
                   SelectedValue="{Binding Path=IdAdress, Mode=TwoWay}"
-                  />
+                  /> -->
         
         <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Customer" />
-        <ComboBox Grid.Column="1" Grid.Row="7" Margin="0,8,0,8"
+        <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=IdCustomer}" /> <!--UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged"-->
+        <Button Content="..." Grid.Column="2" Grid.Row="7" Margin="8,8,0,8" Command="{Binding ShowCustomers}" />
+       <!-- <ComboBox Grid.Column="1" Grid.Row="7" Margin="0,8,0,8"
                   ItemsSource="{Binding CustomerItems}"
                   DisplayMemberPath="Value"
                   SelectedValuePath="Key"
                   SelectedValue="{Binding Path=IdCustomer, Mode=TwoWay}"
-                  />
+                  /> -->
     </Grid>
 </local:JedenViewBase>
