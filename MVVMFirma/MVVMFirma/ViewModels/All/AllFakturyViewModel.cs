@@ -21,6 +21,23 @@ namespace MVVMFirma.ViewModels
         {
         }
         #endregion
+        #region Properties
+        // do tego propertisa zostanie przypisany Kontrahent kliknięty na liście
+        private Invoice _SelectedInvoice;
+        public Invoice SelectedInvoice
+        {
+            get
+            {
+                return _SelectedInvoice;
+            }
+            set
+            {
+                _SelectedInvoice = value;
+                Messenger.Default.Send(_SelectedInvoice);
+                OnRequestClose();
+            }
+        }
+        #endregion
         #region Command
         private BaseCommand _ShowInvoice;
 

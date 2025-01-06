@@ -19,6 +19,8 @@ namespace MVVMFirma.ViewModels
             : base("Notifications")
         {
             Item = new Notifications();
+            // Messenger oczekujący na kontrahenta z widoku gdzie są allKontrahenci
+            Messenger.Default.Register<Customer>(this, getSelectedCustomer);
         }
 
         #endregion
@@ -76,6 +78,7 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => IdCustomer);
             }
         }
+        public string CustomerName { get; set; }
         #endregion
         #region Propertises for ComboBox 
         public IQueryable<KeyAndValue> CustomerItems
@@ -87,6 +90,11 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         #region Helpers
+        private void getSelectedCustomer(Customer cutomer)
+        {
+            IdCustomer = cutomer.IdCustomer;
+            CustomerName = cutomer.Name;
+        }
         public override void Save()
         {
             invoiceEntities.Notifications.Add(Item);

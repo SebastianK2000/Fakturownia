@@ -21,6 +21,23 @@ namespace MVVMFirma.ViewModels
         {
         }
         #endregion
+        #region Properties
+        // do tego propertisa zostanie przypisany Kontrahent kliknięty na liście
+        private Customer _SelectedCustomer;
+        public Customer SelectedCustomer
+        {
+            get
+            {
+                return _SelectedCustomer;
+            }
+            set
+            {
+                _SelectedCustomer = value;
+                Messenger.Default.Send(_SelectedCustomer);
+                OnRequestClose();
+            }
+        }
+        #endregion
         #region Command
         private BaseCommand _ShowCustomers;
 

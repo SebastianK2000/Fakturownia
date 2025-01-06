@@ -19,6 +19,8 @@ namespace MVVMFirma.ViewModels
             : base("Kontrahent")
         {
             Item = new Kontrahent();
+            // Messenger oczekujący na kontrahenta z widoku gdzie są allKontrahenci
+            Messenger.Default.Register<Adress>(this, getSelectedAdress);
         }
 
         #endregion
@@ -100,6 +102,11 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => IdAdress);
             }
         }
+        public string AddressCity { get; set; }
+        public string AddressStreet { get; set; }
+        public string AddressNrHome { get; set; }
+        public string AddressNrLocal { get; set; }
+        public string AddressZipCode { get; set; }
         public int? IdStatus
         {
             get
@@ -137,6 +144,15 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         #region Helpers
+        private void getSelectedAdress(Adress adress)
+        {
+            IdAdress = adress.IdAdress;
+            AddressCity = adress.City;
+            AddressStreet = adress.Street;
+            AddressNrHome = adress.NrHome;
+            AddressNrLocal = adress.NrLocal;
+            AddressZipCode = adress.ZipCode;
+        }
         public override void Save()
         {
             invoiceEntities.Kontrahent.Add(Item);

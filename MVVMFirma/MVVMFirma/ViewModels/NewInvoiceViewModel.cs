@@ -19,6 +19,10 @@ namespace MVVMFirma.ViewModels
             : base("New Invoice")
         {
             Item = new Invoice();
+            // Messenger oczekujący na kontrahenta z widoku gdzie są allKontrahenci
+            Messenger.Default.Register<Kontrahent>(this,getSelectedKontrahent);
+
+            Messenger.Default.Register<Customer>(this, getSelectedCustomer);
         }
 
         #endregion
@@ -153,6 +157,8 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => IdKontrahenta);
             }
         }
+        public string KontrahentNazwa { get; set; }
+        public string KontrahentNIP { get; set; }
         public int? IdCustomer
         {
             get
@@ -165,6 +171,8 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => IdCustomer);
             }
         }
+        public string CustomerName { get; set; }
+
         public int? PaymentMethod
         {
             get
@@ -204,6 +212,17 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         #region Helpers
+        private void getSelectedCustomer(Customer cutomer)
+        {
+            IdCustomer = cutomer.IdCustomer;
+            CustomerName = cutomer.Name;
+        }
+        private void getSelectedKontrahent(Kontrahent kontrahent)
+        {
+            IdKontrahenta = kontrahent.IdKontrachenta;
+            KontrahentNazwa = kontrahent.Name;
+            KontrahentNIP = kontrahent.NIP;
+        }
         public override void Save()
         {
             invoiceEntities.Invoice.Add(Item);

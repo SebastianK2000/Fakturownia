@@ -19,6 +19,8 @@ namespace MVVMFirma.ViewModels
             : base("Export")
         {
             Item = new ImportExportLogs();
+            // Messenger oczekujący na kontrahenta z widoku gdzie są allKontrahenci
+            Messenger.Default.Register<Invoice>(this, getSelectedInvoice);
         }
 
         #endregion
@@ -88,6 +90,7 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => IdInvoice);
             }
         }
+        public string InvoiceNumber { get; set; }
         #endregion
         #region Propertises for ComboBox 
         public IQueryable<KeyAndValue> KontrahentItems
@@ -106,6 +109,11 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         #region Helpers
+        private void getSelectedInvoice(Invoice invoice)
+        {
+            IdInvoice = invoice.IdInvoice;
+            InvoiceNumber = invoice.Number;
+        }
         public override void Save()
         {
             invoiceEntities.ImportExportLogs.Add(Item);

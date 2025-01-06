@@ -21,7 +21,24 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         private BaseCommand _ShowKontrahent;
-        #region Command
+        #region Properties
+        // do tego propertisa zostanie przypisany Kontrahent kliknięty na liście
+        private Kontrahent _SelectedKontrahent;
+        public Kontrahent SelectedKontrahent
+        {
+            get
+            {
+                return _SelectedKontrahent;
+            }
+            set
+            {
+                _SelectedKontrahent = value;
+                Messenger.Default.Send(_SelectedKontrahent);
+                OnRequestClose();
+            }
+        }
+        #endregion
+            #region Command
         public ICommand ShowKontrahent
         {
             get

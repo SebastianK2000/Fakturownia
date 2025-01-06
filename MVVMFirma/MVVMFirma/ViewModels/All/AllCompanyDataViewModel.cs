@@ -21,6 +21,23 @@ namespace MVVMFirma.ViewModels
         {
         }
         #endregion
+        #region Properties
+        // do tego propertisa zostanie przypisany Kontrahent kliknięty na liście
+        private CompanyData _SelectedCompanyData;
+        public CompanyData SelectedCompanyData
+        {
+            get
+            {
+                return _SelectedCompanyData;
+            }
+            set
+            {
+                _SelectedCompanyData = value;
+                Messenger.Default.Send(_SelectedCompanyData);
+                OnRequestClose();
+            }
+        }
+        #endregion
         #region Command
         private BaseCommand _ShowCustomers;
 

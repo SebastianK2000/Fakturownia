@@ -20,6 +20,9 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
 
         <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Code" />
@@ -47,14 +50,21 @@
                   SelectedValue="{Binding Path=IdStatus, Mode=TwoWay}"
                   />
 
-        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="Address" />
-        <TextBox Grid.Column="1" Grid.Row="5" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=IdAddress}" /> <!-- UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" -->
+        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="Address / City" />
+        <TextBox Grid.Column="1" Grid.Row="5" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressCity}" />
         <Button Content="..." Grid.Column="2" Grid.Row="5" Margin="8,8,0,8" Command="{Binding ShowAddress}" />
-       <!-- <ComboBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8"
-                  ItemsSource="{Binding AddressItems}"
-                  DisplayMemberPath="Value"
-                  SelectedValuePath="Key"
-                  SelectedValue="{Binding Path=IdAddress, Mode=TwoWay}"
-                  /> -->
+
+        <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Street" />
+        <TextBox Grid.Column="1" Grid.Row="6" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressStreet}" />
+
+        <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Home number" />
+        <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrHome}" />
+
+        <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" Content="Local number" />
+        <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrLocal}" />
+
+        <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" Content="Zip Code" />
+        <TextBox Grid.Column="1" Grid.Row="9" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressZipCode}" />
+
     </Grid>
 </local:JedenViewBase>

@@ -11,6 +11,8 @@
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="300" />
             <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -47,24 +49,15 @@
         <TextBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8" Text="{Binding Path=Notes, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Kontrahent" />
-        <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=IdKontrahenta}" /> <!-- UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" -->
+        <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=KontrahentNazwa}" />
         <Button Content="..." Grid.Column="2" Grid.Row="7" Margin="8,8,0,8" Command="{Binding ShowKontrahent}" />
-       <!-- <ComboBox Grid.Column="1" Grid.Row="7" Margin="0,8,0,8"
-                  ItemsSource="{Binding KontrahentItems}"
-                  DisplayMemberPath="Value"
-                  SelectedValuePath="Key"
-                  SelectedValue="{Binding Path=IdKontrahenta, Mode=TwoWay}"
-                  /> -->
+
+        <Label Grid.Column="3" Grid.Row="7" Margin="0,8,0,8" Content="Kontrahent" />
+        <TextBox Grid.Column="4" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=KontrahentNIP}" />
 
         <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" Content="Customer" />
-        <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=IdCustomer}" /> <!-- UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged" -->
+        <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=CustomerName}" />
         <Button Content="..." Grid.Column="2" Grid.Row="8" Margin="8,8,0,8" Command="{Binding ShowCustomers}"/>
-       <!-- <ComboBox Grid.Column="1" Grid.Row="8" Margin="0,8,0,8"
-                  ItemsSource="{Binding CustomerItems}"
-                  DisplayMemberPath="Value"
-                  SelectedValuePath="Key"
-                  SelectedValue="{Binding Path=IdCustomer, Mode=TwoWay}"
-                  /> -->
 
         <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" Content="Payment Method" />
         <ComboBox Grid.Column="1" Grid.Row="9" Margin="0,8,0,8"
