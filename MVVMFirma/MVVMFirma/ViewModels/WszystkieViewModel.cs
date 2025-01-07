@@ -71,7 +71,53 @@ namespace MVVMFirma.ViewModels
             base.DisplayName = displayName;
         }
         #endregion
+        #region Sort & filtr
+        // do sortowania
+        // wynuk wyboru po czym sortować zostanie zapisany w SortField
+        public string SortField { get; set; }
+        public List<string> SortComboboxItems
+        {
+            get
+            {
+                return GetComboboxSortList();
+            }
+        }
+        public abstract List<string> GetComboboxSortList();
+        private BaseCommand _SortCommand; // komenda wywołująca funkcje sortowania po naciśnięciu sortuj
+        public ICommand SortCommand
+        {
+            get
+            {
+                if (_SortCommand == null)
+                    _SortCommand = new BaseCommand(() => Sort());
+                return _SortCommand;
+            }
+        }
+        public abstract void Sort();
 
+        // do filtrowania
+        public string FindField { get; set; }
+        public List<string> FindComboboxItems
+        {
+            get
+            {
+                return GetComboboxFindList();
+            }
+        }
+        public abstract List<string> GetComboboxFindList();
+        public string FindTextBox { get; set; }
+        private BaseCommand _FindCommand; // komenda wywołująca funkcje po naciśnięciu szukaj
+        public ICommand FindCommand
+        {
+            get
+            {
+                if (_FindCommand == null)
+                    _FindCommand = new BaseCommand(() => Find());
+                return _FindCommand;
+            }
+        }
+        public abstract void Find();
+        #endregion
         #region Helpers
 
         public abstract void Load();

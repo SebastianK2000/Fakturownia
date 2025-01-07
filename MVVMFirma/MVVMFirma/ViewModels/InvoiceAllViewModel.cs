@@ -20,7 +20,38 @@ namespace MVVMFirma.ViewModels
         {
         }
         #endregion
-
+        #region Sort & Find
+        // w tej funkcji decydujemy po czym sortować
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "Number", "Kontrahent NIP", "Kontrahent Nazwa" };
+        }
+        // w tej funkcji decydujemy JAK sortować
+        public override void Sort()
+        {
+            if (SortField == "Number")
+                List = new ObservableCollection<InvoiceForAllView>(List.OrderBy(item => item.Number));
+            if (SortField == "Kontrahent NIP")
+                List = new ObservableCollection<InvoiceForAllView>(List.OrderBy(item => item.KontrahentNIP));
+            if (SortField == "Kontrahent Nazwa")
+                List = new ObservableCollection<InvoiceForAllView>(List.OrderBy(item => item.KontrahentNazwa));
+        }
+        // w tej funkcji decydujemy po czym wyszukiwać
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "Number", "Kontrahent NIP", "Kontrahent Nazwa" };
+        }
+        // w tej funkcji decydujemy JAK wyszukiwać
+        public override void Find()
+        {
+            if (FindField == "Number")
+                List = new ObservableCollection<InvoiceForAllView>(List.Where(item => item.Number != null && item.Number.StartsWith(FindTextBox)));
+            if (FindField == "Kontrahent NIP")
+                List = new ObservableCollection<InvoiceForAllView>(List.Where(item => item.KontrahentNIP != null && item.KontrahentNIP.StartsWith(FindTextBox)));
+            if (FindField == "Kontrahent Nazwa")
+                List = new ObservableCollection<InvoiceForAllView>(List.Where(item => item.KontrahentNazwa != null && item.KontrahentNazwa.StartsWith(FindTextBox)));
+        }
+        #endregion
         #region Helpers
         public override void Load()
         {

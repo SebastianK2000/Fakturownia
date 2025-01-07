@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using MVVMFirma.Helper;
 using MVVMFirma.Models.Entities;
+using MVVMFirma.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -53,6 +54,38 @@ namespace MVVMFirma.ViewModels
         private void showCustomers()
         {
             Messenger.Default.Send<string>("AddressAll");
+        }
+        #endregion
+        #region Sort & Find
+        // w tej funkcji decydujemy po czym sortować
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "City", "Street", "ZipCode"};
+        }
+        // w tej funkcji decydujemy JAK sortować
+        public override void Sort()
+        {
+            if (SortField == "City")
+                List = new ObservableCollection<Adress>(List.OrderBy(item => item.City));
+            if (SortField == "Street")
+                List = new ObservableCollection<Adress>(List.OrderBy(item => item.Street));
+            if (SortField == "ZipCode")
+                List = new ObservableCollection<Adress>(List.OrderBy(item => item.ZipCode));
+        }
+        // w tej funkcji decydujemy po czym wyszukiwać
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "City", "Street", "ZipCode" };
+        }
+        // w tej funkcji decydujemy JAK wyszukiwać
+        public override void Find()
+        {
+            if (FindField == "City")
+                List = new ObservableCollection<Adress>(List.Where(item => item.City != null && item.City.StartsWith(FindTextBox)));
+            if (FindField == "Street")
+                List = new ObservableCollection<Adress>(List.Where(item => item.Street != null && item.Street.StartsWith(FindTextBox)));
+            if (FindField == "ZipCode")
+                List = new ObservableCollection<Adress>(List.Where(item => item.ZipCode != null && item.ZipCode.StartsWith(FindTextBox)));
         }
         #endregion
         #region Helpers

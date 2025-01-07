@@ -20,7 +20,41 @@ namespace MVVMFirma.ViewModels
         {
         }
         #endregion
-
+        #region Sort & Find
+        // w tej funkcji decydujemy po czym sortować
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "Id Notification", "Message" };
+        }
+        // w tej funkcji decydujemy JAK sortować
+        public override void Sort()
+        {
+            if (SortField == "Id Notification")
+                List = new ObservableCollection<NotificationsForAllView>(List.OrderBy(item => item.IdNotification));
+            if (SortField == "Message")
+                List = new ObservableCollection<NotificationsForAllView>(List.OrderBy(item => item.Message));
+        }
+        // w tej funkcji decydujemy po czym wyszukiwać
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "Id Notification", "Message" };
+        }
+        // w tej funkcji decydujemy JAK wyszukiwać
+        public override void Find()
+        {
+            if (FindField == "Id Notification")
+            {
+                if (int.TryParse(FindTextBox, out int IdNotification))
+                {
+                    List = new ObservableCollection<NotificationsForAllView>(
+                        List.Where(item => item.IdNotification == IdNotification)
+                    );
+                }
+            }
+            if (FindField == "Message")
+                List = new ObservableCollection<NotificationsForAllView>(List.Where(item => item.Message != null && item.Message.StartsWith(FindTextBox)));
+        }
+        #endregion
         #region Helpers
         public override void Load()
         {
