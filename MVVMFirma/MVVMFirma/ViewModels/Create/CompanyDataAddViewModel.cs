@@ -3,25 +3,30 @@ using MVVMFirma.Helper;
 using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
+using MVVMFirma.Validators;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace MVVMFirma.ViewModels
 {
-    public class CompanyDataAddViewModel : JedenViewModel<CompanyData>
+    public class CompanyDataAddViewModel : JedenViewModel<CompanyData>, IDataErrorInfo
     {
         #region Construktor
         public CompanyDataAddViewModel()
             : base("Company Data")
         {
             Item = new CompanyData();
-            // Messenger oczekujący na kontrahenta z widoku gdzie są allKontrahenci
-            Messenger.Default.Register<Customer>(this, getSelectedCustomer);
+            Types = new ObservableCollection<string> { "B2B", "B2C", "C2B", "C2C", "B2G", "G2B", "B2B2C", "Freelance", "Consulting", "E-commerce", "Startup", "Small Business", 
+                "Social Enterprise", "Non-profit", "Manufacturing", "Service Provider", "Online Business", "Retail", "Wholesale", "Franchise", "Subscription Model"};
 
+            Messenger.Default.Register<Customer>(this, getSelectedCustomer);
             Messenger.Default.Register<Adress>(this, getSelectedAdress);
         }
 
@@ -60,6 +65,16 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         #region Properties
+        private ObservableCollection<string> _types;
+        public ObservableCollection<string> Types
+        {
+            get { return _types; }
+            set
+            {
+                _types = value;
+                OnPropertyChanged(() => Types);
+            }
+        }
         public string TypeOfActivity
         {
             get
@@ -194,11 +209,95 @@ namespace MVVMFirma.ViewModels
             IdCustomer = cutomer.IdCustomer;
             CustomerName = cutomer.Name;
         }
+        private bool _canCloseWindow = false;
         public override void Save()
         {
+            if (!IsValid())
+            {
+                ShowMessageBox("Popraw wszystkie błędy przed zapisaniem danych.");
+                _canCloseWindow = false;
+                return;
+            }
+
+            var itemWithNIP = Item as CompanyData;
+
+            if (itemWithNIP?.NIP == null)
+            {
+                ShowMessageBox("NIP nie może być pusty. Proszę wprowadzić poprawny NIP.");
+                _canCloseWindow = false;
+                return;
+            }
+
+            if (itemWithNIP?.REGON == null)
+            {
+                ShowMessageBox("REGON nie może być pusty. Proszę wprowadzić poprawny REGON.");
+                _canCloseWindow = false;
+                return;
+            }
+
+            var existingCompanyData = invoiceEntities.CompanyData.FirstOrDefault(cd => cd.NIP == itemWithNIP.NIP);
+            if (existingCompanyData != null)
+            {
+                ShowMessageBox("Firma z tym NIP już istnieje.");
+                _canCloseWindow = false;
+                return;
+            }
+
             invoiceEntities.CompanyData.Add(Item);
             invoiceEntities.SaveChanges();
+
+            _canCloseWindow = true;
+            base.OnRequestClose();
         }
+
+        #endregion
+        #region Validation
+        public string Error => string.Empty;
+        private string _validateMessage = string.Empty;
+        public string this[string propertyName]
+        {
+            get
+            {
+                if (propertyName == nameof(FirstNameCompanyOwner))
+                {
+                    _validateMessage = StringValidator.ValidateIsFirstLetterUpper(FirstNameCompanyOwner);
+                }
+                if (propertyName == nameof(LastNameCompanyOwner))
+                {
+                    _validateMessage = StringValidator.ValidateIsFirstLetterUpper(LastNameCompanyOwner);
+                }
+                if (propertyName == nameof(NIP))
+                {
+                    _validateMessage = NIPValidator.ValidateNIP(NIP);
+                }
+                if (propertyName == nameof(REGON))
+                {
+                    _validateMessage = ValidateREGON.Validate(REGON);
+                }
+                return _validateMessage;
+            }
+        }
+        public override bool IsValid()
+        {
+            var propertiesToValidate = new[]
+            {
+        nameof(FirstNameCompanyOwner),
+        nameof(LastNameCompanyOwner),
+        nameof(NIP),
+        nameof(REGON)
+    };
+
+            foreach (var property in propertiesToValidate)
+            {
+                if (!string.IsNullOrEmpty(this[property]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         #endregion
     }
 }

@@ -135,7 +135,7 @@
     </Key>
     <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdInvoice" Type="int" />
-    <Property Name="PaymentDate" Type="date" />
+    <Property Name="PaymentDate" Type="datetime" />
     <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
     <Property Name="IdPyments" Type="int" />
     <Property Name="Notes" Type="nvarchar(max)" />

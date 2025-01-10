@@ -27,22 +27,24 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Type Of Activity" />
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" Text="{Binding Path=TypeOfActivity, UpdateSourceTrigger=PropertyChanged}" />
+        <ComboBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" 
+                  ItemsSource="{Binding Types}"
+                  SelectedItem="{Binding TypeOfActivity, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Company Name" />
         <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=CompanyName, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="First Name" />
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Text="{Binding Path=FirstNameCompanyOwner, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Text="{Binding Path=FirstNameCompanyOwner, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
         <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="Last Name" />
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" Text="{Binding Path=LastNameCompanyOwner, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" Text="{Binding Path=LastNameCompanyOwner, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
         <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="NIP" />
-        <TextBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" Text="{Binding Path=NIP, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" Text="{Binding Path=NIP, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
         <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="REGON" />
-        <TextBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" Text="{Binding Path=REGON, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" Text="{Binding Path=REGON, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
         <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Customer" />
         <TextBox Grid.Column="1" Grid.Row="6" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=CustomerName}" TextChanged="TextBox_TextChanged" />

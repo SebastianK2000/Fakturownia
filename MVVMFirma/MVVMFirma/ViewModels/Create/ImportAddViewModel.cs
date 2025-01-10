@@ -5,6 +5,7 @@ using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,10 @@ namespace MVVMFirma.ViewModels
             : base("Import")
         {
             Item = new ImportExportLogs();
+            ActionTypes = new ObservableCollection<string> {"Import", "Export" };
             // Messenger oczekujący na kontrahenta z widoku gdzie są allKontrahenci
             Messenger.Default.Register<Invoice>(this, getSelectedInvoice);
         }
-
         #endregion
         #region Command
         private BaseCommand _ShowInvoice;
@@ -42,40 +43,24 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         #region Properties
+        private ObservableCollection<string> _actionTypes;
+        public ObservableCollection<string> ActionTypes
+        {
+            get { return _actionTypes; }
+            set
+            {
+                _actionTypes = value;
+                OnPropertyChanged(() => ActionTypes);
+            }
+        }
+
         public string ActionType
         {
-            get
-            {
-                return Item.ActionType;
-            }
+            get { return Item.ActionType; }
             set
             {
                 Item.ActionType = value;
                 OnPropertyChanged(() => ActionType);
-            }
-        }
-        public string FileName
-        {
-            get
-            {
-                return Item.FileName;
-            }
-            set
-            {
-                Item.FileName = value;
-                OnPropertyChanged(() => FileName);
-            }
-        }
-        public DateTime? Timestamp
-        {
-            get
-            {
-                return Item.Timestamp;
-            }
-            set
-            {
-                Item.Timestamp = value;
-                OnPropertyChanged(() => Timestamp);
             }
         }
         public int? IdInvoice

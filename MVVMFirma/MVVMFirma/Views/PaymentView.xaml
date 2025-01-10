@@ -11,7 +11,6 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding PaymentId}"/>
                     <DataGridTextColumn Header="Invoice number" Binding="{Binding InvoiceNumber}"/>
-                    <DataGridTextColumn Header="Payment Date" Binding="{Binding PaymentDate}"/>
                     <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
                     <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethodName}"/>
                     <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>

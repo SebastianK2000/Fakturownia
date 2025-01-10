@@ -3,16 +3,19 @@ using MVVMFirma.Helper;
 using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
+using MVVMFirma.Validators;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace MVVMFirma.ViewModels
 {
-    public class AddressAddViewModel : JedenViewModel<Adress>
+    public class AddressAddViewModel : JedenViewModel<Adress>, IDataErrorInfo
     {
         #region Construktor
         public AddressAddViewModel()
@@ -135,6 +138,25 @@ namespace MVVMFirma.ViewModels
         {
             invoiceEntities.Adress.Add(Item);
             invoiceEntities.SaveChanges();
+        }
+        #endregion
+        #region Validation
+        public string Error => string.Empty;
+        private string _validateMessage = string.Empty;
+        public string this[string propertyName]
+        {
+            get
+            {
+                if (propertyName == nameof(City))
+                {
+                    _validateMessage = StringValidator.ValidateIsFirstLetterUpper(City);
+                }
+                return _validateMessage;
+            }
+        }
+        public override bool IsValid()
+        {
+            return string.IsNullOrEmpty(_validateMessage);
         }
         #endregion
     }

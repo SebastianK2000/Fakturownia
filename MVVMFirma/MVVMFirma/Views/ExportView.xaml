@@ -11,8 +11,6 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdLog}"/>
                 <DataGridTextColumn Header="Action Type" Binding="{Binding ActionType}"/>
-                <DataGridTextColumn Header="File Name" Binding="{Binding FileName}"/>
-                <DataGridTextColumn Header="Timestamp" Binding="{Binding Timestamp}"/>
                 <DataGridTextColumn Header="Invoice Number" Binding="{Binding InvoiceNumber}"/>
             </DataGrid.Columns>
         </DataGrid>

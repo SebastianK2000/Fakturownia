@@ -23,7 +23,9 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Language" />
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" Text="{Binding Path=Language, UpdateSourceTrigger=PropertyChanged}" />
+        <ComboBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" 
+                  ItemsSource="{Binding Languages}"
+                  SelectedItem="{Binding Language, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Login" />
         <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=Login, UpdateSourceTrigger=PropertyChanged}" />
@@ -34,10 +36,10 @@
         <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="Payment Deadline Trigger" />
         <CheckBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" IsChecked="{Binding Path=PaymentDeadlineTrigger, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="New Inovice Trigger" />
+        <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="New Invoice Trigger" />
         <CheckBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" IsChecked="{Binding Path=NewInoviceTrigger, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="Pyment Not Made" />
+        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="Payment Not Made" />
         <CheckBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" IsChecked="{Binding Path=PymentNotMade, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Customer" />

@@ -41,9 +41,19 @@ namespace MVVMFirma.ViewModels
         public abstract void Save();
         public void SaveAndClose()
         {
-            Save();
-            base.OnRequestClose();
+            if (IsValid())
+            {
+                Save();
+                base.OnRequestClose();
+            }
+            else
+            {
+                ShowMessageBox("Popraw błędy aby zapisać.");
+            }
+
         }
         #endregion
+
+        public virtual bool IsValid() => true;
     }
 }
