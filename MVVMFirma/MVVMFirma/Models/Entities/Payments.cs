@@ -14,8 +14,6 @@ namespace MVVMFirma.Models.Entities
     
     public partial class Payments
     {
-        internal string IdPayments;
-
         public int PaymentId { get; set; }
         public Nullable<int> IdInvoice { get; set; }
         public Nullable<System.DateTime> PaymentDate { get; set; }
