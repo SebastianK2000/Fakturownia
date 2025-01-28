@@ -97,6 +97,7 @@
     <Compile Include="Models\BusinessLogic\StatusB.cs" />
     <Compile Include="Models\BusinessLogic\TowarB.cs" />
     <Compile Include="Models\BusinessLogic\UtargB.cs" />
+    <Compile Include="Models\BusinessLogic\UtargBVat.cs" />
     <Compile Include="Models\EntitiesForView\AddressForAllView.cs" />
     <Compile Include="Models\EntitiesForView\CompanyDataForAllView.cs" />
     <Compile Include="Models\EntitiesForView\CustomerArchiveForAllView.cs" />

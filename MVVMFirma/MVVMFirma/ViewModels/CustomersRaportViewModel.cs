@@ -10,54 +10,23 @@ using System.Windows.Documents;
 
 namespace MVVMFirma.ViewModels
 {
-    public class CustomersRaportViewModel:WszystkieViewModel<CustomerRaport>
+    public class CustomersRaportViewModel:WorkspaceViewModel
     {
+        #region DB
+        InvoiceEntities db;
+        #endregion
         #region Construktor
-
         public CustomersRaportViewModel()
-            : base("Raport Cutomer")
         {
+            base.DisplayName = "Customers Raport";
+            db = new InvoiceEntities();
         }
         #endregion
-        #region Sort & Find
-        // w tej funkcji decydujemy po czym sortować
-        public override List<string> GetComboboxSortList()
-        {
-            return new List<string> { "IdCustomerRaport" };
-        }
-        // w tej funkcji decydujemy JAK sortować
-        public override void Sort()
-        {
-            if (SortField == "IdCustomerRaport")
-                List = new ObservableCollection<CustomerRaport>(List.OrderBy(item => item.IdCustomerRaport));
-        }
-        // w tej funkcji decydujemy po czym wyszukiwać
-        public override List<string> GetComboboxFindList()
-        {
-            return new List<string> { "IdCustomerRaport" };
-        }
-        // w tej funkcji decydujemy JAK wyszukiwać
-        public override void Find()
-        {
-            if (FindField == "IdCustomerRaport")
-            {
-                if (int.TryParse(FindTextBox, out int IdCustomerRaport))
-                {
-                    List = new ObservableCollection<CustomerRaport>(
-                        List.Where(item => item.IdCustomerRaport == IdCustomerRaport)
-                    );
-                }
-            }
-        }
+        #region Fields
+
         #endregion
-        #region Helpers
-        public override void Load()
-        {
-            List = new ObservableCollection<CustomerRaport>
-                (
-                    invoiceEntities.CustomerRaport.ToList()
-                );
-        }
+        #region Command
+
         #endregion
     }
 }

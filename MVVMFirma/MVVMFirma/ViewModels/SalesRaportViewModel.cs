@@ -118,24 +118,8 @@ namespace MVVMFirma.ViewModels
         }
         private void obliczUtargClick()
         {
-            //Console.WriteLine($"IdTowar: {IdTowar}, DataOd: {DataOd}, DataDo: {DataDo}");
-            //var result = new UtargB(db).UtargOkresTowar(IdTowar, DataOd, DataDo);
-            //if (result.HasValue)
-            //{
-            //    TotalPrice = result.Value;
-            //    Console.WriteLine($"TotalPrice: {TotalPrice}");
-            //}
-            //else
-            //{
-            //    TotalPrice = 0;
-            //    Console.WriteLine("Brak danych dla wybranego okresu.");
-            //}
-
             Utarg = new UtargB(db).UtargOkresTowar(IdTowar, DataOd, DataDo);
-
         }
-
-
         #endregion
     }
 }
