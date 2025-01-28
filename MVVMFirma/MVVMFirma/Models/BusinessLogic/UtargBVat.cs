@@ -12,7 +12,6 @@ namespace MVVMFirma.Models.BusinessLogic
         #endregion
 
         #region Business function
-        // Metoda obliczająca utarg za okres dla danego towaru
         public decimal? UtargOkresTowar(int idTowar, DateTime dataOd, DateTime dataDo)
         {
             return
@@ -26,15 +25,14 @@ namespace MVVMFirma.Models.BusinessLogic
                 ).Sum();
         }
 
-        // Nowa metoda obliczająca VAT na podstawie utargu
         public decimal? ObliczVat(int idTowar, DateTime dataOd, DateTime dataDo, decimal stawkaVat = 0.23m)
         {
             var utarg = UtargOkresTowar(idTowar, dataOd, dataDo);
             if (utarg.HasValue)
             {
-                return utarg.Value * stawkaVat; // Obliczenie wartości VAT
+                return utarg.Value * stawkaVat;
             }
-            return null; // Brak wartości, jeśli utarg jest null
+            return null;
         }
         #endregion
     }

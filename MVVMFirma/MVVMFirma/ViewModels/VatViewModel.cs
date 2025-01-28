@@ -115,7 +115,6 @@ namespace MVVMFirma.ViewModels
             if (IdTowar <= 0)
             {
                 UtargVat = null;
-                // Możesz dodać komunikat o błędzie, jeśli chcesz.
                 return;
             }
 
