@@ -26,7 +26,7 @@ namespace MVVMFirma.ViewModels
             db=new InvoiceEntities();
             DataOd=DateTime.Now;
             DataDo=DateTime.Now;
-            TotalPrice = 0;
+            Utarg = 0;
         }
         #endregion
         #region Fields
@@ -59,7 +59,7 @@ namespace MVVMFirma.ViewModels
                 if (_DataDo != value)
                 {
                     _DataDo = value;
-                    OnPropertyChanged(() => _DataDo);
+                    OnPropertyChanged(() => DataDo);
                 }
             }
         }
@@ -75,23 +75,23 @@ namespace MVVMFirma.ViewModels
                 if (_IdTowar != value)
                 {
                     _IdTowar = value;
-                    OnPropertyChanged(() => _IdTowar);
+                    OnPropertyChanged(() => IdTowar);
                 }
             }
         }
-        private decimal? _TotalPrice;
-        public decimal? TotalPrice
+        private decimal? _Utarg;
+        public decimal? Utarg
         {
             get
             {
-                return _TotalPrice;
+                return _Utarg;
             }
             set
             {
-                if (_TotalPrice != value)
+                if (_Utarg != value)
                 {
-                    _TotalPrice = value;
-                    OnPropertyChanged(() => _TotalPrice);
+                    _Utarg = value;
+                    OnPropertyChanged(() => Utarg);
                 }
             }
         }
@@ -118,10 +118,23 @@ namespace MVVMFirma.ViewModels
         }
         private void obliczUtargClick()
         {
-            Console.WriteLine($"IdTowar: {IdTowar}, DataOd: {DataOd}, DataDo: {DataDo}");
-            TotalPrice = new UtargB(db).UtargOkresTowar(IdTowar, DataOd, DataDo);
-            Console.WriteLine($"TotalPrice: {TotalPrice}");
+            //Console.WriteLine($"IdTowar: {IdTowar}, DataOd: {DataOd}, DataDo: {DataDo}");
+            //var result = new UtargB(db).UtargOkresTowar(IdTowar, DataOd, DataDo);
+            //if (result.HasValue)
+            //{
+            //    TotalPrice = result.Value;
+            //    Console.WriteLine($"TotalPrice: {TotalPrice}");
+            //}
+            //else
+            //{
+            //    TotalPrice = 0;
+            //    Console.WriteLine("Brak danych dla wybranego okresu.");
+            //}
+
+            Utarg = new UtargB(db).UtargOkresTowar(IdTowar, DataOd, DataDo);
+
         }
+
 
         #endregion
     }
