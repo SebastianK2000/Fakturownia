@@ -56,20 +56,12 @@
         <vw:ExportView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:HistoryInvoiceViewModel}">
-        <vw:HistoryInvoiceView/>
-    </DataTemplate>
-
     <DataTemplate DataType="{x:Type vm:ImportViewModel}">
         <vw:ImportView/>
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:NotificationsViewModel}">
         <vw:NotificationsView/>
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:PaidInvoiceViewModel}">
-        <vw:PaidInvoice/>
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:SalesRaportViewModel}">
@@ -86,10 +78,6 @@
 
     <DataTemplate DataType="{x:Type vm:PaymentViewModel}">
         <vw:PaymentView/>
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:UnpaidInvoiceViewModel}">
-        <vw:UnpaidInvoiceView/>
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:VatViewModel}">

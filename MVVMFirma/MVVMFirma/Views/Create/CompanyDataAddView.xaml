@@ -6,61 +6,64 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-        </Grid.RowDefinitions>
+    <Grid Background="#F4F4F4" Margin="20">
+        <Border Background="White" CornerRadius="10" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Type Of Activity" />
-        <ComboBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" 
+                <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" FontWeight="Bold" Content="Type Of Activity" />
+                <ComboBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" Padding="6" MinHeight="30"
                   ItemsSource="{Binding Types}"
                   SelectedItem="{Binding TypeOfActivity, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Company Name" />
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=CompanyName, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" FontWeight="Bold" Content="Company Name" />
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=CompanyName, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="First Name" />
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Text="{Binding Path=FirstNameCompanyOwner, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" FontWeight="Bold" Content="First Name" />
+                <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=FirstNameCompanyOwner, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
-        <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="Last Name" />
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" Text="{Binding Path=LastNameCompanyOwner, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" FontWeight="Bold" Content="Last Name" />
+                <TextBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=LastNameCompanyOwner, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
-        <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="NIP" />
-        <TextBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" Text="{Binding Path=NIP, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" FontWeight="Bold" Content="NIP" />
+                <TextBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=NIP, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
-        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="REGON" />
-        <TextBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" Text="{Binding Path=REGON, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" FontWeight="Bold" Content="REGON" />
+                <TextBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=REGON, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
-        <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Customer" />
-        <TextBox Grid.Column="1" Grid.Row="6" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=CustomerName}" TextChanged="TextBox_TextChanged" />
-        <Button Content="..." Grid.Column="2" Grid.Row="6" Margin="8,8,0,8" Command="{Binding ShowCustomers}" />
+                <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" FontWeight="Bold" Content="Customer" />
+                <TextBox Grid.Column="1" Grid.Row="6" IsEnabled="False" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=CustomerName}" TextChanged="TextBox_TextChanged" />
+                <Button Content="..." Grid.Column="2" Grid.Row="6" Margin="8,8,0,8" Command="{Binding ShowCustomers}" />
 
-        <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Addres / City" />
-        <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressCity, UpdateSourceTrigger=PropertyChanged}" />
-        <Button Content="..." Grid.Column="2" Grid.Row="7" Margin="8,8,0,8" Command="{Binding ShowAddress}"/>
+                <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" FontWeight="Bold" Content="Addres / City" />
+                <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=AddressCity, UpdateSourceTrigger=PropertyChanged}" />
+                <Button Content="..." Grid.Column="2" Grid.Row="7" Margin="8,8,0,8" Command="{Binding ShowAddress}"/>
 
-        <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" Content="Street - home/local" />
-        <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressStreet, UpdateSourceTrigger=PropertyChanged}" />
-        <TextBox Grid.Column="2" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrHome, UpdateSourceTrigger=PropertyChanged}" />
-        <TextBox Grid.Column="3" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrLocal, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" FontWeight="Bold" Content="Street - home/local" />
+                <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressStreet, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Grid.Column="2" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrHome, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Grid.Column="3" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrLocal, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" Content="Zip Code" />
-        <TextBox Grid.Column="1" Grid.Row="9" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressZipCode, UpdateSourceTrigger=PropertyChanged}" />
-
+                <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" FontWeight="Bold" Content="Zip Code" />
+                <TextBox Grid.Column="1" Grid.Row="9" IsEnabled="False" Margin="0,8,0,8" Padding="6" MinHeight="30" Text="{Binding Path=AddressZipCode, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+        </Border>
     </Grid>
 </local:JedenViewBase>

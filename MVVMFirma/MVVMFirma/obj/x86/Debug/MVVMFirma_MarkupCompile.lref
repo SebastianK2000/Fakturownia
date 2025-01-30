@@ -25,7 +25,6 @@ FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomersRaportVie
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\CustomerView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\ExportView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\HelpView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\HistoryInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\ImportView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\InvoiceAllView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\KontrahentView.xaml;;
@@ -34,14 +33,12 @@ FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\MainWindowResource
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\NewInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\NotificationsView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\NowyTowarView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\PaidInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\PaymentsMethod.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\PaymentView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\SalesRaportView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\SettingsView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\SettlementsView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\StatusView.xaml;;
-FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\UnpaidInvoiceView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\VatView.xaml;;
 FC:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\Views\WszystkieTowaryView.xaml;;
 

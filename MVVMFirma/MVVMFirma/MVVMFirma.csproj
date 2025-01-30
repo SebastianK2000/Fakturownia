@@ -217,21 +217,18 @@
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ExportViewModel.cs" />
     <Compile Include="ViewModels\HelpViewModel.cs" />
-    <Compile Include="ViewModels\HistoryInvoiceViewModel.cs" />
     <Compile Include="ViewModels\ImportViewModel.cs" />
     <Compile Include="ViewModels\InvoiceAllViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NewInvoiceViewModel.cs" />
     <Compile Include="ViewModels\NotificationsViewModel.cs" />
     <Compile Include="ViewModels\NowyTowarViewModel.cs" />
-    <Compile Include="ViewModels\PaidInvoiceViewModel.cs" />
     <Compile Include="ViewModels\PaymentsMethodViewModel.cs" />
     <Compile Include="ViewModels\PaymentViewModel.cs" />
     <Compile Include="ViewModels\SalesRaportViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\SettlementsViewModel.cs" />
     <Compile Include="ViewModels\StatusViewModel.cs" />
-    <Compile Include="ViewModels\UnpaidInvoiceViewModel.cs" />
     <Compile Include="ViewModels\VatViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszystkieTowaryViewModel.cs" />
@@ -315,9 +312,6 @@
     <Compile Include="Views\HelpView.xaml.cs">
       <DependentUpon>HelpView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\HistoryInvoiceView.xaml.cs">
-      <DependentUpon>HistoryInvoiceView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ImportView.xaml.cs">
       <DependentUpon>ImportView.xaml</DependentUpon>
     </Compile>
@@ -339,9 +333,6 @@
     <Compile Include="Views\NowyTowarView.xaml.cs">
       <DependentUpon>NowyTowarView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PaidInvoiceView.xaml.cs">
-      <DependentUpon>PaidInvoiceView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\PaymentsMethod.xaml.cs">
       <DependentUpon>PaymentsMethod.xaml</DependentUpon>
     </Compile>
@@ -359,9 +350,6 @@
     </Compile>
     <Compile Include="Views\StatusView.xaml.cs">
       <DependentUpon>StatusView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UnpaidInvoiceView.xaml.cs">
-      <DependentUpon>UnpaidInvoiceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VatView.xaml.cs">
       <DependentUpon>VatView.xaml</DependentUpon>
@@ -508,10 +496,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\HistoryInvoiceView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\ImportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -544,10 +528,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PaidInvoiceView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\PaymentsMethod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -569,10 +549,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StatusView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UnpaidInvoiceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

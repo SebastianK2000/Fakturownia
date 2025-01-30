@@ -6,22 +6,25 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="300" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-        </Grid.RowDefinitions>
+    <Grid Background="#F4F4F4" Margin="20">
+        <Border Background="White" CornerRadius="10" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="300" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Name" />
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" FontWeight="Bold" Content="Name" />
+                <TextBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Description" />
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}" />
-
+                <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" FontWeight="Bold" Content="Description" />
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+        </Border>
     </Grid>
 </local:JedenViewBase>

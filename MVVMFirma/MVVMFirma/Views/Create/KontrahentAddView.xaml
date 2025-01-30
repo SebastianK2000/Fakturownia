@@ -5,66 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="50" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-        </Grid.RowDefinitions>
+             d:DesignHeight="500" d:DesignWidth="850">
+    <Grid Background="#F4F4F4" Margin="20">
+        <Border Background="White" CornerRadius="10" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Code" />
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" Text="{Binding Path=Code, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="0" Content="Code" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="0" Padding="6" MinHeight="35" Text="{Binding Path=Code, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="NIP" />
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=NIP, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="1" Content="NIP" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="1" Padding="6" MinHeight="35" Text="{Binding Path=NIP, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="Name" />
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="2" Content="Name" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="2" Padding="6" MinHeight="35" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
 
-        <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="Kind" />
-        <ComboBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8"
-                  ItemsSource="{Binding KindItems}"
-                  DisplayMemberPath="Value"
-                  SelectedValuePath="Key"
-                  SelectedValue="{Binding Path=IdKind, Mode=TwoWay}"
-                  />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="3" Content="Kind" FontWeight="Bold" VerticalAlignment="Center"/>
+                <ComboBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding KindItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=IdKind, Mode=TwoWay}"/>
 
-        <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="Status" />
-        <ComboBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8"
-                  ItemsSource="{Binding StatusItems}"
-                  DisplayMemberPath="Value"
-                  SelectedValuePath="Key"
-                  SelectedValue="{Binding Path=IdStatus, Mode=TwoWay}"
-                  />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="4" Content="Status" FontWeight="Bold" VerticalAlignment="Center"/>
+                <ComboBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="4" ItemsSource="{Binding StatusItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=IdStatus, Mode=TwoWay}"/>
 
-        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="Address / City" />
-        <TextBox Grid.Column="1" Grid.Row="5" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressCity}" />
-        <Button Content="..." Grid.Column="2" Grid.Row="5" Margin="8,8,0,8" Command="{Binding ShowAddress}" />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="5" Content="Address / City" FontWeight="Bold" VerticalAlignment="Center"/>
+                <StackPanel Margin="0 10 0 0" Grid.Column="1" Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBox IsEnabled="False" Padding="6" MinHeight="35" Text="{Binding Path=AddressCity}" Width="200"/>
+                    <Button Content="..." Margin="8,0,0,0" Width="35" Height="35" Command="{Binding ShowAddress}"/>
+                </StackPanel>
 
-        <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Street" />
-        <TextBox Grid.Column="1" Grid.Row="6" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressStreet}" />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="6" Content="Street" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="6" IsEnabled="False" Padding="6" MinHeight="35" Text="{Binding Path=AddressStreet}"/>
 
-        <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Home number" />
-        <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrHome}" />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="7" Content="Home number" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="7" IsEnabled="False" Padding="6" MinHeight="35" Text="{Binding Path=AddressNrHome}"/>
 
-        <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" Content="Local number" />
-        <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressNrLocal}" />
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="8" Content="Local number" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="8" IsEnabled="False" Padding="6" MinHeight="35" Text="{Binding Path=AddressNrLocal}"/>
 
-        <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" Content="Zip Code" />
-        <TextBox Grid.Column="1" Grid.Row="9" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=AddressZipCode}" />
-
+                <Label Margin="0 10 0 0" Grid.Column="0" Grid.Row="9" Content="Zip Code" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Margin="0 10 0 0" Grid.Column="1" Grid.Row="9" IsEnabled="False" Padding="6" MinHeight="35" Text="{Binding Path=AddressZipCode}"/>
+            </Grid>
+        </Border>
     </Grid>
 </local:JedenViewBase>

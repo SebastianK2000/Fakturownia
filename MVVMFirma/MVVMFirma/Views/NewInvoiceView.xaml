@@ -6,66 +6,69 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="200" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-        </Grid.RowDefinitions>
+    <Grid Background="#F4F4F4" Margin="20" Height="Auto">
+        <Border Background="White" CornerRadius="10" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Active" />
-        <CheckBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" IsChecked="{Binding Path=IsActive, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Active" />
+                <CheckBox Grid.Column="1" Grid.Row="0" Padding="6" MinHeight="15" IsChecked="{Binding Path=IsActive, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Number" />
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=Number, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" FontWeight="Bold" Content="Number" />
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=Number, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="Date" />
-        <DatePicker Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Text="{Binding Path=Date, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" FontWeight="Bold" Content="Date" />
+                <DatePicker Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=Date, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="Deadline payment" />
-        <DatePicker Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" Text="{Binding Path=PaymentDeadline, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" FontWeight="Bold" Content="Deadline payment" />
+                <DatePicker Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=PaymentDeadline, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="Is Paid?" />
-        <CheckBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" IsChecked="{Binding Path=IsPaid, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" FontWeight="Bold" Content="Is Paid?" />
+                <CheckBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" Padding="6" MinHeight="35" IsChecked="{Binding Path=IsPaid, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="Price" />
-        <TextBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" Text="{Binding Path=HowMuchCost, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" FontWeight="Bold" Content="Price" />
+                <TextBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=HowMuchCost, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" Content="Notes" />
-        <TextBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8" Text="{Binding Path=Notes, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Column="0" Grid.Row="6" Margin="0,8,0,8" FontWeight="Bold" Content="Notes" />
+                <TextBox Grid.Column="1" Grid.Row="6" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=Notes, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" Content="Kontrahent" />
-        <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=KontrahentNazwa}" />
-        <Button Content="..." Grid.Column="2" Grid.Row="7" Margin="8,8,0,8" Command="{Binding ShowKontrahent}" />
+                <Label Grid.Column="0" Grid.Row="7" Margin="0,8,0,8" FontWeight="Bold" Content="Kontrahent" />
+                <TextBox Grid.Column="1" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=KontrahentNazwa}" />
+                <Button Content="..." Grid.Column="2" Grid.Row="7" Margin="8,8,0,8" Command="{Binding ShowKontrahent}" />
 
-        <Label Grid.Column="3" Grid.Row="7" Margin="0,8,0,8" Content="Kontrahent" />
-        <TextBox Grid.Column="4" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=KontrahentNIP}" />
+                <Label Grid.Column="3" Grid.Row="7" Margin="8,8,0,8" FontWeight="Bold" Content="Kontrahent" />
+                <TextBox Grid.Column="4" Grid.Row="7" IsEnabled="False" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=KontrahentNIP}" />
 
-        <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" Content="Customer" />
-        <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Text="{Binding Path=CustomerName}" />
-        <Button Content="..." Grid.Column="2" Grid.Row="8" Margin="8,8,0,8" Command="{Binding ShowCustomers}"/>
+                <Label Grid.Column="0" Grid.Row="8" Margin="0,8,0,8" FontWeight="Bold" Content="Customer" />
+                <TextBox Grid.Column="1" Grid.Row="8" IsEnabled="False" Margin="0,8,0,8" Padding="6" MinHeight="35" Text="{Binding Path=CustomerName}" />
+                <Button Content="..." Grid.Column="2" Grid.Row="8" Margin="8,8,0,8" Command="{Binding ShowCustomers}"/>
 
-        <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" Content="Payment Method" />
-        <ComboBox Grid.Column="1" Grid.Row="9" Margin="0,8,0,8"
+                <Label Grid.Column="0" Grid.Row="9" Margin="0,8,0,8" FontWeight="Bold" Content="Payment Method" />
+                <ComboBox Grid.Column="1" Grid.Row="9" Margin="0,8,0,8" Padding="6" MinHeight="35"
                   ItemsSource="{Binding PaymentMethodItems}"
                   DisplayMemberPath="Value"
                   SelectedValuePath="Key"
                   SelectedValue="{Binding Path=PaymentMethod, Mode=TwoWay}"
                   />
-
+            </Grid>
+        </Border>
     </Grid>
 </local:JedenViewBase>
