@@ -6,25 +6,39 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <TabControl RenderTransformOrigin="0.5,0.5" Margin="3,0,-3,-355">
-            <TabControl.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="0.924"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0.484"/>
-                </TransformGroup>
-            </TabControl.RenderTransform>
-            <TabItem Header="Payment Method">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding IdPayments}"/>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                        <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
-        </TabControl>
+    <Grid Background="#F4F4F4" Margin="10">
+        <Border CornerRadius="8" Background="White" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1">
+            <TabControl Margin="10">
+                <TabItem Header="Payment Method">
+                    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+                              HeadersVisibility="Column"
+                              RowBackground="White"
+                              AlternatingRowBackground="#F0F0F0"
+                              GridLinesVisibility="None"
+                              BorderBrush="#DDDDDD" BorderThickness="1"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              IsReadOnly="True"
+                              Margin="10">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="#007ACC"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Height" Value="35"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding IdPayments}" Width="Auto"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
+        </Border>
     </Grid>
 </local:AllViewBase>

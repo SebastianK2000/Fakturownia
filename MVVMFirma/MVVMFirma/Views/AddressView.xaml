@@ -6,19 +6,44 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-356">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding IdAdress}"/>
-                <DataGridTextColumn Header="City" Binding="{Binding City}"/>
-                <DataGridTextColumn Header="Street" Binding="{Binding Street}"/>
-                <DataGridTextColumn Header="Home number" Binding="{Binding NrHome}"/>
-                <DataGridTextColumn Header="Local number" Binding="{Binding NrLocal}"/>
-                <DataGridTextColumn Header="Zip Code" Binding="{Binding ZipCode}"/>
-                <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}"/>
-                <DataGridTextColumn Header="Customer Phone" Binding="{Binding CustomerPhone}"/>
-                <DataGridTextColumn Header="Customer Email" Binding="{Binding CustomerEmail}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+
+    <Grid Background="#F4F4F4" Margin="10">
+        <Border CornerRadius="8" Background="White" Padding="10">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+                      HeadersVisibility="Column"
+                      RowBackground="White"
+                      AlternatingRowBackground="#F0F0F0"
+                      GridLinesVisibility="None"
+                      BorderBrush="#DDDDDD" BorderThickness="1"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      IsReadOnly="True"
+                      Margin="10">
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#007ACC"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="5"/>
+                    </Style>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="35"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding IdAdress}" Width="Auto"/>
+                    <DataGridTextColumn Header="City" Binding="{Binding City}" Width="Auto"/>
+                    <DataGridTextColumn Header="Street" Binding="{Binding Street}" Width="Auto"/>
+                    <DataGridTextColumn Header="Home number" Binding="{Binding NrHome}" Width="Auto"/>
+                    <DataGridTextColumn Header="Local number" Binding="{Binding NrLocal}" Width="Auto"/>
+                    <DataGridTextColumn Header="Zip Code" Binding="{Binding ZipCode}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer Phone" Binding="{Binding CustomerPhone}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer Email" Binding="{Binding CustomerEmail}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </local:AllViewBase>

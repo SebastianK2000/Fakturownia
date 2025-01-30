@@ -7,21 +7,44 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-356">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding IdInvoice}"/>
-                <DataGridCheckBoxColumn Header="Status" Binding="{Binding Status}"/>
-                <DataGridTextColumn Header="Number" Binding="{Binding Number}"/>
-                <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
-                <DataGridTextColumn Header="Kontrahent NIP" Binding="{Binding KontrahentNIP}"/>
-                <DataGridTextColumn Header="Kontrahent Name" Binding="{Binding KontrahentNazwa}"/>
-                <DataGridTextColumn Header="Payment Deadline" Binding="{Binding PaymentDeadline}"/>
-                <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethodName}"/>
-                <DataGridCheckBoxColumn Header="Is Paid?" Binding="{Binding IsPaid}"/>
-                <DataGridCheckBoxColumn Header="Is Active?" Binding="{Binding IsActive}"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding HowMuchCost}"/>
-                <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Border CornerRadius="8" Background="White" Padding="10">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+              HeadersVisibility="Column"
+              RowBackground="White"
+              AlternatingRowBackground="#F0F0F0"
+              GridLinesVisibility="None"
+              BorderBrush="#DDDDDD" BorderThickness="1"
+              CanUserAddRows="False"
+              CanUserDeleteRows="False"
+              IsReadOnly="True"
+              Margin="10">
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#007ACC"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="5"/>
+                    </Style>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="35"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding IdInvoice}" Width="Auto"/>
+                    <DataGridCheckBoxColumn Header="Status" Binding="{Binding Status}" Width="Auto"/>
+                    <DataGridTextColumn Header="Number" Binding="{Binding Number}" Width="Auto"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="Auto"/>
+                    <DataGridTextColumn Header="Kontrahent NIP" Binding="{Binding KontrahentNIP}" Width="Auto"/>
+                    <DataGridTextColumn Header="Kontrahent Name" Binding="{Binding KontrahentNazwa}" Width="Auto"/>
+                    <DataGridTextColumn Header="Payment Deadline" Binding="{Binding PaymentDeadline}" Width="Auto"/>
+                    <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethodName}" Width="Auto"/>
+                    <DataGridCheckBoxColumn Header="Is Paid?" Binding="{Binding IsPaid}" Width="Auto"/>
+                    <DataGridCheckBoxColumn Header="Is Active?" Binding="{Binding IsActive}" Width="Auto"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding HowMuchCost}" Width="Auto"/>
+                    <DataGridTextColumn Header="Notes" Binding="{Binding Notes}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </local:AllViewBase>

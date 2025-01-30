@@ -6,30 +6,58 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <TabControl Margin="0,0,0,-436">
-            <!-- Status -->
-            <TabItem Header="Status">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding StatusList}" Height="1134" Margin="4,0,-4,0">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding IdStatus}"/>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                        <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
+    <Grid Background="#F4F4F4" Margin="10">
+        <Border CornerRadius="8" Background="White" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1">
+            <TabControl Margin="10">
+                <!-- Status -->
+                <TabItem Header="Status">
+                    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding StatusList}"
+                              HeadersVisibility="Column"
+                              RowBackground="White"
+                              AlternatingRowBackground="#F0F0F0"
+                              GridLinesVisibility="None"
+                              BorderBrush="#DDDDDD" BorderThickness="1"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              IsReadOnly="True">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="#007ACC"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Height" Value="35"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding IdStatus}" Width="Auto"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
 
-            <!-- Kind -->
-            <TabItem Header="Kind">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding KindList}" Height="479" Margin="0,0,-10,0">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding IdKind}"/>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                        <DataGridTextColumn Header="Desctiption" Binding="{Binding Desctiption}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
-
-        </TabControl>
+                <!-- Kind -->
+                <TabItem Header="Kind">
+                    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding KindList}"
+                              HeadersVisibility="Column"
+                              RowBackground="White"
+                              AlternatingRowBackground="#F0F0F0"
+                              GridLinesVisibility="None"
+                              BorderBrush="#DDDDDD" BorderThickness="1"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding IdKind}" Width="Auto"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
+        </Border>
     </Grid>
 </local:AllViewBase>

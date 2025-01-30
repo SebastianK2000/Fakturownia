@@ -7,14 +7,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-353">
+        <Border CornerRadius="8" Background="White" Padding="10">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+                  HeadersVisibility="Column"
+                  RowBackground="White"
+                  AlternatingRowBackground="#F0F0F0"
+                  GridLinesVisibility="None"
+                  BorderBrush="#DDDDDD" BorderThickness="1"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  Margin="10">
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#007ACC"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="5"/>
+                    </Style>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="35"/>
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding PaymentId}"/>
-                    <DataGridTextColumn Header="Invoice number" Binding="{Binding InvoiceNumber}"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
-                    <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethodName}"/>
-                    <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                    <DataGridTextColumn Header="Id" Binding="{Binding PaymentId}" Width="Auto"/>
+                    <DataGridTextColumn Header="Invoice number" Binding="{Binding InvoiceNumber}" Width="Auto"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="Auto"/>
+                    <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethodName}" Width="Auto"/>
+                    <DataGridTextColumn Header="Notes" Binding="{Binding Notes}" Width="Auto"/>
                 </DataGrid.Columns>
             </DataGrid>
+        </Border>
     </Grid>
 </local:AllViewBase>

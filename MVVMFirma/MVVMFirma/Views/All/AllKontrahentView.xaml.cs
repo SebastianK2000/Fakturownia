@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy allKontrahentView.xaml
     /// </summary>
-    public partial class AllKontrahentView : AllViewBase
+    public partial class AllKontrahentView : UserControl
     {
         public AllKontrahentView()
         {

@@ -7,14 +7,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-350">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding IdNotification}"/>
-                <DataGridTextColumn Header="Message" Binding="{Binding Message}"/>
-                <DataGridTextColumn Header="Id Customer" Binding="{Binding CustomerIdCustomer}"/>
-                <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}"/>
-                <DataGridTextColumn Header="Send Date" Binding="{Binding SendDate}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Border CornerRadius="8" Background="White" Padding="10">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+              HeadersVisibility="Column"
+              RowBackground="White"
+              AlternatingRowBackground="#F0F0F0"
+              GridLinesVisibility="None"
+              BorderBrush="#DDDDDD" BorderThickness="1"
+              CanUserAddRows="False"
+              CanUserDeleteRows="False"
+              IsReadOnly="True"
+              Margin="10">
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#007ACC"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="5"/>
+                    </Style>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="35"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding IdNotification}" Width="Auto"/>
+                    <DataGridTextColumn Header="Message" Binding="{Binding Message}" Width="Auto"/>
+                    <DataGridTextColumn Header="Id Customer" Binding="{Binding CustomerIdCustomer}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}" Width="Auto"/>
+                    <DataGridTextColumn Header="Send Date" Binding="{Binding SendDate}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </local:AllViewBase>

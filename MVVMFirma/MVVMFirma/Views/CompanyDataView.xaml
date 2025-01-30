@@ -7,24 +7,47 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Margin="0,0,0,-369">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding IdCompanyData}"/>
-                        <DataGridTextColumn Header="Type Of Activity" Binding="{Binding TypeOfActivity}"/>
-                        <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}"/>
-                        <DataGridTextColumn Header="First Name" Binding="{Binding FirstNameCompanyOwner}"/>
-                        <DataGridTextColumn Header="Last Name" Binding="{Binding LastNameCompanyOwner}"/>
-                        <DataGridTextColumn Header="NIP" Binding="{Binding NIP}"/>
-                        <DataGridTextColumn Header="REGON" Binding="{Binding REGON}"/>
-                        <DataGridTextColumn Header="Address: City" Binding="{Binding AdressCity}"/>
-                        <DataGridTextColumn Header="Address: Street" Binding="{Binding AdressStreet}"/>
-                        <DataGridTextColumn Header="Address: Home number" Binding="{Binding AdressNrHome}"/>
-                        <DataGridTextColumn Header="Address: Local number" Binding="{Binding AdressNrLocal}"/>
-                        <DataGridTextColumn Header="Address: Zip Code" Binding="{Binding AdressZipCode}"/>
-                        <DataGridTextColumn Header="Customer: Name" Binding="{Binding CustomerName}"/>
-                        <DataGridTextColumn Header="Customer: Phone" Binding="{Binding CustomerPhone}"/>
-                        <DataGridTextColumn Header="Customer: Email" Binding="{Binding CustomerEmail}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+        <Border CornerRadius="8" Background="White" Padding="10">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+                      HeadersVisibility="Column"
+                      RowBackground="White"
+                      AlternatingRowBackground="#F0F0F0"
+                      GridLinesVisibility="None"
+                      BorderBrush="#DDDDDD" BorderThickness="1"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      IsReadOnly="True"
+                      Margin="10">
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#007ACC"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="5"/>
+                    </Style>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="35"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding IdCompanyData}" Width="Auto"/>
+                    <DataGridTextColumn Header="Type Of Activity" Binding="{Binding TypeOfActivity}" Width="Auto"/>
+                    <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}" Width="Auto"/>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstNameCompanyOwner}" Width="Auto"/>
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastNameCompanyOwner}" Width="Auto"/>
+                    <DataGridTextColumn Header="NIP" Binding="{Binding NIP}" Width="Auto"/>
+                    <DataGridTextColumn Header="REGON" Binding="{Binding REGON}" Width="Auto"/>
+                    <DataGridTextColumn Header="Address: City" Binding="{Binding AdressCity}" Width="Auto"/>
+                    <DataGridTextColumn Header="Address: Street" Binding="{Binding AdressStreet}" Width="Auto"/>
+                    <DataGridTextColumn Header="Address: Home number" Binding="{Binding AdressNrHome}" Width="Auto"/>
+                    <DataGridTextColumn Header="Address: Local number" Binding="{Binding AdressNrLocal}" Width="Auto"/>
+                    <DataGridTextColumn Header="Address: Zip Code" Binding="{Binding AdressZipCode}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer: Name" Binding="{Binding CustomerName}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer: Phone" Binding="{Binding CustomerPhone}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer: Email" Binding="{Binding CustomerEmail}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </local:AllViewBase>

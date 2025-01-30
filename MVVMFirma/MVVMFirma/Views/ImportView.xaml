@@ -7,12 +7,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,-354">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding IdLog}"/>
-                <DataGridTextColumn Header="Action Type" Binding="{Binding ActionType}"/>
-                <DataGridTextColumn Header="Invoice Number" Binding="{Binding InvoiceNumber}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Border CornerRadius="8" Background="White" Padding="10">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+                      SelectionChanged="DataGrid_SelectionChanged"
+                      HeadersVisibility="Column"
+                      RowBackground="White"
+                      AlternatingRowBackground="#F0F0F0"
+                      GridLinesVisibility="None"
+                      BorderBrush="#DDDDDD" BorderThickness="1"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      IsReadOnly="True"
+                      Margin="10">
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#007ACC"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="5"/>
+                    </Style>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="35"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding IdLog}" Width="Auto"/>
+                    <DataGridTextColumn Header="Action Type" Binding="{Binding ActionType}" Width="Auto"/>
+                    <DataGridTextColumn Header="Invoice Number" Binding="{Binding InvoiceNumber}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </local:AllViewBase>
