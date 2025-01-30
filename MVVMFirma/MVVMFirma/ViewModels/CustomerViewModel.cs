@@ -22,7 +22,18 @@ namespace MVVMFirma.ViewModels
         }
 
         #endregion
-
+        #region Command
+        private BaseCommand _CancelCommand;
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
+        }
+        #endregion
         #region Properties
         public string Name
         {
@@ -86,6 +97,18 @@ namespace MVVMFirma.ViewModels
             invoiceEntities.SaveChanges();
         }
 
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new Customer();
+        }
+
+        public void CancelAndClose()
+        {
+            Cancel();
+
+            base.OnRequestClose();
+        }
         #endregion
 
         #region Validation

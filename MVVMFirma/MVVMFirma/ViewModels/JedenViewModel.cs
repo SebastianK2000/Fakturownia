@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
-    public abstract class JedenViewModel<T>:WorkspaceViewModel
+    public abstract class JedenViewModel<T> : WorkspaceViewModel
     {
         #region DB
         protected InvoiceEntities invoiceEntities; // pole preprezentujące DB
@@ -19,15 +19,26 @@ namespace MVVMFirma.ViewModels
         #endregion
         #region Command
         private BaseCommand _SaveCommand;
+        private BaseCommand _CancelCommand;
 
-        public ICommand SaveCommand 
+        public ICommand SaveCommand
         {
             get
             {
                 if (_SaveCommand == null)
                     _SaveCommand = new BaseCommand(() => SaveAndClose());
-                return _SaveCommand; 
-            } 
+                return _SaveCommand;
+            }
+        }
+
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
         }
         #endregion
         #region Construktor
@@ -51,6 +62,12 @@ namespace MVVMFirma.ViewModels
                 ShowMessageBox("Popraw błędy aby zapisać.");
             }
 
+        }
+        public abstract void Cancel();
+        public void CancelAndClose()
+        {
+            Cancel();
+            base.OnRequestClose();
         }
         #endregion
 

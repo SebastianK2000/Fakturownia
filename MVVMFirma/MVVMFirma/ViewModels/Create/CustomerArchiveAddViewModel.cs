@@ -6,6 +6,8 @@ using System;
 using System.Linq;
 using System.ComponentModel;
 using System.Data.Entity.Infrastructure;
+using MVVMFirma.Helper;
+using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
@@ -18,7 +20,18 @@ namespace MVVMFirma.ViewModels
             Item = new Customer();
         }
         #endregion
-
+        #region Command
+        private BaseCommand _CancelCommand;
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
+        }
+        #endregion
         #region Properties
         public string Name
         {
@@ -72,6 +85,19 @@ namespace MVVMFirma.ViewModels
 
             invoiceEntities.Customer.Add(Item);
             invoiceEntities.SaveChanges();
+        }
+
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new Customer();
+        }
+
+        public void CancelAndClose()
+        {
+            Cancel();
+
+            base.OnRequestClose();
         }
         #endregion
 

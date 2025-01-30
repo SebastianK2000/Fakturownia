@@ -21,7 +21,18 @@ namespace MVVMFirma.ViewModels
         }
 
         #endregion
-
+        #region Command
+        private BaseCommand _CancelCommand;
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
+        }
+        #endregion
         #region Properties
         public string Code
         {
@@ -123,6 +134,19 @@ namespace MVVMFirma.ViewModels
             }
             invoiceEntities.Towar.Add(Item); // dodaje do lokalnej kolekcji
             invoiceEntities.SaveChanges(); // zapisuje do DB
+        }
+
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new Towar();
+        }
+
+        public void CancelAndClose()
+        {
+            Cancel();
+
+            base.OnRequestClose();
         }
 
         #endregion

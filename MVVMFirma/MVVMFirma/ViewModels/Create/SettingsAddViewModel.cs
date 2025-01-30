@@ -155,6 +155,15 @@ namespace MVVMFirma.ViewModels
             invoiceEntities.Settings.Add(Item);
             invoiceEntities.SaveChanges();
         }
+
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new Settings();
+            // Zamyka okno po anulowaniu
+            base.OnRequestClose();
+        }
+
         #endregion
     }
 }

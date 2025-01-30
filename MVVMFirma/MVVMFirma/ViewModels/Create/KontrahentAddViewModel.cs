@@ -27,6 +27,17 @@ namespace MVVMFirma.ViewModels
 
         #endregion
         #region Command
+        private BaseCommand _CancelCommand;
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
+        }
+
         private BaseCommand _ShowAddress;
 
         public ICommand ShowAddress
@@ -159,6 +170,19 @@ namespace MVVMFirma.ViewModels
         {
             invoiceEntities.Kontrahent.Add(Item);
             invoiceEntities.SaveChanges();
+        }
+
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new Kontrahent();
+        }
+
+        public void CancelAndClose()
+        {
+            Cancel();
+
+            base.OnRequestClose();
         }
         #endregion
         #region Validation

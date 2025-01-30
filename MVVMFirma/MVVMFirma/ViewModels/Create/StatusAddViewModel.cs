@@ -1,4 +1,5 @@
-﻿using MVVMFirma.Models.BusinessLogic;
+﻿using MVVMFirma.Helper;
+using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
@@ -19,7 +21,18 @@ namespace MVVMFirma.ViewModels
         }
 
         #endregion
-
+        #region Command
+        private BaseCommand _CancelCommand;
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
+        }
+        #endregion
         #region Properties
         public string Name
         {
@@ -51,6 +64,19 @@ namespace MVVMFirma.ViewModels
         {
             invoiceEntities.Status.Add(Item);
             invoiceEntities.SaveChanges();
+        }
+
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new Status();
+        }
+
+        public void CancelAndClose()
+        {
+            Cancel();
+
+            base.OnRequestClose();
         }
         #endregion
     }

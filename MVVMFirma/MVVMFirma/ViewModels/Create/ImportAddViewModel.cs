@@ -20,14 +20,17 @@ namespace MVVMFirma.ViewModels
             : base("Import")
         {
             Item = new ImportExportLogs();
-            ActionTypes = new ObservableCollection<string> {"Import", "Export" };
+            ActionTypes = new ObservableCollection<string> { "Import", "Export" };
             // Messenger oczekujący na kontrahenta z widoku gdzie są allKontrahenci
             Messenger.Default.Register<Invoice>(this, getSelectedInvoice);
         }
         #endregion
+
         #region Command
         private BaseCommand _ShowInvoice;
+        private BaseCommand _CancelCommand;
 
+        // Command for showing invoice
         public ICommand ShowInvoice
         {
             get
@@ -37,11 +40,24 @@ namespace MVVMFirma.ViewModels
                 return _ShowInvoice;
             }
         }
+
+        // Command for canceling the action
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
+        }
+
         private void showInvoice()
         {
             Messenger.Default.Send<string>("InvoiceAll");
         }
         #endregion
+
         #region Properties
         private ObservableCollection<string> _actionTypes;
         public ObservableCollection<string> ActionTypes
@@ -63,6 +79,7 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => ActionType);
             }
         }
+
         public int? IdInvoice
         {
             get
@@ -75,8 +92,10 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => IdInvoice);
             }
         }
+
         public string InvoiceNumber { get; set; }
         #endregion
+
         #region Propertises for ComboBox 
         public IQueryable<KeyAndValue> KontrahentItems
         {
@@ -85,6 +104,7 @@ namespace MVVMFirma.ViewModels
                 return new KontrahenciB(invoiceEntities).GetKontrahenciKeyAndValueItems();
             }
         }
+
         public IQueryable<KeyAndValue> InvoiceItems
         {
             get
@@ -93,16 +113,36 @@ namespace MVVMFirma.ViewModels
             }
         }
         #endregion
+
         #region Helpers
         private void getSelectedInvoice(Invoice invoice)
         {
             IdInvoice = invoice.IdInvoice;
             InvoiceNumber = invoice.Number;
         }
+
+        // Save method
         public override void Save()
         {
             invoiceEntities.ImportExportLogs.Add(Item);
             invoiceEntities.SaveChanges();
+        }
+
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new ImportExportLogs();
+            ActionType = null;
+            IdInvoice = null;
+            InvoiceNumber = string.Empty;
+
+        }
+
+        public void CancelAndClose()
+        {
+            Cancel();
+            
+            base.OnRequestClose();
         }
         #endregion
     }

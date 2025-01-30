@@ -28,6 +28,17 @@ namespace MVVMFirma.ViewModels
 
         #endregion
         #region Command
+        private BaseCommand _CancelCommand;
+        public ICommand CancelCommand
+        {
+            get
+            {
+                if (_CancelCommand == null)
+                    _CancelCommand = new BaseCommand(() => CancelAndClose());
+                return _CancelCommand;
+            }
+        }
+
         private BaseCommand _ShowCustomers;
 
         public ICommand ShowCustomers
@@ -157,6 +168,19 @@ namespace MVVMFirma.ViewModels
         public override bool IsValid()
         {
             return string.IsNullOrEmpty(_validateMessage);
+        }
+
+        // Cancel method
+        public override void Cancel()
+        {
+            Item = new Adress();
+        }
+
+        public void CancelAndClose()
+        {
+            Cancel();
+
+            base.OnRequestClose();
         }
         #endregion
     }
