@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
         Title="MVVMFirma" Height="300" Width="300" WindowState="Maximized"
-        xmlns:vm="clr-namespace:MVVMFirma.Views"
-        >
+        xmlns:vm="clr-namespace:MVVMFirma.ViewModels"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <Window.Resources>
         <ResourceDictionary Source="MainWindowResources.xaml"  />
     </Window.Resources>
@@ -19,35 +19,50 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Menu Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="2">
-            <MenuItem Header="_Plik"/>
-            <MenuItem Header="_Magazyn">
-                <MenuItem Header="Wszystkie towary"/>
-                <MenuItem Header="Nowy towar"/>
-                <MenuItem Header="Wydanie Zewnętrzne (WZ)"/>
-                <MenuItem Header="Przyjęcie Zewnętrzne (PZ)"/>
+            <MenuItem Header="_Customer">
+                <MenuItem Header="Customer List" Command="{Binding Commands[0].Command}" />
+                <MenuItem Header="Customer Archive" Command="{Binding Commands[1].Command}" />
+                <MenuItem Header="Kontrahent List" Command="{Binding Commands[2].Command}" />
+                <MenuItem Header="Address" Command="{Binding Commands[3].Command}" />
+                <MenuItem Header="Company Data" Command="{Binding Commands[4].Command}" />
+                <MenuItem Header="My Payments" Command="{Binding Commands[5].Command}" />
+                <MenuItem Header="Payments Method" Command="{Binding Commands[6].Command}" />
             </MenuItem>
-            <MenuItem Header="Program"/>
+            <MenuItem Header="_Products">
+                <MenuItem Header="Invoice" Command="{Binding Commands[7].Command}" />
+                <MenuItem Header="Products List" Command="{Binding Commands[8].Command}" />
+                <MenuItem Header="Status" Command="{Binding Commands[9].Command}" />
+            </MenuItem>
+            <MenuItem Header="Program">
+                <MenuItem Header="Notifications" Command="{Binding Commands[10].Command}" />
+                <MenuItem Header="Import" Command="{Binding Commands[11].Command}" />
+                <MenuItem Header="Export" Command="{Binding Commands[12].Command}" />
+                <MenuItem Header="Settings" Command="{Binding Commands[13].Command}" />
+                <MenuItem Header="Contact Support" Command="{Binding Commands[14].Command}" />
+                <MenuItem Header="Help" Command="{Binding Commands[15].Command}" />
+            </MenuItem>
+            <MenuItem Header="Raport">
+                <MenuItem Header="Raport: Customer" Command="{Binding Commands[16].Command}" />
+                <MenuItem Header="Raport: Sales" Command="{Binding Commands[17].Command}" />
+                <MenuItem Header="Raport: VAT" Command="{Binding Commands[18].Command}" />
+            </MenuItem>
         </Menu>
         <ToolBar Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="2">
-            <ToggleButton Width="32" Height="32" Background="Blue" Margin="2"/>
-            <ToggleButton Width="32" Height="32" Background="Yellow" Margin="2"/>
+            <ToggleButton Width="32" Height="32" Background="#FFD700" Margin="2"/>
+            <ToggleButton Width="32" Height="32" Background="#007ACC" Margin="2"/>
         </ToolBar>
         <Border Grid.Row="2" Grid.Column="0">
             <HeaderedContentControl 
-                Header="Operacje" 
-                Background="Aqua" 
-                Content="{Binding Path=Commands}" 
+                Header="Operations"  
+                Content="{Binding Commands}" 
                 ContentTemplate="{StaticResource CommandsTemplate}"
-                Style="{StaticResource MainHCCStyle}"
-                />
+                Style="{StaticResource ButtonStyle}" Background="#FFD700" />
         </Border>
         <Border Grid.Row="2" Grid.Column="1">
             <HeaderedContentControl 
-                Header="Przestrzeń robocza"
-                Content="{Binding Path=Workspaces}"
+                Content="{Binding Workspaces}"
                 ContentTemplate="{StaticResource WorkspacesTemplate}"
-                Style="{StaticResource MainHCCStyle}"
-            />
+                Style="{StaticResource MainHCCStyle}" />
         </Border>
         <StatusBar Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
             <StatusBarItem>

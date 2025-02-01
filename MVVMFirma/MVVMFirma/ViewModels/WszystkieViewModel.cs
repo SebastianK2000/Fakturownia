@@ -41,8 +41,45 @@ namespace MVVMFirma.ViewModels
             }
         }
 
-        #endregion
+        private BaseCommand _EditCommand; // Komenda edytowania
+        public ICommand EditCommand
+        {
+            get
+            {
+                if (_EditCommand == null)
+                    _EditCommand = new BaseCommand(() => Edit());
+                return _EditCommand;
+            }
+        }
 
+        private BaseCommand _DeleteCommand; // Komenda usuwania
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                if (_DeleteCommand == null)
+                    _DeleteCommand = new BaseCommand(() => Delete());
+                return _DeleteCommand;
+            }
+        }
+        #endregion
+        #region Methods
+
+        // Edit method (implementacja edytowania zależna od Twojej logiki)
+        public virtual void Edit()
+        {
+            // Logika edytowania, np. wysłanie komunikatu do edytowania obiektu
+            Messenger.Default.Send(DisplayName + "Edit");
+        }
+
+        // Delete method (implementacja usuwania)
+        public virtual void Delete()
+        {
+            // Logika usuwania, np. wysłanie komunikatu do usunięcia obiektu
+            Messenger.Default.Send(DisplayName + "Delete");
+        }
+
+        #endregion
         #region List
         private ObservableCollection<T> _List; // Tu przechowujemy towary pobrane z DB
 

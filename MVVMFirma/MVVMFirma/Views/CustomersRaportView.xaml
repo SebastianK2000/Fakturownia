@@ -6,37 +6,48 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
+    <Grid Background="#F5F5F5" Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="33"/>
-            <RowDefinition Height="33"/>
-            <RowDefinition Height="33"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="33"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Raport all new Customers"
-           Margin="3" HorizontalContentAlignment="Center"/>
-        <Grid Grid.Row="1">
+
+        <!-- Nagłówek -->
+        <TextBlock Grid.Row="0" Text="Raport: New Customers" 
+                   FontSize="20" FontWeight="Bold" 
+                   Foreground="#333" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <!-- Sekcja filtrów -->
+        <Grid Grid.Row="1" Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Od" Margin="3"/>
-            <DatePicker Grid.Column="1" Margin="3" SelectedDate="{Binding DataOd, Mode=TwoWay}"/>
-            <Label Grid.Column="2" Content="Do" Margin="3"/>
-            <DatePicker Grid.Column="3" Margin="3" SelectedDate="{Binding DataDo, Mode=TwoWay}"/>
-        </Grid>
-        <Button Grid.Row="3" Content="Oblicz" Margin="3" Command="{Binding ObliczCommand}"/>
-        <Grid Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Nowi użytkownicy:" Margin="3"/>
-            <Label Grid.Column="1" Content="{Binding AllNewCustomers}" Margin="3"/>
+            <TextBlock Grid.Column="0" Text="Od:" FontSize="14" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            <DatePicker Grid.Column="1" SelectedDate="{Binding DataOd, Mode=TwoWay}" Padding="5"/>
+            <TextBlock Grid.Column="2" Text="Do:" FontSize="14" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            <DatePicker Grid.Column="3" SelectedDate="{Binding DataDo, Mode=TwoWay}" Padding="5"/>
         </Grid>
 
+        <!-- Przycisk Oblicz -->
+
+        <Button Height="35" Grid.Row="3" Content="Oblicz" Command="{Binding ObliczCommand}"
+                 Background="#007ACC" Foreground="White"
+                FontWeight="Bold" BorderThickness="0" Cursor="Hand"/>
+
+        <!-- Wynik raportu -->
+        <Grid Grid.Row="4" Margin="20,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Nowi użytkownicy:" FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="{Binding AllNewCustomers}" Margin="5 5 0 2" FontWeight="Bold" Foreground="#007ACC" VerticalAlignment="Center"/>
+        </Grid>
     </Grid>
 </UserControl>
