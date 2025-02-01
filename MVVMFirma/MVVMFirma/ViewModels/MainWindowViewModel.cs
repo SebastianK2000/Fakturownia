@@ -10,17 +10,44 @@ using System.ComponentModel;
 using System.Windows.Data;
 using MVVMFirma.Views;
 using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Command;
 
 namespace MVVMFirma.ViewModels
 {
     public class MainWindowViewModel : BaseViewModel
     {
-        #region Fields
+        public ObservableCollection<RelayCommand> RelayCommands { get; set; }
+
+        public MainWindowViewModel()
+        {
+            RelayCommands = new ObservableCollection<RelayCommand>
+            {
+                new RelayCommand(ExecuteCustomerCommand),
+                new RelayCommand(ExecuteCustomerListCommand),
+                new RelayCommand(ExecuteCustomerArchiveCommand),
+                // Możesz dodać kolejne komendy tutaj...
+            };
+        }
+
+        private void ExecuteCustomerCommand()
+        {
+            ShowView<CustomerViewModel>();
+        }
+
+        private void ExecuteCustomerListCommand()
+        {
+            ShowView<CustomersListViewModel>();
+        }
+
+        private void ExecuteCustomerArchiveCommand()
+        {
+            ShowView<CustomerHistoryViewModel>();
+        }
+
         private ReadOnlyCollection<CommandViewModel> _Commands;
         private ObservableCollection<WorkspaceViewModel> _Workspaces;
-        #endregion
 
-        #region Commands
+        // Komendy wywołujące widoki
         public ReadOnlyCollection<CommandViewModel> Commands
         {
             get
@@ -33,108 +60,48 @@ namespace MVVMFirma.ViewModels
                 return _Commands;
             }
         }
+
         private List<CommandViewModel> CreateCommands()
         {
-            // oczekuje na stringa i jak go złapie to wywołuje open która jest zdefiniowana w regionie prywatnych helpersów
             Messenger.Default.Register<string>(this, Open);
             return new List<CommandViewModel>
             {
-
                 // Customer section
-
-                new CommandViewModel(
-                    "Customer List",
-                    new BaseCommand(() => this.ShowView<CustomersListViewModel>())),
-
-                new CommandViewModel(
-                    "Customer Archive",
-                    new BaseCommand(() => this.ShowView<CustomerHistoryViewModel>())),
-
-                new CommandViewModel(
-                    "Kontrahent",
-                    new BaseCommand(() => this.ShowView<KontrahentViewModel>())),
-
+                new CommandViewModel("Customer List", new BaseCommand(() => this.ShowView<CustomersListViewModel>())),
+                new CommandViewModel("Customer Archive", new BaseCommand(() => this.ShowView<CustomerHistoryViewModel>())),
+                new CommandViewModel("Kontrahent", new BaseCommand(() => this.ShowView<KontrahentViewModel>())),
+                
                 // Invoices section
-
-                new CommandViewModel(
-                    "Invoices List",
-                    new BaseCommand(() => this.ShowView<InvoiceAllViewModel>())),
-
-                new CommandViewModel(
-                    "Status",
-                    new BaseCommand(() => this.ShowView < StatusViewModel >())),
-
+                new CommandViewModel("Invoices List", new BaseCommand(() => this.ShowView<InvoiceAllViewModel>())),
+                new CommandViewModel("Status", new BaseCommand(() => this.ShowView<StatusViewModel>())),
+                
                 // Products and Services section
-
-                new CommandViewModel(
-                    "Product List",
-                    new BaseCommand(() => this.ShowView<WszystkieTowaryViewModel>())),
-
+                new CommandViewModel("Product List", new BaseCommand(() => this.ShowView<WszystkieTowaryViewModel>())),
+                
                 // Notifications and configurations section
-                new CommandViewModel(
-                    "Address",
-                    new BaseCommand(() => this.ShowView < AddressViewModel >())),
-
-                new CommandViewModel(
-                    "Company Data",
-                    new BaseCommand(() => this.ShowView < CompanyDataViewModel >())),
-
-                new CommandViewModel(
-                    "Notifications",
-                    new BaseCommand(() => this.ShowView < NotificationsViewModel >())),
-
+                new CommandViewModel("Address", new BaseCommand(() => this.ShowView<AddressViewModel>())),
+                new CommandViewModel("Company Data", new BaseCommand(() => this.ShowView<CompanyDataViewModel>())),
+                new CommandViewModel("Notifications", new BaseCommand(() => this.ShowView<NotificationsViewModel>())),
+                
                 // Payments section 
-
-                new CommandViewModel(
-                    "Payments",
-                    new BaseCommand(() => this.ShowView < PaymentViewModel >())),
-
-                new CommandViewModel(
-                    "Payment Method",
-                    new BaseCommand(() => this.ShowView < SettlementsViewModel >())),
-
+                new CommandViewModel("Payments", new BaseCommand(() => this.ShowView<PaymentViewModel>())),
+                new CommandViewModel("Payment Method", new BaseCommand(() => this.ShowView<SettlementsViewModel>())),
+                
                 // Organizational section
-
-                new CommandViewModel(
-                    "Import",
-                    new BaseCommand(() => this.ShowView < ImportViewModel >())),
-
-                new CommandViewModel(
-                    "Export",
-                    new BaseCommand(() => this.ShowView < ExportViewModel >())),
-
-                new CommandViewModel(
-                    "Settings",
-                    new BaseCommand(() => this.ShowView < SettingsViewModel >())),
-
-                new CommandViewModel(
-                    "Contact Support",
-                    new BaseCommand(() => this.ShowView<ContactSupportViewModel>())),
-
-                new CommandViewModel(
-                    "Help",
-                    new BaseCommand(() => this.ShowView<HelpViewModel>())),
-
-                // Raport - Business logic 
-
-                new CommandViewModel(
-                    "Sales Raport",
-                    new BaseCommand(() => this.CreateView(new SalesRaportViewModel()))),
-
-                new CommandViewModel(
-                    "Customers Raport",
-                    new BaseCommand(() => this.CreateView(new CustomersRaportViewModel()))),
-
-                new CommandViewModel(
-                    "Vat Raport",
-                    new BaseCommand(() => this.CreateView(new VatViewModel()))),
-
+                new CommandViewModel("Import", new BaseCommand(() => this.ShowView<ImportViewModel>())),
+                new CommandViewModel("Export", new BaseCommand(() => this.ShowView<ExportViewModel>())),
+                new CommandViewModel("Settings", new BaseCommand(() => this.ShowView<SettingsViewModel>())),
+                new CommandViewModel("Contact Support", new BaseCommand(() => this.ShowView<ContactSupportViewModel>())),
+                new CommandViewModel("Help", new BaseCommand(() => this.ShowView<HelpViewModel>())),
+                
+                // Reports
+                new CommandViewModel("Sales Raport", new BaseCommand(() => this.CreateView(new SalesRaportViewModel()))),
+                new CommandViewModel("Customers Raport", new BaseCommand(() => this.CreateView(new CustomersRaportViewModel()))),
+                new CommandViewModel("Vat Raport", new BaseCommand(() => this.CreateView(new VatViewModel()))),
             };
         }
 
-        #endregion
-
-        #region Workspaces
+        // Workspaces
         public ObservableCollection<WorkspaceViewModel> Workspaces
         {
             get
@@ -147,6 +114,7 @@ namespace MVVMFirma.ViewModels
                 return _Workspaces;
             }
         }
+
         private void OnWorkspacesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null && e.NewItems.Count != 0)
@@ -157,29 +125,19 @@ namespace MVVMFirma.ViewModels
                 foreach (WorkspaceViewModel workspace in e.OldItems)
                     workspace.RequestClose -= this.OnWorkspaceRequestClose;
         }
+
         private void OnWorkspaceRequestClose(object sender, EventArgs e)
         {
             WorkspaceViewModel workspace = sender as WorkspaceViewModel;
-            //workspace.Dispos();
             this.Workspaces.Remove(workspace);
         }
 
-        #endregion // Workspaces
-
-        #region Private Helpers
+        // Private helpers
         private void CreateView(WorkspaceViewModel New) // Element create new
         {
-            //NowyTowarViewModel workspace = new NowyTowarViewModel(); // tworzenie zakładki
             this.Workspaces.Add(New); // dodanie zakładki do kolekcji zakładek
             this.SetActiveWorkspace(New); // aktywowanie zakładki
         }
-
-        //private void CreateInvoice()
-        //{
-        //    NewInvoiceViewModel workspace = new NewInvoiceViewModel();
-        //    this.Workspaces.Add(workspace);
-        //    this.SetActiveWorkspace(workspace);
-        //}
 
         private void ShowView<T>() where T : WorkspaceViewModel, new() // Element show 
         {
@@ -202,6 +160,7 @@ namespace MVVMFirma.ViewModels
             if (collectionView != null)
                 collectionView.MoveCurrentTo(workspace);
         }
+
         private void Open(string name)
         {
             Debug.WriteLine($"Otrzymano komunikat: {name}");
@@ -263,10 +222,7 @@ namespace MVVMFirma.ViewModels
 
             if (name == "KontrahentAll")
                 ShowView<AllKontrahentViewModel>();
-
-
         }
 
-        #endregion
     }
 }

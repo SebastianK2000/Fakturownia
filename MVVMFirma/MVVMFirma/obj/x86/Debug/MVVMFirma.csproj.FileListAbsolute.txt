@@ -335,3 +335,4 @@ C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\a
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allCustomerView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allFakturyView.baml
 C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\obj\x86\Debug\Views\All\allKontrahentView.baml
+C:\Users\Admin\Desktop\Fakturownia\MVVMFirma\MVVMFirma\bin\Debug\FontAwesome.Sharp.dll

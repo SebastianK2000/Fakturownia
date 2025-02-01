@@ -48,9 +48,53 @@
             </MenuItem>
         </Menu>
         <ToolBar Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="2">
-            <ToggleButton Width="32" Height="32" Background="#FFD700" Margin="2"/>
-            <ToggleButton Width="32" Height="32" Background="#007ACC" Margin="2"/>
+            <!-- Klient -->
+            <Button Width="64" Height="64" Command="{Binding Commands[0].Command}" Background="#FFD700" Margin="2" Cursor="Hand">
+                <Button.Content>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE74C;" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Klient" FontSize="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <!-- Kontrahent -->
+            <Button Width="64" Height="64" Command="{Binding Commands[2].Command}" Background="#FFD700" Margin="2" Cursor="Hand">
+                <Button.Content>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE74C;" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Kontrahent" FontSize="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <!-- Faktura -->
+            <Button Width="64" Height="64" Command="{Binding Commands[3].Command}" Background="#FFD700" Margin="2" Cursor="Hand">
+                <Button.Content>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE74C;" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Faktura" FontSize="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <!-- Towar -->
+            <Button Width="64" Height="64" Command="{Binding Commands[5].Command}" Background="#FFD700" Margin="2" Cursor="Hand">
+                <Button.Content>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE74C;" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Towar" FontSize="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <!-- Company -->
+            <Button Width="64" Height="64" Command="{Binding Commands[7].Command}" Background="#FFD700" Margin="2" Cursor="Hand">
+                <Button.Content>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE74C;" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Company" FontSize="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
         </ToolBar>
+
         <Border Grid.Row="2" Grid.Column="0">
             <HeaderedContentControl 
                 Header="Operations"  
